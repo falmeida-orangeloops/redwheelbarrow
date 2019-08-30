@@ -1,0 +1,42 @@
+{
+  "notes": [
+    {
+      "id": "c082bac6-a886-47a1-ab87-48a7a10c9d8b",
+      "title": "Note 1",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "createdDate": 1522613495,
+      "categoryId": "0"
+    },
+    {
+      "id": "c082baaa-a886-47a1-ab87-48a7a10c9d8b",
+      "title": "Note 2",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "createdDate": 1521613495,
+      "categoryId": "1"
+    },
+    {
+      "id": "c082bac6-a886-47a1-ab87-48a7a10c9qwe",
+      "title": "Note 3",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "createdDate": 1522613495,
+      "categoryId": "2"
+    }
+  ],
+  "categories": [
+    {
+      "id": "0",
+      "title": "Personal",
+      "createdDate": 1522613400
+    },
+    {
+      "id": "1",
+      "title": "University",
+      "createdDate": 1522313495
+    },
+    {
+      "id": "2",
+      "title": "Work",
+      "createdDate": 1522610495
+    }
+  ]
+}
