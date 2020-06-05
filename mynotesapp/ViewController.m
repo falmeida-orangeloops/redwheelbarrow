@@ -24,34 +24,18 @@
     [self updateTextView];
 }
 
-- (NoteCategory *) categoryWithId:(NSString *)id {
-    NSArray *categories = self.categories;
-    
-    for (int i = 0; i < self.categories.count; i++) {
-        if ([((NoteCategory*)categories[i]).id isEqualToString:id])
-            return self.categories[i];
-    }
-    
-    return nil;
-}
-
 - (void) updateNotesAndCategories {
     NSString *path = [[NSBundle mainBundle] pathForResource:@"notes" ofType:@"json"];
-    NSData *data = [NSData dataWithContentsOfFile:path];
-    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-    NSArray *jsonNotes = dict[@"notes"];
-    NSArray *jsonCategories = dict[@"categories"];
-    id newNotes[jsonNotes.count];
-    id newCategories[jsonCategories.count];
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:kNilOptions error:nil];
     
-    for (int i = 0; i < jsonNotes.count; i++)
-        newNotes[i] = [[Note alloc] initWithDict:jsonNotes[i]];
+    self.notes = [[NSMutableArray<Note*> alloc] init];
+    self.categories = [[NSMutableDictionary<NSString*,NoteCategory*> alloc] init];
     
-    for (int i = 0; i < jsonCategories.count; i++)
-        newCategories[i] = [[NoteCategory alloc] initWithDict:jsonCategories[i]];
+    for (id item in dict[@"notes"])
+        [self.notes addObject:[[Note alloc] initWithDict:item]];
     
-    self.notes = [NSArray arrayWithObjects:newNotes count:jsonCategories.count];
-    self.categories = [NSArray arrayWithObjects:newCategories count:jsonCategories.count];
+    for (id item in dict[@"categories"])
+        [self.categories setObject:[[NoteCategory alloc] initWithDict:item] forKey:item[@"id"]];
 }
 
 - (void) updateTextView {
@@ -62,7 +46,7 @@
     [df setDateFormat:@"MM/dd/yyyy hh:mm:ss"];
     
     for (Note *note in self.notes) {
-        newText = [NSString stringWithFormat:@"%@title: %@\ncontent: %@\ncreated date: %@\ncategory: %@\n\n", newText, note.title, note.content, [df stringFromDate:note.createdDate], [self categoryWithId:note.categoryId].title];
+        newText = [NSString stringWithFormat:@"%@title: %@\ncontent: %@\ncreated date: %@\ncategory: %@\n\n", newText, note.title, note.content, [df stringFromDate:note.createdDate], self.categories[note.categoryId].title];
     }
     
     self.textView.text = newText;

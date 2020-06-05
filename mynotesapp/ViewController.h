@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Models/NoteCategory.h"
+#import "Models/Note.h"
 
 @interface ViewController : UIViewController
-@property NSArray *notes;
-@property NSArray *categories;
+@property NSMutableArray<Note*> *notes;
+@property NSMutableDictionary<NSString*,NoteCategory*> *categories;
 
-- (NoteCategory *)categoryWithId:(NSString *)id;
 - (void)updateNotesAndCategories;
 - (void)updateTextView;
 @end
