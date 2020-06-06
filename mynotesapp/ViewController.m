@@ -13,7 +13,7 @@
 #import "Models/NoteCategory.h"
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -21,7 +21,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self updateTextView];
+    
+    self.df = [[NSDateFormatter alloc] init];
+    [self.df setDateFormat:@"MM/dd/yyyy hh:mm:ss"];
+    
+    [self updateNotesAndCategories];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.notes.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *identifier = @"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    
+    if (cell == nil)
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+ 
+    Note *note = [self.notes objectAtIndex:indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"title: %@\ncontent: %@\ncreated date: %@\ncategory: %@", note.title, note.content, [self.df stringFromDate:note.createdDate], self.categories[note.categoryId].title];
+    cell.textLabel.numberOfLines = 0;
+    cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    
+    return cell;
 }
 
 - (void) updateNotesAndCategories {
@@ -36,20 +59,6 @@
     
     for (id item in dict[@"categories"])
         [self.categories setObject:[[NoteCategory alloc] initWithDict:item] forKey:item[@"id"]];
-}
-
-- (void) updateTextView {
-    [self updateNotesAndCategories];
-    
-    NSString *newText = [NSString string];
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    [df setDateFormat:@"MM/dd/yyyy hh:mm:ss"];
-    
-    for (Note *note in self.notes) {
-        newText = [NSString stringWithFormat:@"%@title: %@\ncontent: %@\ncreated date: %@\ncategory: %@\n\n", newText, note.title, note.content, [df stringFromDate:note.createdDate], self.categories[note.categoryId].title];
-    }
-    
-    self.textView.text = newText;
 }
 
 @end

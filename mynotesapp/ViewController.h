@@ -10,11 +10,11 @@
 #import "Models/NoteCategory.h"
 #import "Models/Note.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property NSMutableArray<Note*> *notes;
 @property NSMutableDictionary<NSString*,NoteCategory*> *categories;
+@property NSDateFormatter *df;
 
 - (void)updateNotesAndCategories;
-- (void)updateTextView;
 @end
 
