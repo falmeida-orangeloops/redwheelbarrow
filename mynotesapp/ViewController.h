@@ -14,7 +14,8 @@
 @property NSMutableArray<Note*> *notes;
 @property NSMutableDictionary<NSString*,NoteCategory*> *categories;
 @property NSDateFormatter *df;
+@property UIRefreshControl *refreshControl;
 
-- (void)updateNotesAndCategories;
+- (void)updateNotes;
 @end
 

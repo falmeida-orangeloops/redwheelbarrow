@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FC055B0A248858350095DA72 /* notes.json in Resources */ = {isa = PBXBuildFile; fileRef = FC055B09248858350095DA72 /* notes.json */; };
+		FC26F496248EDDBC00283D50 /* notes.json in Resources */ = {isa = PBXBuildFile; fileRef = FC26F495248EDDBC00283D50 /* notes.json */; };
 		FC2E1BE9248838FC0089F347 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2E1BE8248838FC0089F347 /* AppDelegate.m */; };
 		FC2E1BEC248838FC0089F347 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2E1BEB248838FC0089F347 /* SceneDelegate.m */; };
 		FC2E1BEF248838FC0089F347 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2E1BEE248838FC0089F347 /* ViewController.m */; };
@@ -17,10 +17,12 @@
 		FC2E1BFA248838FD0089F347 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2E1BF9248838FD0089F347 /* main.m */; };
 		FC758FE82489381F0050804C /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = FC758FE72489381F0050804C /* Note.m */; };
 		FC758FEC248939AF0050804C /* NoteCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = FC758FEB248939AF0050804C /* NoteCategory.m */; };
+		FCFF0DFA248C4C6200175862 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFF0DF8248C4C6200175862 /* Cell.m */; };
+		FCFF0DFB248C4C6200175862 /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCFF0DF9248C4C6200175862 /* Cell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FC055B09248858350095DA72 /* notes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = notes.json; path = Resources/General/notes.json; sourceTree = SOURCE_ROOT; };
+		FC26F495248EDDBC00283D50 /* notes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = notes.json; path = Resources/General/notes.json; sourceTree = SOURCE_ROOT; };
 		FC2E1BE4248838FB0089F347 /* mynotesapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mynotesapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC2E1BE7248838FC0089F347 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FC2E1BE8248838FC0089F347 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -37,6 +39,9 @@
 		FC758FE72489381F0050804C /* Note.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		FC758FEA2489399C0050804C /* NoteCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteCategory.h; sourceTree = "<group>"; };
 		FC758FEB248939AF0050804C /* NoteCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteCategory.m; sourceTree = "<group>"; };
+		FCFF0DF7248C4C6200175862 /* Cell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
+		FCFF0DF8248C4C6200175862 /* Cell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		FCFF0DF9248C4C6200175862 /* Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,8 +74,8 @@
 		FC2E1BE6248838FB0089F347 /* mynotesapp */ = {
 			isa = PBXGroup;
 			children = (
+				FC26F495248EDDBC00283D50 /* notes.json */,
 				FC758FE5248937800050804C /* Models */,
-				FC055B09248858350095DA72 /* notes.json */,
 				FC2E1BE7248838FC0089F347 /* AppDelegate.h */,
 				FC2E1BE8248838FC0089F347 /* AppDelegate.m */,
 				FC2E1BEA248838FC0089F347 /* SceneDelegate.h */,
@@ -82,6 +87,9 @@
 				FC2E1BF5248838FC0089F347 /* LaunchScreen.storyboard */,
 				FC2E1BF8248838FD0089F347 /* Info.plist */,
 				FC2E1BF9248838FD0089F347 /* main.m */,
+				FCFF0DF7248C4C6200175862 /* Cell.h */,
+				FCFF0DF8248C4C6200175862 /* Cell.m */,
+				FCFF0DF9248C4C6200175862 /* Cell.xib */,
 			);
 			path = mynotesapp;
 			sourceTree = "<group>";
@@ -155,9 +163,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC2E1BF7248838FC0089F347 /* LaunchScreen.storyboard in Resources */,
+				FC26F496248EDDBC00283D50 /* notes.json in Resources */,
+				FCFF0DFB248C4C6200175862 /* Cell.xib in Resources */,
 				FC2E1BF4248838FC0089F347 /* Assets.xcassets in Resources */,
 				FC2E1BF2248838FC0089F347 /* Main.storyboard in Resources */,
-				FC055B0A248858350095DA72 /* notes.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +183,7 @@
 				FC758FEC248939AF0050804C /* NoteCategory.m in Sources */,
 				FC2E1BFA248838FD0089F347 /* main.m in Sources */,
 				FC2E1BEC248838FC0089F347 /* SceneDelegate.m in Sources */,
+				FCFF0DFA248C4C6200175862 /* Cell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

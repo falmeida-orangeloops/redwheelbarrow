@@ -11,6 +11,7 @@
 #import "ViewController.h"
 #import "Models/Note.h"
 #import "Models/NoteCategory.h"
+#import "Cell.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -23,9 +24,13 @@
     [super viewDidLoad];
     
     self.df = [[NSDateFormatter alloc] init];
-    [self.df setDateFormat:@"MM/dd/yyyy hh:mm:ss"];
+    [self.df setDateFormat:@"MM/dd/yyyy"];
     
-    [self updateNotesAndCategories];
+    self.refreshControl = [[UIRefreshControl alloc]init];
+    [self.refreshControl addTarget:self action:@selector(updateNotes) forControlEvents:UIControlEventValueChanged];
+    self.tableView.refreshControl = self.refreshControl;
+    
+    [self updateNotes];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -34,22 +39,26 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *identifier = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    [tableView registerNib:[UINib nibWithNibName:@"Cell" bundle:nil] forCellReuseIdentifier:identifier];
+    Cell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     if (cell == nil)
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[Cell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
  
     Note *note = [self.notes objectAtIndex:indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:@"title: %@\ncontent: %@\ncreated date: %@\ncategory: %@", note.title, note.content, [self.df stringFromDate:note.createdDate], self.categories[note.categoryId].title];
-    cell.textLabel.numberOfLines = 0;
-    cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    cell.titleLabel.text = note.title;
+    cell.contentLabel.text = note.content;
+    [cell.categoryButton setTitle:self.categories[note.categoryId].title forState:UIControlStateNormal];
+    cell.createdDateLabel.text = [self.df stringFromDate:note.createdDate];
     
     return cell;
 }
 
-- (void) updateNotesAndCategories {
+- (void) updateNotes {
     NSString *path = [[NSBundle mainBundle] pathForResource:@"notes" ofType:@"json"];
-    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:kNilOptions error:nil];
+    NSData *data = [NSData dataWithContentsOfFile:path];
+    NSDictionary* dict = [NSJSONSerialization JSONObjectWithData:data
+    options:kNilOptions error:nil];
     
     self.notes = [[NSMutableArray<Note*> alloc] init];
     self.categories = [[NSMutableDictionary<NSString*,NoteCategory*> alloc] init];
@@ -59,6 +68,9 @@
     
     for (id item in dict[@"categories"])
         [self.categories setObject:[[NoteCategory alloc] initWithDict:item] forKey:item[@"id"]];
+    
+    [self.tableView reloadData];
+    [self.refreshControl endRefreshing];
 }
 
 @end

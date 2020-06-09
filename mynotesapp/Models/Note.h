@@ -11,7 +11,7 @@
 
 @interface Note : NSObject
 
-@property NSString *id;
+@property NSString *id; //todo: change name
 @property NSString *title;
 @property NSString *content;
 @property NSDate *createdDate;

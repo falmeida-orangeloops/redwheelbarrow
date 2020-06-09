@@ -15,29 +15,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yf1-TD-C9W">
+                                <rect key="frame" x="8" y="52" width="398" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dwg-zK-mMq">
-                                <rect key="frame" x="0.0" y="89" width="414" height="773"/>
+                                <rect key="frame" x="0.0" y="81" width="414" height="781"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="8uK-W9-8Nf"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="LCn-g2-8QY"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yf1-TD-C9W">
-                                <rect key="frame" x="20" y="52" width="51" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="yf1-TD-C9W" firstAttribute="top" secondItem="bjP-lb-JDx" secondAttribute="top" constant="8" id="4oC-Sk-GUh"/>
-                            <constraint firstItem="yf1-TD-C9W" firstAttribute="leading" secondItem="bjP-lb-JDx" secondAttribute="leading" constant="20" id="7BC-Nx-Lzl"/>
+                            <constraint firstItem="yf1-TD-C9W" firstAttribute="leading" secondItem="bjP-lb-JDx" secondAttribute="leading" constant="8" id="7BC-Nx-Lzl"/>
                             <constraint firstItem="bjP-lb-JDx" firstAttribute="bottom" secondItem="Dwg-zK-mMq" secondAttribute="bottom" id="F6c-A4-JZg"/>
                             <constraint firstItem="Dwg-zK-mMq" firstAttribute="leading" secondItem="bjP-lb-JDx" secondAttribute="leading" id="J9T-MI-reX"/>
                             <constraint firstItem="bjP-lb-JDx" firstAttribute="trailing" secondItem="Dwg-zK-mMq" secondAttribute="trailing" id="TXO-Xk-AvB"/>
-                            <constraint firstItem="Dwg-zK-mMq" firstAttribute="top" secondItem="yf1-TD-C9W" secondAttribute="bottom" constant="16" id="cFg-Af-dWW"/>
+                            <constraint firstItem="bjP-lb-JDx" firstAttribute="trailing" secondItem="yf1-TD-C9W" secondAttribute="trailing" constant="8" id="YMq-ca-W08"/>
+                            <constraint firstItem="Dwg-zK-mMq" firstAttribute="top" secondItem="yf1-TD-C9W" secondAttribute="bottom" constant="8" id="cFg-Af-dWW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bjP-lb-JDx"/>
                     </view>
