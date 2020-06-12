@@ -24,6 +24,10 @@
 		FCF049BA24A14FC400DB4600 /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF049B924A14FC400DB4600 /* DownloadManager.m */; };
 		FCFF0DFA248C4C6200175862 /* NoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFF0DF8248C4C6200175862 /* NoteCell.m */; };
 		FCFF0DFB248C4C6200175862 /* NoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCFF0DF9248C4C6200175862 /* NoteCell.xib */; };
+		FCDDBC4724927F6500C1A19A /* SetCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDBC4624927F6500C1A19A /* SetCategoryViewController.swift */; };
+		FCFF0DFA248C4C6200175862 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFF0DF8248C4C6200175862 /* Cell.m */; };
+		FCFF0DFB248C4C6200175862 /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCFF0DF9248C4C6200175862 /* Cell.xib */; };
+		FCFF3F6D24912976005D953E /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFF3F6C24912976005D953E /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +52,9 @@
 		FC758FE72489381F0050804C /* Note.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		FC758FEA2489399C0050804C /* NoteCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteCategory.h; sourceTree = "<group>"; };
 		FC758FEB248939AF0050804C /* NoteCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteCategory.m; sourceTree = "<group>"; };
+		FCFF3F6B24912976005D953E /* mynotesapp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mynotesapp-Bridging-Header.h"; sourceTree = "<group>"; };
+		FCFF3F6C24912976005D953E /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		FCDDBC4624927F6500C1A19A /* SetCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCategoryViewController.swift; sourceTree = "<group>"; };
 		FC9F32B0249A5AD7005C20A5 /* AlertController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertController.h; sourceTree = "<group>"; };
 		FC9F32B1249A5AEA005C20A5 /* AlertController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertController.m; sourceTree = "<group>"; };
 		FC9F32B5249A7733005C20A5 /* NSDate+MyFormats.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+MyFormats.h"; sourceTree = "<group>"; };
@@ -94,14 +101,18 @@
 				FC5D217F249934B9001F970A /* View */,
 				FC758FE5248937800050804C /* Models */,
 				FC2E1BE7248838FC0089F347 /* AppDelegate.h */,
-				FC2E1BEA248838FC0089F347 /* SceneDelegate.h */,
 				FC2E1BE8248838FC0089F347 /* AppDelegate.m */,
+				FC2E1BEA248838FC0089F347 /* SceneDelegate.h */,
 				FC2E1BEB248838FC0089F347 /* SceneDelegate.m */,
 				FC2E1BF0248838FC0089F347 /* Main.storyboard */,
+				FCFF3F6C24912976005D953E /* DetailsViewController.swift */,
+				FCDDBC4624927F6500C1A19A /* SetCategoryViewController.swift */,
 				FC2E1BF3248838FC0089F347 /* Assets.xcassets */,
 				FC2E1BF5248838FC0089F347 /* LaunchScreen.storyboard */,
 				FC2E1BF8248838FD0089F347 /* Info.plist */,
+				FC2E1BE8248838FC0089F347 /* AppDelegate.m */,
 				FC2E1BF9248838FD0089F347 /* main.m */,
+				FCFF3F6B24912976005D953E /* mynotesapp-Bridging-Header.h */,
 			);
 			path = mynotesapp;
 			sourceTree = "<group>";
@@ -177,6 +188,7 @@
 				TargetAttributes = {
 					FC2E1BE3248838FB0089F347 = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 				};
 			};
@@ -221,6 +233,7 @@
 				FC758FE82489381F0050804C /* Note.m in Sources */,
 				FC2E1BEF248838FC0089F347 /* ViewController.m in Sources */,
 				FC2E1BE9248838FC0089F347 /* AppDelegate.m in Sources */,
+				FCFF3F6D24912976005D953E /* DetailsViewController.swift in Sources */,
 				FC758FEC248939AF0050804C /* NoteCategory.m in Sources */,
 				FC9F32B2249A5AEA005C20A5 /* AlertController.m in Sources */,
 				FC2E1BFA248838FD0089F347 /* main.m in Sources */,
@@ -230,6 +243,7 @@
 				FCF049BA24A14FC400DB4600 /* DownloadManager.m in Sources */,
 				FCFF0DFA248C4C6200175862 /* NoteCell.m in Sources */,
 				FC31DDD22499D46700861E37 /* Repository.m in Sources */,
+				FCDDBC4724927F6500C1A19A /* SetCategoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,7 +383,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = mynotesapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -377,6 +393,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "falmeida-orangeloops.mynotesapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "mynotesapp/mynotesapp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -385,7 +404,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = mynotesapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -393,6 +414,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "falmeida-orangeloops.mynotesapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "mynotesapp/mynotesapp-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
