@@ -15,8 +15,8 @@
 
 @interface Repository : NSObject
 
-@property (weak) NSMutableArray<Note*> *notes;
-@property (weak) NSMutableDictionary<NSString*,NoteCategory*> *categories;
+@property NSMutableArray<Note*> *notes;
+@property NSMutableDictionary<NSString*,NoteCategory*> *categories;
 
 - (void)reloadNotesAndCategories;
 + (Repository *)sharedRepository;

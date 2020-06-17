@@ -11,7 +11,7 @@
 #import "ViewController.h"
 #import "../Models/Note.h"
 #import "../Models/NoteCategory.h"
-#import "../Models/NSDateFormatter+MyFormats.h"
+#import "../Models/NSDate+MyFormats.h"
 #import "../Models/Repository.h"
 #import "AlertController.h"
 #import "Cell.h"
@@ -49,7 +49,7 @@
     cell.titleLabel.text = note.title;
     cell.contentLabel.text = note.content;
     [cell.categoryButton setTitle:note.category.title forState:UIControlStateNormal];
-    cell.createdDateLabel.text = [NSDateFormatter shortStringFromDate:note.createdDate];
+    cell.createdDateLabel.text = [note.createdDate shortString];
     
     return cell;
 }

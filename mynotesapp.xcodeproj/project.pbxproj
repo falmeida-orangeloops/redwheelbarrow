@@ -20,7 +20,7 @@
 		FC758FE82489381F0050804C /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = FC758FE72489381F0050804C /* Note.m */; };
 		FC758FEC248939AF0050804C /* NoteCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = FC758FEB248939AF0050804C /* NoteCategory.m */; };
 		FC9F32B2249A5AEA005C20A5 /* AlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9F32B1249A5AEA005C20A5 /* AlertController.m */; };
-		FC9F32B7249A7748005C20A5 /* NSDateFormatter+MyFormats.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9F32B6249A7748005C20A5 /* NSDateFormatter+MyFormats.m */; };
+		FC9F32B7249A7748005C20A5 /* NSDate+MyFormats.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9F32B6249A7748005C20A5 /* NSDate+MyFormats.m */; };
 		FCFF0DFA248C4C6200175862 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFF0DF8248C4C6200175862 /* Cell.m */; };
 		FCFF0DFB248C4C6200175862 /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCFF0DF9248C4C6200175862 /* Cell.xib */; };
 /* End PBXBuildFile section */
@@ -49,8 +49,8 @@
 		FC758FEB248939AF0050804C /* NoteCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteCategory.m; sourceTree = "<group>"; };
 		FC9F32B0249A5AD7005C20A5 /* AlertController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertController.h; sourceTree = "<group>"; };
 		FC9F32B1249A5AEA005C20A5 /* AlertController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertController.m; sourceTree = "<group>"; };
-		FC9F32B5249A7733005C20A5 /* NSDateFormatter+MyFormats.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+MyFormats.h"; sourceTree = "<group>"; };
-		FC9F32B6249A7748005C20A5 /* NSDateFormatter+MyFormats.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+MyFormats.m"; sourceTree = "<group>"; };
+		FC9F32B5249A7733005C20A5 /* NSDate+MyFormats.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+MyFormats.h"; sourceTree = "<group>"; };
+		FC9F32B6249A7748005C20A5 /* NSDate+MyFormats.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+MyFormats.m"; sourceTree = "<group>"; };
 		FCFF0DF7248C4C6200175862 /* Cell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
 		FCFF0DF8248C4C6200175862 /* Cell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
 		FCFF0DF9248C4C6200175862 /* Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
@@ -135,8 +135,8 @@
 				FC31DDD12499D46700861E37 /* Repository.m */,
 				FC31DDD32499DCBD00861E37 /* JSONParser.h */,
 				FC31DDD42499DCD700861E37 /* JSONParser.m */,
-				FC9F32B5249A7733005C20A5 /* NSDateFormatter+MyFormats.h */,
-				FC9F32B6249A7748005C20A5 /* NSDateFormatter+MyFormats.m */,
+				FC9F32B5249A7733005C20A5 /* NSDate+MyFormats.h */,
+				FC9F32B6249A7748005C20A5 /* NSDate+MyFormats.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -221,7 +221,7 @@
 				FC2E1BFA248838FD0089F347 /* main.m in Sources */,
 				FC31DDD52499DCD700861E37 /* JSONParser.m in Sources */,
 				FC2E1BEC248838FC0089F347 /* SceneDelegate.m in Sources */,
-				FC9F32B7249A7748005C20A5 /* NSDateFormatter+MyFormats.m in Sources */,
+				FC9F32B7249A7748005C20A5 /* NSDate+MyFormats.m in Sources */,
 				FCFF0DFA248C4C6200175862 /* Cell.m in Sources */,
 				FC31DDD22499D46700861E37 /* Repository.m in Sources */,
 			);

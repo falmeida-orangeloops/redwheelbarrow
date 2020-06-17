@@ -11,9 +11,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSDateFormatter (MyFormats)
+@interface NSDate (MyFormats)
 
-+ (NSString *)shortStringFromDate:(NSDate *)date;
+- (NSString *)shortString;
 
 @end
 

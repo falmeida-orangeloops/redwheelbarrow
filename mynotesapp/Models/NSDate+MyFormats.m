@@ -6,19 +6,19 @@
 //  Copyright © 2020 Facundo Almeida. All rights reserved.
 //
 
-#import "NSDateFormatter+MyFormats.h"
+#import "NSDate+MyFormats.h"
 #import <Foundation/Foundation.h>
 
-@implementation NSDateFormatter (MyFormats)
+@implementation NSDate (MyFormats)
 
-+ (NSString *)shortStringFromDate:(NSDate *)date {
+- (NSString *)shortString {
     NSDateFormatter *shortStringDateFormatter = nil;
     
     if (shortStringDateFormatter == nil)
         shortStringDateFormatter = [[NSDateFormatter alloc] init];
     
     [shortStringDateFormatter setDateFormat:@"MM/dd/yyyy"];
-    NSString *result = [shortStringDateFormatter stringFromDate:date];
+    NSString *result = [shortStringDateFormatter stringFromDate:self];
     
     return result;
 }
