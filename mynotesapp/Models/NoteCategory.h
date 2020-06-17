@@ -11,9 +11,9 @@
 
 @interface NoteCategory : NSObject
 
-@property NSString *id;
-@property NSString *title;
-@property NSDate *createdDate;
+@property (copy) NSString *identifier;
+@property (copy) NSString *title;
+@property (copy) NSDate *createdDate;
 
 - (id)initWithDict:(NSDictionary *)dict;
 

@@ -9,13 +9,15 @@
 #ifndef Note_h
 #define Note_h
 
+#import "NoteCategory.h"
+
 @interface Note : NSObject
 
-@property NSString *id; //todo: change name
-@property NSString *title;
-@property NSString *content;
-@property NSDate *createdDate;
-@property NSString *categoryId;
+@property (copy) NSString *identifier;
+@property (copy) NSString *title;
+@property (copy) NSString *content;
+@property (copy) NSDate *createdDate;
+@property (weak) NoteCategory *category;
 
 - (id)initWithDict:(NSDictionary *)dict;
 

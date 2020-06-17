@@ -13,7 +13,7 @@
 
 - (id)initWithDict:(NSDictionary *)dict {
     self = [super init];
-    self.id = [[NSString alloc] initWithString:dict[@"id"]];
+    self.identifier = [[NSString alloc] initWithString:dict[@"id"]];
     self.title = [[NSString alloc] initWithString:dict[@"title"]];
     self.createdDate = [NSDate dateWithTimeIntervalSince1970:[dict[@"createdDate"] stringValue].intValue];
     

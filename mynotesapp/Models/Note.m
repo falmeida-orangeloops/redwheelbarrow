@@ -8,16 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import "Note.h"
+#import "Repository.h"
 
 @implementation Note
 
 - (id)initWithDict:(NSDictionary *)dict {
     self = [super init];
-    self.id = [[NSString alloc] initWithString:dict[@"id"]];
-    self.title = [[NSString alloc] initWithString:dict[@"title"]];
-    self.content = [[NSString alloc] initWithString:dict[@"content"]];
+    self.identifier = dict[@"id"];
+    self.title = dict[@"title"];
+    self.content = dict[@"content"];
     self.createdDate = [NSDate dateWithTimeIntervalSince1970:[dict[@"createdDate"] stringValue].intValue];
-    self.categoryId = [[NSString alloc] initWithString:dict[@"categoryId"]];
+    self.category = [Repository sharedRepository].categories[dict[@"categoryId"]];
     
     return self;
 }
