@@ -11,11 +11,11 @@
 
 @interface NoteCategory : NSObject
 
-@property (copy) NSString *identifier;
-@property (copy) NSString *title;
-@property (copy) NSDate *createdDate;
+@property (copy, nonnull, nonatomic) NSString *identifier;
+@property (copy, nonnull, nonatomic) NSString *title;
+@property (copy, nonnull, nonatomic) NSDate *createdDate;
 
-- (id)initWithDict:(NSDictionary *)dict;
+- (id _Nonnull)initWithDict:(NSDictionary *_Nonnull)dict;
 
 @end
 

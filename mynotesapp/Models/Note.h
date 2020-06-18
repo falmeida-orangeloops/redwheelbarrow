@@ -13,13 +13,13 @@
 
 @interface Note : NSObject
 
-@property (copy) NSString *identifier;
-@property (copy) NSString *title;
-@property (copy) NSString *content;
-@property (copy) NSDate *createdDate;
-@property (weak) NoteCategory *category;
+@property (copy, nonnull, nonatomic) NSString *identifier;
+@property (copy, nonnull, nonatomic) NSString *title;
+@property (copy, nonnull, nonatomic) NSString *content;
+@property (copy, nonnull, nonatomic) NSDate *createdDate;
+@property (strong, nonnull, nonatomic) NoteCategory *category;
 
-- (id)initWithDict:(NSDictionary *)dict;
+- (id _Nonnull)initWithDict:(NSDictionary *_Nonnull)dict;
 
 @end
 

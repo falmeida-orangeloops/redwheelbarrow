@@ -6,15 +6,15 @@
 //  Copyright © 2020 Facundo Almeida. All rights reserved.
 //
 
-
-
 #import "ViewController.h"
 #import "../Models/Note.h"
 #import "../Models/NoteCategory.h"
-#import "../Models/NSDate+MyFormats.h"
 #import "../Models/Repository.h"
 #import "AlertController.h"
-#import "Cell.h"
+#import "NoteCell.h"
+
+NSString *const NOTE_CELL_IDENTIFIER = @"NoteCell";
+NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -26,6 +26,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.tableView registerNib:[UINib nibWithNibName:NOTE_CELL_NIB_NAME bundle:nil] forCellReuseIdentifier:NOTE_CELL_IDENTIFIER];
+    
     _refreshControl = [[UIRefreshControl alloc]init];
     [_refreshControl addTarget:self action:@selector(updateNotes) forControlEvents:UIControlEventValueChanged];
     self.tableView.refreshControl = self.refreshControl;
@@ -34,39 +36,24 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [Repository sharedRepository].notes.count;
+    return ((Repository *)[Repository sharedRepository]).notes.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *identifier = @"cell";
-    [tableView registerNib:[UINib nibWithNibName:@"Cell" bundle:nil] forCellReuseIdentifier:identifier];
-    Cell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    
-    if (cell == nil)
-        cell = [[Cell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
- 
-    Note *note = [[Repository sharedRepository].notes objectAtIndex:indexPath.row];
-    cell.titleLabel.text = note.title;
-    cell.contentLabel.text = note.content;
-    [cell.categoryButton setTitle:note.category.title forState:UIControlStateNormal];
-    cell.createdDateLabel.text = [note.createdDate shortString];
+    Cell *cell = [tableView dequeueReusableCellWithIdentifier:NOTE_CELL_IDENTIFIER];
+    Note *note = [((Repository *)[Repository sharedRepository]).notes objectAtIndex:indexPath.row];
+    [cell fillForNote:note];
     
     return cell;
 }
 
 - (void) updateNotes {
-    @try {
-        [[Repository sharedRepository] reloadNotesAndCategories];
-    }
+    [[Repository sharedRepository] reloadNotesAndCategories:^(NSError *error){
+            [AlertController showAlertWithTitle:@"Problem when loading notes" message:@"The JSON file could not be parsed." parent:self];
+    }];
     
-    @catch(NSException *exception) {
-        [AlertController showAlertWithTitle:@"Problem when loading notes" message:@"The JSON file could not be parsed." parent:self];
-    }
-    
-    @finally {
-        [self.tableView reloadData];
-        [self.refreshControl endRefreshing];
-    }
+    [self.tableView reloadData];
+    [self.refreshControl endRefreshing];
 }
 
 @end

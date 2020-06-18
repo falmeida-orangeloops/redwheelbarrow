@@ -1,5 +1,5 @@
 //
-//  NSDateFormatter+MyFormats.h
+//  NSDate+MyFormats.h
 //  mynotesapp
 //
 //  Created by Facundo Almeida on 6/17/20.

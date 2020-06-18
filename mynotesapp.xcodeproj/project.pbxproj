@@ -21,8 +21,8 @@
 		FC758FEC248939AF0050804C /* NoteCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = FC758FEB248939AF0050804C /* NoteCategory.m */; };
 		FC9F32B2249A5AEA005C20A5 /* AlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9F32B1249A5AEA005C20A5 /* AlertController.m */; };
 		FC9F32B7249A7748005C20A5 /* NSDate+MyFormats.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9F32B6249A7748005C20A5 /* NSDate+MyFormats.m */; };
-		FCFF0DFA248C4C6200175862 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFF0DF8248C4C6200175862 /* Cell.m */; };
-		FCFF0DFB248C4C6200175862 /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCFF0DF9248C4C6200175862 /* Cell.xib */; };
+		FCFF0DFA248C4C6200175862 /* NoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFF0DF8248C4C6200175862 /* NoteCell.m */; };
+		FCFF0DFB248C4C6200175862 /* NoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCFF0DF9248C4C6200175862 /* NoteCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,9 +51,9 @@
 		FC9F32B1249A5AEA005C20A5 /* AlertController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertController.m; sourceTree = "<group>"; };
 		FC9F32B5249A7733005C20A5 /* NSDate+MyFormats.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+MyFormats.h"; sourceTree = "<group>"; };
 		FC9F32B6249A7748005C20A5 /* NSDate+MyFormats.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+MyFormats.m"; sourceTree = "<group>"; };
-		FCFF0DF7248C4C6200175862 /* Cell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
-		FCFF0DF8248C4C6200175862 /* Cell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
-		FCFF0DF9248C4C6200175862 /* Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
+		FCFF0DF7248C4C6200175862 /* NoteCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteCell.h; sourceTree = "<group>"; };
+		FCFF0DF8248C4C6200175862 /* NoteCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteCell.m; sourceTree = "<group>"; };
+		FCFF0DF9248C4C6200175862 /* NoteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +87,8 @@
 			isa = PBXGroup;
 			children = (
 				FC5D2180249934C7001F970A /* Controllers */,
-				FC5D217F249934B9001F970A /* View */,
 				FC26F495248EDDBC00283D50 /* notes.json */,
+				FC5D217F249934B9001F970A /* View */,
 				FC758FE5248937800050804C /* Models */,
 				FC2E1BE7248838FC0089F347 /* AppDelegate.h */,
 				FC2E1BE8248838FC0089F347 /* AppDelegate.m */,
@@ -106,9 +106,9 @@
 		FC5D217F249934B9001F970A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FCFF0DF7248C4C6200175862 /* Cell.h */,
-				FCFF0DF8248C4C6200175862 /* Cell.m */,
-				FCFF0DF9248C4C6200175862 /* Cell.xib */,
+				FCFF0DF7248C4C6200175862 /* NoteCell.h */,
+				FCFF0DF8248C4C6200175862 /* NoteCell.m */,
+				FCFF0DF9248C4C6200175862 /* NoteCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -200,7 +200,7 @@
 			files = (
 				FC2E1BF7248838FC0089F347 /* LaunchScreen.storyboard in Resources */,
 				FC26F496248EDDBC00283D50 /* notes.json in Resources */,
-				FCFF0DFB248C4C6200175862 /* Cell.xib in Resources */,
+				FCFF0DFB248C4C6200175862 /* NoteCell.xib in Resources */,
 				FC2E1BF4248838FC0089F347 /* Assets.xcassets in Resources */,
 				FC2E1BF2248838FC0089F347 /* Main.storyboard in Resources */,
 			);
@@ -222,7 +222,7 @@
 				FC31DDD52499DCD700861E37 /* JSONParser.m in Sources */,
 				FC2E1BEC248838FC0089F347 /* SceneDelegate.m in Sources */,
 				FC9F32B7249A7748005C20A5 /* NSDate+MyFormats.m in Sources */,
-				FCFF0DFA248C4C6200175862 /* Cell.m in Sources */,
+				FCFF0DFA248C4C6200175862 /* NoteCell.m in Sources */,
 				FC31DDD22499D46700861E37 /* Repository.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

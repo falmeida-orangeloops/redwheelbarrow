@@ -17,8 +17,9 @@
     self.identifier = dict[@"id"];
     self.title = dict[@"title"];
     self.content = dict[@"content"];
-    self.createdDate = [NSDate dateWithTimeIntervalSince1970:[dict[@"createdDate"] stringValue].intValue];
-    self.category = [Repository sharedRepository].categories[dict[@"categoryId"]];
+    self.createdDate = [NSDate dateWithTimeIntervalSince1970:[dict[@"createdDate"] integerValue]];
+    self.category = ((Repository
+                     *)[Repository sharedRepository]).categories[dict[@"categoryId"]];
     
     return self;
 }

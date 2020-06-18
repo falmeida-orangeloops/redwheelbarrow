@@ -13,10 +13,10 @@
 
 @implementation Repository
 
-- (void)reloadNotesAndCategories {
-    self.categories = [[NSMutableDictionary<NSString*,NoteCategory*> alloc] init];
-    self.notes = [[NSMutableArray<Note*> alloc] init];
-    NSDictionary<NSString*,NSString*> *dict = [JSONParser parseJSONFromLocalFile];
+- (void)reloadNotesAndCategories:(void (^)(NSError *))completed {
+    _categories = [[NSMutableDictionary<NSString*,NoteCategory*> alloc] init];
+    _notes = [[NSMutableArray<Note*> alloc] init];
+    NSDictionary<NSString*,NSString*> *dict = [JSONParser parseJSONFromLocalFile:completed];
     
     for (id item in dict[@"categories"])
         [self.categories setObject:[[NoteCategory alloc] initWithDict:item] forKey:item[@"id"]];
@@ -25,11 +25,10 @@
         [self.notes addObject:[[Note alloc] initWithDict:item]];
 }
 
-+ (Repository *)sharedRepository {
++ (id)sharedRepository {
     static Repository *result = nil;
-    
-    if (result == nil)
-        result = [[Repository alloc] init];
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{result = [[Repository alloc] init];});
     
     return result;
 }

@@ -13,9 +13,9 @@
 
 - (id)initWithDict:(NSDictionary *)dict {
     self = [super init];
-    self.identifier = [[NSString alloc] initWithString:dict[@"id"]];
-    self.title = [[NSString alloc] initWithString:dict[@"title"]];
-    self.createdDate = [NSDate dateWithTimeIntervalSince1970:[dict[@"createdDate"] stringValue].intValue];
+    self.identifier = dict[@"id"];
+    self.title = dict[@"title"];
+    self.createdDate = [NSDate dateWithTimeIntervalSince1970:[dict[@"createdDate"] integerValue]];
     
     return self;
 }

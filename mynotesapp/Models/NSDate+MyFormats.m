@@ -1,5 +1,5 @@
 //
-//  NSDateFormatter+MyFormats.m
+//  NSDate+MyFormats.m
 //  mynotesapp
 //
 //  Created by Facundo Almeida on 6/17/20.
@@ -12,15 +12,10 @@
 @implementation NSDate (MyFormats)
 
 - (NSString *)shortString {
-    NSDateFormatter *shortStringDateFormatter = nil;
-    
-    if (shortStringDateFormatter == nil)
-        shortStringDateFormatter = [[NSDateFormatter alloc] init];
-    
+    NSDateFormatter *shortStringDateFormatter = [[NSDateFormatter alloc] init];
     [shortStringDateFormatter setDateFormat:@"MM/dd/yyyy"];
-    NSString *result = [shortStringDateFormatter stringFromDate:self];
     
-    return result;
+    return [shortStringDateFormatter stringFromDate:self];
 }
 
 @end

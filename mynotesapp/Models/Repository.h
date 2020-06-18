@@ -15,11 +15,11 @@
 
 @interface Repository : NSObject
 
-@property NSMutableArray<Note*> *notes;
-@property NSMutableDictionary<NSString*,NoteCategory*> *categories;
+@property (readonly, strong, nonnull, nonatomic) NSMutableArray<Note*> *notes;
+@property (readonly, strong, nonnull, nonatomic) NSMutableDictionary<NSString*,NoteCategory*> *categories;
 
-- (void)reloadNotesAndCategories;
-+ (Repository *)sharedRepository;
+- (void)reloadNotesAndCategories:(void (^_Nonnull)(NSError * _Nonnull error))completed;
++ (id _Nonnull)sharedRepository;
 
 @end
 

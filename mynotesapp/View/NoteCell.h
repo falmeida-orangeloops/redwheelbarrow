@@ -1,5 +1,5 @@
 //
-//  Cell.h
+//  NoteCell.h
 //  mynotesapp
 //
 //  Created by Facundo Almeida on 6/6/20.
@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Note.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 @property (weak, nonatomic) IBOutlet UIButton *categoryButton;
 @property (weak, nonatomic) IBOutlet UILabel *createdDateLabel;
+
+- (void)fillForNote: (Note *)note;
 
 @end
 
