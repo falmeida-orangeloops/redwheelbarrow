@@ -51,4 +51,12 @@ import UIKit
         note?.category = category
         categoryButton.setTitle(note?.category.title, for: .normal)
     }
+    
+    @IBAction func deleteNote(_ sender: Any) {
+        var confirmationAlert = UIAlertController(title: "Delete this note", message: "Are you sure? This can't be undone.", preferredStyle: .alert)
+        confirmationAlert.addAction(UIAlertAction(title: "Delete", style: .default, handler: {(action: UIAlertAction!) in self.navigationController?.popViewController(animated: true)}))
+        confirmationAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        present(confirmationAlert, animated: true, completion: nil)
+    }
 }

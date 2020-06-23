@@ -104,7 +104,11 @@
                         <viewLayoutGuide key="safeArea" id="f0z-GB-c6a"/>
                     </view>
                     <navigationItem key="navigationItem" id="AwB-KZ-L9I">
-                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="ZhF-0u-IoT"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="ZhF-0u-IoT">
+                            <connections>
+                                <action selector="deleteNote:" destination="IXk-cO-mPa" id="fGP-BJ-mKo"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="categoryButton" destination="Rfv-aX-dl5" id="Vw7-VV-uKs"/>
