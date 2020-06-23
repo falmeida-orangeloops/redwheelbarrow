@@ -13,7 +13,7 @@
 
 @interface JSONParser : NSObject
 
-+(NSDictionary<NSString*,NSString*> *)parseJSONFromLocalFile:(void (^)(NSError *error))completed;
++(NSDictionary<NSString*,NSString*> *)parseJSONFromData:(NSData *)data error:(NSError **)error;
 
 @end
 

@@ -14,6 +14,7 @@
 
 @property (readonly, strong, nullable, nonatomic) UIRefreshControl *refreshControl;
 
-- (void)updateNotes;
+- (void)reloadNotes;
+- (void)didReloadNotes:(NSError *)error;
 @end
 
