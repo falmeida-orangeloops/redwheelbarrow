@@ -1,0 +1,16 @@
+PODS:
+  - JHPullToRefreshKit (1.0.1)
+
+DEPENDENCIES:
+  - JHPullToRefreshKit
+
+SPEC REPOS:
+  trunk:
+    - JHPullToRefreshKit
+
+SPEC CHECKSUMS:
+  JHPullToRefreshKit: ec51e32764eacf468eddf3d05a9f1b3b6d9a7d76
+
+PODFILE CHECKSUM: defa81a5b8b81dd547f534c2bb1cb0ef8eb9b6a2
+
+COCOAPODS: 1.9.3

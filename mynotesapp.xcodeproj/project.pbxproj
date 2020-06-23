@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FC09245A24AE676F008A562C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC09245824AE676E008A562C /* ViewController.m */; };
+		93A883A418F0FABC58B13D1C /* Pods_mynotesapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2FFC0D29150D98CE9720DCC /* Pods_mynotesapp.framework */; };
 		FC26F496248EDDBC00283D50 /* notes.json in Resources */ = {isa = PBXBuildFile; fileRef = FC26F495248EDDBC00283D50 /* notes.json */; };
 		FC2E1BE9248838FC0089F347 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2E1BE8248838FC0089F347 /* AppDelegate.m */; };
 		FC2E1BEC248838FC0089F347 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2E1BEB248838FC0089F347 /* SceneDelegate.m */; };
@@ -31,6 +32,9 @@
 /* Begin PBXFileReference section */
 		FC09245824AE676E008A562C /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FC09245924AE676E008A562C /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8CD11A8F3481559DB4648B2E /* Pods-mynotesapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mynotesapp.release.xcconfig"; path = "Target Support Files/Pods-mynotesapp/Pods-mynotesapp.release.xcconfig"; sourceTree = "<group>"; };
+		A5BC19FFB43AA0843CAD186C /* Pods-mynotesapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mynotesapp.debug.xcconfig"; path = "Target Support Files/Pods-mynotesapp/Pods-mynotesapp.debug.xcconfig"; sourceTree = "<group>"; };
+		B2FFC0D29150D98CE9720DCC /* Pods_mynotesapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mynotesapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC26F495248EDDBC00283D50 /* notes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = notes.json; path = Resources/General/notes.json; sourceTree = SOURCE_ROOT; };
 		FC2E1BE4248838FB0089F347 /* mynotesapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mynotesapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC2E1BE7248838FC0089F347 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -69,17 +73,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93A883A418F0FABC58B13D1C /* Pods_mynotesapp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FC129AEC24AE21FB001744A3 /* Recovered References */ = {
+		2A53E2673FBFDBCB287A59FD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				A5BC19FFB43AA0843CAD186C /* Pods-mynotesapp.debug.xcconfig */,
+				8CD11A8F3481559DB4648B2E /* Pods-mynotesapp.release.xcconfig */,
 			);
-			name = "Recovered References";
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BBD2F9C0E62A17B7411909D2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B2FFC0D29150D98CE9720DCC /* Pods_mynotesapp.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		FC2E1BDB248838FB0089F347 = {
@@ -87,7 +103,8 @@
 			children = (
 				FC2E1BE6248838FB0089F347 /* mynotesapp */,
 				FC2E1BE5248838FB0089F347 /* Products */,
-				FC129AEC24AE21FB001744A3 /* Recovered References */,
+				2A53E2673FBFDBCB287A59FD /* Pods */,
+				BBD2F9C0E62A17B7411909D2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -169,9 +186,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FC2E1BFD248838FD0089F347 /* Build configuration list for PBXNativeTarget "mynotesapp" */;
 			buildPhases = (
+				49CF4400EF835A48D6788E19 /* [CP] Check Pods Manifest.lock */,
 				FC2E1BE0248838FB0089F347 /* Sources */,
 				FC2E1BE1248838FB0089F347 /* Frameworks */,
 				FC2E1BE2248838FB0089F347 /* Resources */,
+				3D8EBC2E3DA32E72F04DEF6E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -229,6 +248,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3D8EBC2E3DA32E72F04DEF6E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-mynotesapp/Pods-mynotesapp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-mynotesapp/Pods-mynotesapp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mynotesapp/Pods-mynotesapp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		49CF4400EF835A48D6788E19 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mynotesapp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FC2E1BE0248838FB0089F347 /* Sources */ = {
@@ -387,6 +448,7 @@
 		};
 		FC2E1BFE248838FD0089F347 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5BC19FFB43AA0843CAD186C /* Pods-mynotesapp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -408,6 +470,7 @@
 		};
 		FC2E1BFF248838FD0089F347 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CD11A8F3481559DB4648B2E /* Pods-mynotesapp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
