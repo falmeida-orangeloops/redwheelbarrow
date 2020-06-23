@@ -12,6 +12,7 @@
 @implementation JSONParser
 
 + (NSDictionary<NSString *,NSString *> *)parseJSONFromData:(NSData *)data error:(NSError **)error {
+    
     if (data == nil) {
         return nil;
     }

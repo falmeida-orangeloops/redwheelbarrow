@@ -62,15 +62,16 @@ NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";
     if (error == nil)
         return;
     
-    else if ([error.domain isEqualToString:@"NSURLErrorDomain"]) {
-        AlertController *alert = [[AlertController alloc] initWithTitle:@"Problem when loading notes" message:@"The JSON file could not be retrieved."];
-        [self presentViewController:alert animated:true completion:nil];
-    }
+    NSString *errorMessage = nil;
     
-    else {
-        AlertController *alert = [[AlertController alloc] initWithTitle:@"Problem when loading notes" message:@"The JSON file could not be parsed."];
-            [self presentViewController:alert animated:true completion:nil];
-    }
+    if ([error.domain isEqualToString:@"NSURLErrorDomain"])
+        errorMessage = [NSString stringWithFormat:@"The JSON file could not be retrieved: %@", error.userInfo[@"NSLocalizedDescription"]];
+    
+    else
+        errorMessage = [NSString stringWithFormat:@"The JSON file could not be parsed: %@", error.userInfo[@"NSDebugDescription"]];
+
+    AlertController *alert = [[AlertController alloc] initWithTitle:@"Problem when loading notes" message:errorMessage];
+    [self presentViewController:alert animated:true completion:nil];
 }
 
 @end
