@@ -19,21 +19,13 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dwg-zK-mMq">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="741"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <connections>
                                             <outlet property="dataSource" destination="BYZ-38-t0r" id="8uK-W9-8Nf"/>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="LCn-g2-8QY"/>
                                         </connections>
                                     </tableView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAS-gI-E11">
-                                        <rect key="frame" x="0.0" y="741" width="414" height="33"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="New Note"/>
-                                        <connections>
-                                            <action selector="newNote:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uq5-0K-2AX"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -46,7 +38,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bjP-lb-JDx"/>
                     </view>
-                    <navigationItem key="navigationItem" title="My Notes" id="kIL-4Z-ifa"/>
+                    <navigationItem key="navigationItem" title="My Notes" id="kIL-4Z-ifa">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="NPL-2j-KQ3">
+                            <connections>
+                                <action selector="addNote:" destination="BYZ-38-t0r" id="dB4-Fa-WbE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Dwg-zK-mMq" id="LKp-Wm-4so"/>
                     </connections>
