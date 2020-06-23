@@ -3,13 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		FC09245A24AE676F008A562C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC09245824AE676E008A562C /* ViewController.m */; };
 		93A883A418F0FABC58B13D1C /* Pods_mynotesapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2FFC0D29150D98CE9720DCC /* Pods_mynotesapp.framework */; };
 		FC26F496248EDDBC00283D50 /* notes.json in Resources */ = {isa = PBXBuildFile; fileRef = FC26F495248EDDBC00283D50 /* notes.json */; };
+		FC27F55824A27A3E000A1615 /* RefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = FC27F55724A27A3E000A1615 /* RefreshControl.m */; };
 		FC2E1BE9248838FC0089F347 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2E1BE8248838FC0089F347 /* AppDelegate.m */; };
 		FC2E1BEC248838FC0089F347 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2E1BEB248838FC0089F347 /* SceneDelegate.m */; };
 		FC2E1BF2248838FC0089F347 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC2E1BF0248838FC0089F347 /* Main.storyboard */; };
@@ -36,6 +37,8 @@
 		A5BC19FFB43AA0843CAD186C /* Pods-mynotesapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mynotesapp.debug.xcconfig"; path = "Target Support Files/Pods-mynotesapp/Pods-mynotesapp.debug.xcconfig"; sourceTree = "<group>"; };
 		B2FFC0D29150D98CE9720DCC /* Pods_mynotesapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mynotesapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC26F495248EDDBC00283D50 /* notes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = notes.json; path = Resources/General/notes.json; sourceTree = SOURCE_ROOT; };
+		FC27F55624A27A3E000A1615 /* RefreshControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RefreshControl.h; sourceTree = "<group>"; };
+		FC27F55724A27A3E000A1615 /* RefreshControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RefreshControl.m; sourceTree = "<group>"; };
 		FC2E1BE4248838FB0089F347 /* mynotesapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mynotesapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC2E1BE7248838FC0089F347 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FC2E1BE8248838FC0089F347 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -86,7 +89,6 @@
 				A5BC19FFB43AA0843CAD186C /* Pods-mynotesapp.debug.xcconfig */,
 				8CD11A8F3481559DB4648B2E /* Pods-mynotesapp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -146,6 +148,11 @@
 				FC87C11C24AE6666003FAA32 /* AlertController.m */,
 				FC87C11E24AE6666003FAA32 /* EditNoteViewController.swift */,
 				FCDDBC4624927F6500C1A19A /* CategoryPickerViewController.swift */,
+				FCFF0DF7248C4C6200175862 /* NoteCell.h */,
+				FCFF0DF8248C4C6200175862 /* NoteCell.m */,
+				FCFF0DF9248C4C6200175862 /* NoteCell.xib */,
+				FC27F55624A27A3E000A1615 /* RefreshControl.h */,
+				FC27F55724A27A3E000A1615 /* RefreshControl.m */, refresh control provided by JHPullToRefreshKit pod
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -311,6 +318,7 @@
 				FCDDBC4724927F6500C1A19A /* CategoryPickerViewController.swift in Sources */,
 				FCFF0DFA248C4C6200175862 /* NoteCell.m in Sources */,
 				FC87C12124AE6666003FAA32 /* EditNoteViewController.swift in Sources */,
+				FC27F55824A27A3E000A1615 /* RefreshControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
