@@ -103,6 +103,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="f0z-GB-c6a"/>
                     </view>
+                    <navigationItem key="navigationItem" id="AwB-KZ-L9I">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="ZhF-0u-IoT"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="categoryButton" destination="Rfv-aX-dl5" id="Vw7-VV-uKs"/>
                         <outlet property="contentTextView" destination="Moh-8s-Cey" id="2Xl-Yh-kFu"/>
