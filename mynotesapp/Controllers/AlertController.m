@@ -17,7 +17,7 @@
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
     [alert addAction:okAction];
     
-    dispatch_async(dispatch_get_main_queue(), ^{[parent presentViewController:alert animated:true completion:nil];});
+    [parent presentViewController:alert animated:true completion:nil];
 }
 
 @end

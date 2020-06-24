@@ -12,7 +12,7 @@
 @implementation JSONParser
 
 + (NSDictionary<NSString *,NSString *> *)parseJSONFromLocalFile:(void (^)(NSError *))completed {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"note" ofType:@"json"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"notes" ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:path];
     
     NSDictionary<NSString *,NSString *> *result = nil;

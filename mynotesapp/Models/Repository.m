@@ -18,6 +18,11 @@
     _notes = [[NSMutableArray<Note*> alloc] init];
     NSDictionary<NSString*,NSString*> *dict = [JSONParser parseJSONFromLocalFile:completed];
     
+    if (dict[@"categories"] == nil) {
+        completed(nil);
+        return;
+    }
+    
     for (id item in dict[@"categories"])
         [self.categories setObject:[[NoteCategory alloc] initWithDict:item] forKey:item[@"id"]];
     

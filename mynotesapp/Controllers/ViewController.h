@@ -12,7 +12,7 @@
 
 @interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
-@property (readonly, strong, nonnull, nonatomic) UIRefreshControl *refreshControl;
+@property (readonly, weak, nullable, nonatomic) UIRefreshControl *refreshControl;
 
 - (void)updateNotes;
 @end
