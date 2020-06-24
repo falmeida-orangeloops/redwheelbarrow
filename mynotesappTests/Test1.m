@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Test1.h"
+#import "KIFUITestActor+EXAdditions.h"
 
 @implementation Test1
 
@@ -17,6 +18,10 @@
 
 - (void)afterEach {
     
+}
+
+- (void)test1 {
+    NSLog(@"hello world");
 }
 
 @end

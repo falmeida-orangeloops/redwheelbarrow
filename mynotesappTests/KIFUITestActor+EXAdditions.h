@@ -9,7 +9,11 @@
 #ifndef KIFUITestActor_EXAdditions_h
 #define KIFUITestActor_EXAdditions_h
 
+#import <KIF/KIF.h>
+
 @interface KIFUITestActor (EXAdditions)
+
+- (void)selectFirstNote;
 
 @end
 

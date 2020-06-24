@@ -7,3 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "KIFUITestActor+EXAdditions.h"
+
+@implementation KIFUITestActor (EXAdditions)
+
+- (void)selectFirstNote {
+    NSLog(@"first test");
+}
+
+@end
