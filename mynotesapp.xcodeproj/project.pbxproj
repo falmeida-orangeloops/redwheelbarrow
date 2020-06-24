@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DBB1A5756AEE2857D2893496 /* libPods-mynotesappTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 183A90120F4801A372888D2C /* libPods-mynotesappTests.a */; };
+		FC04EC1924A3D2FD007881B4 /* Pods_mynotesapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC04EC1824A3D2FD007881B4 /* Pods_mynotesapp.framework */; };
+		FC04EC1A24A3D2FD007881B4 /* Pods_mynotesapp.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC04EC1824A3D2FD007881B4 /* Pods_mynotesapp.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FC04EC2024A3D3FE007881B4 /* Test1.m in Sources */ = {isa = PBXBuildFile; fileRef = FC04EC1F24A3D3FE007881B4 /* Test1.m */; };
+		FC04EC2324A3D4D7007881B4 /* KIFUITestActor+EXAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FC04EC2224A3D4D7007881B4 /* KIFUITestActor+EXAdditions.m */; };
 		FC26F496248EDDBC00283D50 /* notes.json in Resources */ = {isa = PBXBuildFile; fileRef = FC26F495248EDDBC00283D50 /* notes.json */; };
 		FC2E1BE9248838FC0089F347 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2E1BE8248838FC0089F347 /* AppDelegate.m */; };
 		FC2E1BEC248838FC0089F347 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2E1BEB248838FC0089F347 /* SceneDelegate.m */; };
@@ -25,7 +30,45 @@
 		FCFF0DFB248C4C6200175862 /* NoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCFF0DF9248C4C6200175862 /* NoteCell.xib */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		FC6382FA24A3CDB5004CBCC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC2E1BDC248838FB0089F347 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC2E1BE3248838FB0089F347;
+			remoteInfo = mynotesapp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FC04EC1B24A3D2FD007881B4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FC04EC1A24A3D2FD007881B4 /* Pods_mynotesapp.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		069E85273E182C7BD54F1C7F /* Pods-mynotesapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mynotesapp.release.xcconfig"; path = "Target Support Files/Pods-mynotesapp/Pods-mynotesapp.release.xcconfig"; sourceTree = "<group>"; };
+		183A90120F4801A372888D2C /* libPods-mynotesappTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mynotesappTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		38AC47EC8EEA7ADC2C4D3F4C /* Pods_mynotesapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mynotesapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		530F760C3820017427AB4078 /* Pods-mynotesappTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mynotesappTests.debug.xcconfig"; path = "Target Support Files/Pods-mynotesappTests/Pods-mynotesappTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8B0D9C649C07827A1DCB51C1 /* Pods-mynotesappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mynotesappTests.release.xcconfig"; path = "Target Support Files/Pods-mynotesappTests/Pods-mynotesappTests.release.xcconfig"; sourceTree = "<group>"; };
+		CC04DF3B84476312AF211943 /* Pods-mynotesapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mynotesapp.debug.xcconfig"; path = "Target Support Files/Pods-mynotesapp/Pods-mynotesapp.debug.xcconfig"; sourceTree = "<group>"; };
+		FC04EC1424A3D240007881B4 /* libKIF.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libKIF.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC04EC1624A3D29D007881B4 /* libKIF.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libKIF.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC04EC1824A3D2FD007881B4 /* Pods_mynotesapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_mynotesapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC04EC1C24A3D384007881B4 /* libKIF.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libKIF.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC04EC1E24A3D3EC007881B4 /* Test1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test1.h; sourceTree = "<group>"; };
+		FC04EC1F24A3D3FE007881B4 /* Test1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test1.m; sourceTree = "<group>"; };
+		FC04EC2124A3D4C3007881B4 /* KIFUITestActor+EXAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KIFUITestActor+EXAdditions.h"; sourceTree = "<group>"; };
+		FC04EC2224A3D4D7007881B4 /* KIFUITestActor+EXAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "KIFUITestActor+EXAdditions.m"; sourceTree = "<group>"; };
 		FC26F495248EDDBC00283D50 /* notes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = notes.json; path = Resources/General/notes.json; sourceTree = SOURCE_ROOT; };
 		FC2E1BE4248838FB0089F347 /* mynotesapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mynotesapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC2E1BE7248838FC0089F347 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -43,6 +86,8 @@
 		FC31DDD12499D46700861E37 /* Repository.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Repository.m; sourceTree = "<group>"; };
 		FC31DDD32499DCBD00861E37 /* JSONParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONParser.h; sourceTree = "<group>"; };
 		FC31DDD42499DCD700861E37 /* JSONParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSONParser.m; sourceTree = "<group>"; };
+		FC6382F524A3CDB5004CBCC8 /* mynotesappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mynotesappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC6382F924A3CDB5004CBCC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC758FE6248937A60050804C /* Note.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
 		FC758FE72489381F0050804C /* Note.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		FC758FEA2489399C0050804C /* NoteCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteCategory.h; sourceTree = "<group>"; };
@@ -61,17 +106,53 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC04EC1924A3D2FD007881B4 /* Pods_mynotesapp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC6382F224A3CDB5004CBCC8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBB1A5756AEE2857D2893496 /* libPods-mynotesappTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19AE9F7F29D358B8547828F0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CC04DF3B84476312AF211943 /* Pods-mynotesapp.debug.xcconfig */,
+				069E85273E182C7BD54F1C7F /* Pods-mynotesapp.release.xcconfig */,
+				530F760C3820017427AB4078 /* Pods-mynotesappTests.debug.xcconfig */,
+				8B0D9C649C07827A1DCB51C1 /* Pods-mynotesappTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8A60F49B7569A67E3F169F36 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FC04EC1C24A3D384007881B4 /* libKIF.a */,
+				FC04EC1824A3D2FD007881B4 /* Pods_mynotesapp.framework */,
+				FC04EC1624A3D29D007881B4 /* libKIF.a */,
+				FC04EC1424A3D240007881B4 /* libKIF.a */,
+				38AC47EC8EEA7ADC2C4D3F4C /* Pods_mynotesapp.framework */,
+				183A90120F4801A372888D2C /* libPods-mynotesappTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FC2E1BDB248838FB0089F347 = {
 			isa = PBXGroup;
 			children = (
 				FC2E1BE6248838FB0089F347 /* mynotesapp */,
+				FC6382F624A3CDB5004CBCC8 /* mynotesappTests */,
 				FC2E1BE5248838FB0089F347 /* Products */,
+				19AE9F7F29D358B8547828F0 /* Pods */,
+				8A60F49B7569A67E3F169F36 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				FC2E1BE4248838FB0089F347 /* mynotesapp.app */,
+				FC6382F524A3CDB5004CBCC8 /* mynotesappTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -124,6 +206,18 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		FC6382F624A3CDB5004CBCC8 /* mynotesappTests */ = {
+			isa = PBXGroup;
+			children = (
+				FC6382F924A3CDB5004CBCC8 /* Info.plist */,
+				FC04EC1E24A3D3EC007881B4 /* Test1.h */,
+				FC04EC1F24A3D3FE007881B4 /* Test1.m */,
+				FC04EC2124A3D4C3007881B4 /* KIFUITestActor+EXAdditions.h */,
+				FC04EC2224A3D4D7007881B4 /* KIFUITestActor+EXAdditions.m */,
+			);
+			path = mynotesappTests;
+			sourceTree = "<group>";
+		};
 		FC758FE5248937800050804C /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,9 +242,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FC2E1BFD248838FD0089F347 /* Build configuration list for PBXNativeTarget "mynotesapp" */;
 			buildPhases = (
+				1ED00C21427EBCD1A63E76CB /* [CP] Check Pods Manifest.lock */,
 				FC2E1BE0248838FB0089F347 /* Sources */,
 				FC2E1BE1248838FB0089F347 /* Frameworks */,
 				FC2E1BE2248838FB0089F347 /* Resources */,
+				FC04EC1B24A3D2FD007881B4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -160,6 +256,25 @@
 			productName = mynotesapp;
 			productReference = FC2E1BE4248838FB0089F347 /* mynotesapp.app */;
 			productType = "com.apple.product-type.application";
+		};
+		FC6382F424A3CDB5004CBCC8 /* mynotesappTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC6382FE24A3CDB5004CBCC8 /* Build configuration list for PBXNativeTarget "mynotesappTests" */;
+			buildPhases = (
+				CC14A931D34CDFA543570402 /* [CP] Check Pods Manifest.lock */,
+				FC6382F124A3CDB5004CBCC8 /* Sources */,
+				FC6382F224A3CDB5004CBCC8 /* Frameworks */,
+				FC6382F324A3CDB5004CBCC8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FC6382FB24A3CDB5004CBCC8 /* PBXTargetDependency */,
+			);
+			name = mynotesappTests;
+			productName = mynotesappTests;
+			productReference = FC6382F524A3CDB5004CBCC8 /* mynotesappTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -172,6 +287,10 @@
 				TargetAttributes = {
 					FC2E1BE3248838FB0089F347 = {
 						CreatedOnToolsVersion = 11.5;
+					};
+					FC6382F424A3CDB5004CBCC8 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = FC2E1BE3248838FB0089F347;
 					};
 				};
 			};
@@ -189,6 +308,7 @@
 			projectRoot = "";
 			targets = (
 				FC2E1BE3248838FB0089F347 /* mynotesapp */,
+				FC6382F424A3CDB5004CBCC8 /* mynotesappTests */,
 			);
 		};
 /* End PBXProject section */
@@ -206,7 +326,61 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FC6382F324A3CDB5004CBCC8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1ED00C21427EBCD1A63E76CB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mynotesapp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC14A931D34CDFA543570402 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mynotesappTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FC2E1BE0248838FB0089F347 /* Sources */ = {
@@ -227,7 +401,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FC6382F124A3CDB5004CBCC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC04EC2024A3D3FE007881B4 /* Test1.m in Sources */,
+				FC04EC2324A3D4D7007881B4 /* KIFUITestActor+EXAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FC6382FB24A3CDB5004CBCC8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC2E1BE3248838FB0089F347 /* mynotesapp */;
+			targetProxy = FC6382FA24A3CDB5004CBCC8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FC2E1BF0248838FC0089F347 /* Main.storyboard */ = {
@@ -361,6 +552,7 @@
 		};
 		FC2E1BFE248838FD0089F347 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC04DF3B84476312AF211943 /* Pods-mynotesapp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -377,6 +569,7 @@
 		};
 		FC2E1BFF248838FD0089F347 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 069E85273E182C7BD54F1C7F /* Pods-mynotesapp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -388,6 +581,46 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "falmeida-orangeloops.mynotesapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FC6382FC24A3CDB5004CBCC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 530F760C3820017427AB4078 /* Pods-mynotesappTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A382UDPYZK;
+				INFOPLIST_FILE = mynotesappTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "falmeida-orangeloops.mynotesappTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mynotesapp.app/mynotesapp";
+			};
+			name = Debug;
+		};
+		FC6382FD24A3CDB5004CBCC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B0D9C649C07827A1DCB51C1 /* Pods-mynotesappTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A382UDPYZK;
+				INFOPLIST_FILE = mynotesappTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "falmeida-orangeloops.mynotesappTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mynotesapp.app/mynotesapp";
 			};
 			name = Release;
 		};
@@ -408,6 +641,15 @@
 			buildConfigurations = (
 				FC2E1BFE248838FD0089F347 /* Debug */,
 				FC2E1BFF248838FD0089F347 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC6382FE24A3CDB5004CBCC8 /* Build configuration list for PBXNativeTarget "mynotesappTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC6382FC24A3CDB5004CBCC8 /* Debug */,
+				FC6382FD24A3CDB5004CBCC8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
