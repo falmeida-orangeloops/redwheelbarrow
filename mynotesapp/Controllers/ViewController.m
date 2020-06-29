@@ -49,7 +49,10 @@ NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";
 
 - (void) updateNotes {
     [[Repository sharedRepository] reloadNotesAndCategories:^(NSError *error){
-        dispatch_async(dispatch_get_main_queue(), ^{[AlertController showAlertWithTitle:@"Problem when loading notes" message:@"The JSON file could not be parsed." parent:self];});
+        dispatch_async(dispatch_get_main_queue(), ^{
+            AlertController *alert = [[AlertController alloc] initWithTitle:@"Problem when loading notes" message:@"The JSON file could not be parsed."];
+            [self presentViewController:alert animated:true completion:nil];
+        });
     }];
     
     [self.tableView reloadData];

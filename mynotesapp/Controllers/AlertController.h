@@ -11,9 +11,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AlertController : NSObject
+@interface AlertController : UIAlertController
 
-+ (void)showAlertWithTitle:(NSString *)title message:(NSString *)message parent:(UIViewController *)parent;
+- (id)initWithTitle:(NSString *)title message:(NSString *)message;
 
 @end
 

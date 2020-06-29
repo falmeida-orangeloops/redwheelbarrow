@@ -12,12 +12,13 @@
 
 @implementation AlertController
 
-+ (void)showAlertWithTitle:(id)title message:(id)message parent:(UIViewController *)parent {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-    [alert addAction:okAction];
+- (id)initWithTitle:(NSString *)title message:(NSString *)message {
+    self = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     
-    [parent presentViewController:alert animated:true completion:nil];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    [self addAction:okAction];
+    
+    return self;
 }
 
 @end

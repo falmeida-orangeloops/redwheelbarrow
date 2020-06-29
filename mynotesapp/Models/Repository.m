@@ -18,7 +18,7 @@
     _notes = [[NSMutableArray<Note*> alloc] init];
     NSDictionary<NSString*,NSString*> *dict = [JSONParser parseJSONFromLocalFile:completed];
     
-    if (dict[@"categories"] == nil) {
+    if (dict[@"categories"] == nil || dict[@"notes"] == nil) {
         completed(nil);
         return;
     }
@@ -31,11 +31,11 @@
 }
 
 + (id)sharedRepository {
-    static Repository *result = nil;
+    static Repository *instance = nil;
     static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{result = [[Repository alloc] init];});
+    dispatch_once(&onceToken, ^{instance = [[Repository alloc] init];});
     
-    return result;
+    return instance;
 }
 
 @end
