@@ -21,6 +21,7 @@ NSString *const NOTES_URL = @"https://s3.amazonaws.com/kezmo.assets/sandbox/note
     _notes = [[NSMutableArray<Note*> alloc] init];
     
     [DownloadManager dataFromURL:[NSURL URLWithString:NOTES_URL] completionHandler:^(NSData *data, NSURLResponse *response, NSError *httpError) {
+        
         if (httpError != nil) {
             completionHandler(httpError);
             return;
@@ -38,7 +39,7 @@ NSString *const NOTES_URL = @"https://s3.amazonaws.com/kezmo.assets/sandbox/note
             completionHandler(parsingError);
             return;
         }
-    
+        
         for (id item in dict[@"categories"])
             [_categories setObject:[[NoteCategory alloc] initWithDict:item] forKey:item[@"id"]];
         
