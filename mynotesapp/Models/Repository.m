@@ -17,7 +17,7 @@ NSString *const NOTES_URL = @"https://s3.amazonaws.com/kezmo.assets/sandbox/note
 @implementation Repository
 
 - (void)reloadNotesAndCategories:(void (^)(NSError *))completionHandler {
-    _categories = [[NSMutableDictionary<NSString*,NoteCategory*> alloc] init];
+    _categories = [[NSMutableDictionary<NSString*, NoteCategory*> alloc] init];
     _notes = [[NSMutableArray<Note*> alloc] init];
     
     [DownloadManager dataFromURL:[NSURL URLWithString:NOTES_URL] completionHandler:^(NSData *data, NSURLResponse *response, NSError *httpError) {
@@ -28,7 +28,7 @@ NSString *const NOTES_URL = @"https://s3.amazonaws.com/kezmo.assets/sandbox/note
         }
         
         NSError *parsingError = nil;
-        NSDictionary<NSString*,NSString*> *dict = [JSONParser parseJSONFromData:data error:&parsingError];
+        NSDictionary<NSString*, NSString*> *dict = [JSONParser parseJSONFromData:data error:&parsingError];
         
         if (dict[@"categories"] == nil || dict[@"notes"] == nil) {
             completionHandler(nil);
