@@ -18,7 +18,7 @@
 @property (readonly, strong, nonnull, nonatomic) NSMutableArray<Note*> *notes;
 @property (readonly, strong, nonnull, nonatomic) NSMutableDictionary<NSString*,NoteCategory*> *categories;
 
-- (void)reloadNotesAndCategories:(void (^_Nonnull)(NSError * _Nonnull error))completed;
+- (void)reloadNotesAndCategories:(void (^_Nonnull)(NSError * _Nonnull error))completionHandler;
 + (id _Nonnull)sharedRepository;
 
 @end

@@ -11,23 +11,17 @@
 
 @implementation JSONParser
 
-+ (NSDictionary<NSString *,NSString *> *)parseJSONFromLocalFile:(void (^)(NSError *))completed {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"notes" ofType:@"json"];
-    NSData *data = [NSData dataWithContentsOfFile:path];
++ (NSDictionary<NSString *,NSString *> *)parseJSONFromData:(NSData *)data error:(NSError **)error {
     
-    NSDictionary<NSString *,NSString *> *result = nil;
-    NSError *parsingError = nil;
+    if (data == nil) {
+        return nil;
+    }
     
-    if (data == nil)
-        parsingError = [NSError errorWithDomain:@"falmeida-orangeloops.mynotesapp" code:-1 userInfo:0];
-    
-    else
-        result = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&parsingError];
-    
-    if (parsingError != nil)
-        completed(parsingError);
-    
-    return result;
+    else {
+        id result = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:error];
+        
+        return result;
+    }
 }
 
 @end

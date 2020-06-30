@@ -29,10 +29,10 @@ NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";
     [self.tableView registerNib:[UINib nibWithNibName:NOTE_CELL_NIB_NAME bundle:nil] forCellReuseIdentifier:NOTE_CELL_IDENTIFIER];
     
     _refreshControl = [[UIRefreshControl alloc]init];
-    [_refreshControl addTarget:self action:@selector(updateNotes) forControlEvents:UIControlEventValueChanged];
+    [_refreshControl addTarget:self action:@selector(reloadNotes) forControlEvents:UIControlEventValueChanged];
     self.tableView.refreshControl = self.refreshControl;
     
-    [self updateNotes];
+    [self reloadNotes];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -47,16 +47,31 @@ NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";
     return cell;
 }
 
-- (void) updateNotes {
+- (void)reloadNotes {
     [[Repository sharedRepository] reloadNotesAndCategories:^(NSError *error){
         dispatch_async(dispatch_get_main_queue(), ^{
-            AlertController *alert = [[AlertController alloc] initWithTitle:@"Problem when loading notes" message:@"The JSON file could not be parsed."];
-            [self presentViewController:alert animated:true completion:nil];
+            [self didReloadNotes:error];
         });
     }];
-    
+}
+
+- (void)didReloadNotes:(NSError *)error {
     [self.tableView reloadData];
     [self.refreshControl endRefreshing];
+    
+    if (error == nil)
+        return;
+    
+    NSString *errorMessage = nil;
+    
+    if ([error.domain isEqualToString:@"NSURLErrorDomain"])
+        errorMessage = [NSString stringWithFormat:@"The JSON file could not be retrieved: %@", error.userInfo[@"NSLocalizedDescription"]];
+    
+    else
+        errorMessage = [NSString stringWithFormat:@"The JSON file could not be parsed: %@", error.userInfo[@"NSDebugDescription"]];
+
+    AlertController *alert = [[AlertController alloc] initWithTitle:@"Problem when loading notes" message:errorMessage];
+    [self presentViewController:alert animated:true completion:nil];
 }
 
 @end
