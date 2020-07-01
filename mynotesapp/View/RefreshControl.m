@@ -19,7 +19,7 @@
 */
 
 - (CGFloat)height {
-    return self.label.frame.size.height + 20;
+    return self.imageView.frame.size.height + 20;
 }
 
 - (NSTimeInterval)animationDuration {
@@ -27,12 +27,18 @@
 }
 
 - (void)setup {
-    _label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 20)];
-    _label.text = @"Release to load";
-    _label.textColor = [UIColor grayColor];
-    _label.textAlignment = NSTextAlignmentCenter;
+    NSMutableArray<UIImage*> *framesArray = [[NSMutableArray alloc] init];
     
-    [self addSubview:_label];
+    for (int i = 0; i <= 12; i++) {
+        [framesArray addObject:[UIImage imageNamed:[NSString stringWithFormat:@"loadingAnimation/frame%d.png", i]]];
+    }
+    
+    _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, framesArray[0].size.width, framesArray[0].size.height)];
+    _imageView.center = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
+    _imageView.animationDuration = 1.0f;
+    _imageView.animationImages = framesArray;
+    [_imageView startAnimating];
+    [self addSubview:_imageView];
 }
 
 - (void)handleScrollingOnAnimationView:(UIView *)animationView withPullDistance:(CGFloat)pullDistance pullRatio:(CGFloat)pullRatio pullVelocity:(CGFloat)pullVelocity {

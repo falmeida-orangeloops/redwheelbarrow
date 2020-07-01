@@ -26,6 +26,7 @@
 		FC9F32B7249A7748005C20A5 /* NSDate+MyFormats.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9F32B6249A7748005C20A5 /* NSDate+MyFormats.m */; };
 		FCDDBC4724927F6500C1A19A /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDBC4624927F6500C1A19A /* CategoryPickerViewController.swift */; };
 		FCF049BA24A14FC400DB4600 /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF049B924A14FC400DB4600 /* DownloadManager.m */; };
+		FCE5C0C324ACE05C0000B3C9 /* loadingAnimation in Resources */ = {isa = PBXBuildFile; fileRef = FCE5C0C224ACE05C0000B3C9 /* loadingAnimation */; };
 		FCFF0DFA248C4C6200175862 /* NoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFF0DF8248C4C6200175862 /* NoteCell.m */; };
 		FCFF0DFB248C4C6200175862 /* NoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCFF0DF9248C4C6200175862 /* NoteCell.xib */; };
 /* End PBXBuildFile section */
@@ -65,6 +66,7 @@
 		FCDDBC4624927F6500C1A19A /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewController.swift; sourceTree = "<group>"; };
 		FCF049B824A14F3E00DB4600 /* DownloadManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DownloadManager.h; sourceTree = "<group>"; };
 		FCF049B924A14FC400DB4600 /* DownloadManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DownloadManager.m; sourceTree = "<group>"; };
+		FCE5C0C224ACE05C0000B3C9 /* loadingAnimation */ = {isa = PBXFileReference; lastKnownFileType = folder; path = loadingAnimation; sourceTree = "<group>"; };
 		FCFF0DF7248C4C6200175862 /* NoteCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteCell.h; sourceTree = "<group>"; };
 		FCFF0DF8248C4C6200175862 /* NoteCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteCell.m; sourceTree = "<group>"; };
 		FCFF0DF9248C4C6200175862 /* NoteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteCell.xib; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				FC87C11C24AE6666003FAA32 /* AlertController.m */,
 				FC87C11E24AE6666003FAA32 /* EditNoteViewController.swift */,
 				FCDDBC4624927F6500C1A19A /* CategoryPickerViewController.swift */,
+				FCE5C0C224ACE05C0000B3C9 /* loadingAnimation */,
 				FCFF0DF7248C4C6200175862 /* NoteCell.h */,
 				FCFF0DF8248C4C6200175862 /* NoteCell.m */,
 				FCFF0DF9248C4C6200175862 /* NoteCell.xib */,
@@ -251,6 +254,7 @@
 				FCFF0DFB248C4C6200175862 /* NoteCell.xib in Resources */,
 				FC2E1BF4248838FC0089F347 /* Assets.xcassets in Resources */,
 				FC2E1BF2248838FC0089F347 /* Main.storyboard in Resources */,
+				FCE5C0C324ACE05C0000B3C9 /* loadingAnimation in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

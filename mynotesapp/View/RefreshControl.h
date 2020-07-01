@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RefreshControl : JHRefreshControl
 
-@property (readonly, nonnull, strong, nonatomic) UILabel *label;
+@property (readonly, nonnull, strong, nonatomic) UIImageView *imageView;
 
 @end
 
