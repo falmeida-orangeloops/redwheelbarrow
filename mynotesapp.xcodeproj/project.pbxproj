@@ -25,8 +25,8 @@
 		FCFF0DFA248C4C6200175862 /* NoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFF0DF8248C4C6200175862 /* NoteCell.m */; };
 		FCFF0DFB248C4C6200175862 /* NoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCFF0DF9248C4C6200175862 /* NoteCell.xib */; };
 		FCDDBC4724927F6500C1A19A /* SetCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDBC4624927F6500C1A19A /* SetCategoryViewController.swift */; };
-		FCFF0DFA248C4C6200175862 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFF0DF8248C4C6200175862 /* Cell.m */; };
-		FCFF0DFB248C4C6200175862 /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCFF0DF9248C4C6200175862 /* Cell.xib */; };
+		FCFF0DFA248C4C6200175862 /* NoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFF0DF8248C4C6200175862 /* NoteCell.m */; };
+		FCFF0DFB248C4C6200175862 /* NoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCFF0DF9248C4C6200175862 /* NoteCell.xib */; };
 		FCFF3F6D24912976005D953E /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFF3F6C24912976005D953E /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +52,10 @@
 		FC758FE72489381F0050804C /* Note.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		FC758FEA2489399C0050804C /* NoteCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteCategory.h; sourceTree = "<group>"; };
 		FC758FEB248939AF0050804C /* NoteCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteCategory.m; sourceTree = "<group>"; };
+		FCDDBC4624927F6500C1A19A /* SetCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCategoryViewController.swift; sourceTree = "<group>"; };
+		FCFF0DF7248C4C6200175862 /* NoteCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteCell.h; sourceTree = "<group>"; };
+		FCFF0DF8248C4C6200175862 /* NoteCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteCell.m; sourceTree = "<group>"; };
+		FCFF0DF9248C4C6200175862 /* NoteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteCell.xib; sourceTree = "<group>"; };
 		FCFF3F6B24912976005D953E /* mynotesapp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mynotesapp-Bridging-Header.h"; sourceTree = "<group>"; };
 		FCFF3F6C24912976005D953E /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		FCDDBC4624927F6500C1A19A /* SetCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCategoryViewController.swift; sourceTree = "<group>"; };
@@ -96,7 +100,8 @@
 		FC2E1BE6248838FB0089F347 /* mynotesapp */ = {
 			isa = PBXGroup;
 			children = (
-				FC5D2180249934C7001F970A /* Controllers */,
+				FC5D4B0224AE1BA00001C3C0 /* View */,
+				FC5D4B0124AE1B310001C3C0 /* Controllers */,
 				FC26F495248EDDBC00283D50 /* notes.json */,
 				FC5D217F249934B9001F970A /* View */,
 				FC758FE5248937800050804C /* Models */,
@@ -117,7 +122,16 @@
 			path = mynotesapp;
 			sourceTree = "<group>";
 		};
-		FC5D217F249934B9001F970A /* View */ = {
+		FC5D4B0124AE1B310001C3C0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FC2E1BED248838FC0089F347 /* ViewController.h */,
+				FC2E1BEE248838FC0089F347 /* ViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FC5D4B0224AE1BA00001C3C0 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				FCFF0DF7248C4C6200175862 /* NoteCell.h */,
@@ -125,17 +139,6 @@
 				FCFF0DF9248C4C6200175862 /* NoteCell.xib */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		FC5D2180249934C7001F970A /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				FC2E1BED248838FC0089F347 /* ViewController.h */,
-				FC2E1BEE248838FC0089F347 /* ViewController.m */,
-				FC9F32B0249A5AD7005C20A5 /* AlertController.h */,
-				FC9F32B1249A5AEA005C20A5 /* AlertController.m */,
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		FC758FE5248937800050804C /* Models */ = {
@@ -244,6 +247,7 @@
 				FCFF0DFA248C4C6200175862 /* NoteCell.m in Sources */,
 				FC31DDD22499D46700861E37 /* Repository.m in Sources */,
 				FCDDBC4724927F6500C1A19A /* SetCategoryViewController.swift in Sources */,
+				FCFF0DFA248C4C6200175862 /* NoteCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

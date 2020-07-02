@@ -12,6 +12,8 @@
 #import "../Models/Repository.h"
 #import "AlertController.h"
 #import "NoteCell.h"
+#import "Cell.h"
+#import "mynotesapp-Swift.h"
 
 NSString *const NOTE_CELL_IDENTIFIER = @"NoteCell";
 NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";
@@ -25,7 +27,7 @@ NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     [self.tableView registerNib:[UINib nibWithNibName:NOTE_CELL_NIB_NAME bundle:nil] forCellReuseIdentifier:NOTE_CELL_IDENTIFIER];
     
     _refreshControl = [[UIRefreshControl alloc]init];
@@ -72,6 +74,25 @@ NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";
 
     AlertController *alert = [[AlertController alloc] initWithTitle:@"Problem when loading notes" message:errorMessage];
     [self presentViewController:alert animated:true completion:nil];
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    DetailsViewController *detailsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailsViewController"];
+    detailsViewController.delegate = self;
+    [detailsViewController loadView:self.notes[[indexPath row]]];
+    [self.navigationController pushViewController:detailsViewController animated:true];
+}
+
+- (IBAction)addNote:(id)sender {
+    Note *newNote = [[Note alloc] initWithIdentifier:[[NSUUID UUID] UUIDString] title:@"" content:@"" createdDate:[NSDate date] category:self.categories[@"0"]];
+    [self.notes insertObject:newNote atIndex:0];
+    
+    [self.tableView reloadData];
+    [self tableView:_tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
 }
 
 @end
