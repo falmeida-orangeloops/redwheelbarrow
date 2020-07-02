@@ -36,7 +36,7 @@ import UIKit
         self.note = note;
         titleTextField.text = note.title
         contentTextView.text = note.content
-        createdDateLabel.text = (note.createdDate as NSDate).shortString();
+        createdDateLabel.text = "Created on " + (note.createdDate as NSDate).shortString();
         categoryButton.setTitle(note.category.title, for: .normal)
     }
     
