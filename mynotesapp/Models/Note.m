@@ -25,15 +25,7 @@
 }
 
 - (id)initWithDict:(NSDictionary *)dict {
-    self = [super init];
-    self.identifier = dict[@"id"];
-    self.title = dict[@"title"];
-    self.content = dict[@"content"];
-    self.createdDate = [NSDate dateWithTimeIntervalSince1970:[dict[@"createdDate"] integerValue]];
-    self.category = ((Repository
-                     *)[Repository sharedRepository]).categories[dict[@"categoryId"]];
-    
-    return self;
+    return [self initWithIdentifier:dict[@"id"] title:dict[@"title"] content:dict[@"content"] createdDate:[NSDate dateWithTimeIntervalSince1970:[dict[@"createdDate"] integerValue]] category:((Repository*)[Repository sharedRepository]).categories[dict[@"categoryId"]]];
 }
 
 @end
