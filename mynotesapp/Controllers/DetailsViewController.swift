@@ -52,8 +52,19 @@ import UIKit
     }
     
     @IBAction func deleteNote(_ sender: Any) {
-        var confirmationAlert = UIAlertController(title: "Delete this note", message: "Are you sure? This can't be undone.", preferredStyle: .alert)
-        confirmationAlert.addAction(UIAlertAction(title: "Delete", style: .default, handler: {(action: UIAlertAction!) in self.navigationController?.popViewController(animated: true)}))
+        let confirmationAlert = UIAlertController(title: "Delete this note", message: "Are you sure? This can't be undone.", preferredStyle: .alert)
+        confirmationAlert.addAction(UIAlertAction(title: "Delete", style: .default, handler: {(action: UIAlertAction!) in
+            
+            let notes = (Repository.sharedRepository() as! Repository).notes
+            for i in stride(from: 0, through: notes.count - 1, by: 1) {
+                if (notes[i] as! Note) == self.note {
+                    notes.removeObject(at: i)
+                    break
+                }
+            }
+            
+            self.navigationController?.popViewController(animated: true);
+        }))
         confirmationAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
         present(confirmationAlert, animated: true, completion: nil)

@@ -110,7 +110,6 @@
 				FC2E1BEA248838FC0089F347 /* SceneDelegate.h */,
 				FC2E1BEB248838FC0089F347 /* SceneDelegate.m */,
 				FC2E1BF0248838FC0089F347 /* Main.storyboard */,
-				FCFF3F6C24912976005D953E /* DetailsViewController.swift */,
 				FCDDBC4624927F6500C1A19A /* SetCategoryViewController.swift */,
 				FC2E1BF3248838FC0089F347 /* Assets.xcassets */,
 				FC2E1BF5248838FC0089F347 /* LaunchScreen.storyboard */,
@@ -125,6 +124,7 @@
 		FC5D4B0124AE1B310001C3C0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FCFF3F6C24912976005D953E /* DetailsViewController.swift */,
 				FC2D81D324AE2C560083918A /* AlertController.h */,
 				FC2D81D224AE2C560083918A /* AlertController.m */,
 				FC129AEF24AE226B001744A3 /* ViewController.h */,
