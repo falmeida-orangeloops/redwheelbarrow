@@ -48,7 +48,7 @@ import UIKit
         super.loadView();
         
         self.currentCategory = delegate!.note!.category
-        self.categories = delegate?.delegate?.categories.allValues as! [NoteCategory]
+        self.categories = Array(((Repository.sharedRepository() as! Repository).categories as! [String:NoteCategory]).values)
         self.categories.sort(by: {$0.title < $1.title})
     }
     

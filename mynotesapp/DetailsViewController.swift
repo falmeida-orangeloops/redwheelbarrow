@@ -10,7 +10,6 @@ import UIKit
 
 @objc class DetailsViewController: UIViewController {
     var note: Note?
-    @objc weak var delegate: ViewController?
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var createdDateLabel: UILabel!
@@ -26,7 +25,7 @@ import UIKit
         
         if self.isMovingFromParent {
             guard let note = self.note else {return};
-            note.title = titleTextField.text;
+            note.title = titleTextField.text!;
             note.content = contentTextView.text;
         }
     }
@@ -37,7 +36,7 @@ import UIKit
         self.note = note;
         titleTextField.text = note.title
         contentTextView.text = note.content
-        createdDateLabel.text = "Created on " + delegate!.df.string(from: note.createdDate)
+        createdDateLabel.text = (note.createdDate as NSDate).shortString();
         categoryButton.setTitle(note.category.title, for: .normal)
     }
     

@@ -13,6 +13,8 @@
 @implementation Note
 
 - (id)initWithIdentifier:(NSString *)identifier title:(NSString *)title content:(NSString *)content createdDate:(NSDate *)createdDate category:(NoteCategory *)category {
+    self = [super init];
+    
     self.identifier = identifier;
     self.title = title;
     self.content = content;
@@ -22,7 +24,7 @@
     return self;
 }
 
-- (id)initWithDict:(NSDictionary *)dict category:(NoteCategory *)category {
+- (id)initWithDict:(NSDictionary *)dict {
     self = [super init];
     self.identifier = dict[@"id"];
     self.title = dict[@"title"];

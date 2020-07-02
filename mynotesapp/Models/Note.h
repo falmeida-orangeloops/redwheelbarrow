@@ -19,6 +19,7 @@
 @property (copy, nonnull, nonatomic) NSDate *createdDate;
 @property (strong, nonnull, nonatomic) NoteCategory *category;
 
+- (id _Nonnull)initWithIdentifier:(NSString*_Nonnull)identifier title:(NSString*_Nonnull)title content:(NSString*_Nonnull)content createdDate:(NSDate*_Nonnull)createdDate category:(NoteCategory*_Nonnull)category;
 - (id _Nonnull)initWithDict:(NSDictionary *_Nonnull)dict;
 
 @end
