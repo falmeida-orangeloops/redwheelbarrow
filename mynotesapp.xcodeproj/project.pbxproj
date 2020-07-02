@@ -7,11 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC09245A24AE676F008A562C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC09245824AE676E008A562C /* ViewController.m */; };
 		FC26F496248EDDBC00283D50 /* notes.json in Resources */ = {isa = PBXBuildFile; fileRef = FC26F495248EDDBC00283D50 /* notes.json */; };
-		FC2D81D424AE2C560083918A /* AlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2D81D224AE2C560083918A /* AlertController.m */; };
 		FC2E1BE9248838FC0089F347 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2E1BE8248838FC0089F347 /* AppDelegate.m */; };
 		FC2E1BEC248838FC0089F347 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2E1BEB248838FC0089F347 /* SceneDelegate.m */; };
-		FC2E1BEF248838FC0089F347 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2E1BEE248838FC0089F347 /* ViewController.m */; };
 		FC2E1BF2248838FC0089F347 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC2E1BF0248838FC0089F347 /* Main.storyboard */; };
 		FC2E1BF4248838FC0089F347 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC2E1BF3248838FC0089F347 /* Assets.xcassets */; };
 		FC2E1BF7248838FC0089F347 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC2E1BF5248838FC0089F347 /* LaunchScreen.storyboard */; };
@@ -20,25 +19,24 @@
 		FC31DDD52499DCD700861E37 /* JSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FC31DDD42499DCD700861E37 /* JSONParser.m */; };
 		FC758FE82489381F0050804C /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = FC758FE72489381F0050804C /* Note.m */; };
 		FC758FEC248939AF0050804C /* NoteCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = FC758FEB248939AF0050804C /* NoteCategory.m */; };
+		FC87C12024AE6666003FAA32 /* AlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC87C11C24AE6666003FAA32 /* AlertController.m */; };
+		FC87C12124AE6666003FAA32 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC87C11E24AE6666003FAA32 /* DetailsViewController.swift */; };
 		FC9F32B7249A7748005C20A5 /* NSDate+MyFormats.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9F32B6249A7748005C20A5 /* NSDate+MyFormats.m */; };
 		FCDDBC4724927F6500C1A19A /* SetCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDBC4624927F6500C1A19A /* SetCategoryViewController.swift */; };
 		FCF049BA24A14FC400DB4600 /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF049B924A14FC400DB4600 /* DownloadManager.m */; };
 		FCFF0DFA248C4C6200175862 /* NoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFF0DF8248C4C6200175862 /* NoteCell.m */; };
 		FCFF0DFB248C4C6200175862 /* NoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCFF0DF9248C4C6200175862 /* NoteCell.xib */; };
-		FCFF3F6D24912976005D953E /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFF3F6C24912976005D953E /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FC129AEF24AE226B001744A3 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FC09245824AE676E008A562C /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FC09245924AE676E008A562C /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		FC26F495248EDDBC00283D50 /* notes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = notes.json; path = Resources/General/notes.json; sourceTree = SOURCE_ROOT; };
-		FC2D81D224AE2C560083918A /* AlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlertController.m; path = "../../../../ol-mobile-training/mynotesapp/Controllers/AlertController.m"; sourceTree = "<group>"; };
-		FC2D81D324AE2C560083918A /* AlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlertController.h; path = "../../../../ol-mobile-training/mynotesapp/Controllers/AlertController.h"; sourceTree = "<group>"; };
 		FC2E1BE4248838FB0089F347 /* mynotesapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mynotesapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC2E1BE7248838FC0089F347 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FC2E1BE8248838FC0089F347 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FC2E1BEA248838FC0089F347 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		FC2E1BEB248838FC0089F347 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		FC2E1BEE248838FC0089F347 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FC2E1BF1248838FC0089F347 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FC2E1BF3248838FC0089F347 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC2E1BF6248838FC0089F347 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -52,6 +50,9 @@
 		FC758FE72489381F0050804C /* Note.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		FC758FEA2489399C0050804C /* NoteCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteCategory.h; sourceTree = "<group>"; };
 		FC758FEB248939AF0050804C /* NoteCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteCategory.m; sourceTree = "<group>"; };
+		FC87C11C24AE6666003FAA32 /* AlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertController.m; sourceTree = "<group>"; };
+		FC87C11D24AE6666003FAA32 /* AlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertController.h; sourceTree = "<group>"; };
+		FC87C11E24AE6666003FAA32 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		FC9F32B5249A7733005C20A5 /* NSDate+MyFormats.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+MyFormats.h"; sourceTree = "<group>"; };
 		FC9F32B6249A7748005C20A5 /* NSDate+MyFormats.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+MyFormats.m"; sourceTree = "<group>"; };
 		FCDDBC4624927F6500C1A19A /* SetCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCategoryViewController.swift; sourceTree = "<group>"; };
@@ -61,7 +62,6 @@
 		FCFF0DF8248C4C6200175862 /* NoteCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteCell.m; sourceTree = "<group>"; };
 		FCFF0DF9248C4C6200175862 /* NoteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteCell.xib; sourceTree = "<group>"; };
 		FCFF3F6B24912976005D953E /* mynotesapp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mynotesapp-Bridging-Header.h"; sourceTree = "<group>"; };
-		FCFF3F6C24912976005D953E /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +110,6 @@
 				FC2E1BEA248838FC0089F347 /* SceneDelegate.h */,
 				FC2E1BEB248838FC0089F347 /* SceneDelegate.m */,
 				FC2E1BF0248838FC0089F347 /* Main.storyboard */,
-				FCDDBC4624927F6500C1A19A /* SetCategoryViewController.swift */,
 				FC2E1BF3248838FC0089F347 /* Assets.xcassets */,
 				FC2E1BF5248838FC0089F347 /* LaunchScreen.storyboard */,
 				FC2E1BF8248838FD0089F347 /* Info.plist */,
@@ -124,11 +123,12 @@
 		FC5D4B0124AE1B310001C3C0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FCFF3F6C24912976005D953E /* DetailsViewController.swift */,
-				FC2D81D324AE2C560083918A /* AlertController.h */,
-				FC2D81D224AE2C560083918A /* AlertController.m */,
-				FC129AEF24AE226B001744A3 /* ViewController.h */,
-				FC2E1BEE248838FC0089F347 /* ViewController.m */,
+				FC09245924AE676E008A562C /* ViewController.h */,
+				FC09245824AE676E008A562C /* ViewController.m */,
+				FC87C11D24AE6666003FAA32 /* AlertController.h */,
+				FC87C11C24AE6666003FAA32 /* AlertController.m */,
+				FC87C11E24AE6666003FAA32 /* DetailsViewController.swift */,
+				FCDDBC4624927F6500C1A19A /* SetCategoryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -235,21 +235,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC87C12024AE6666003FAA32 /* AlertController.m in Sources */,
 				FC758FE82489381F0050804C /* Note.m in Sources */,
-				FC2E1BEF248838FC0089F347 /* ViewController.m in Sources */,
 				FC2E1BE9248838FC0089F347 /* AppDelegate.m in Sources */,
-				FCFF3F6D24912976005D953E /* DetailsViewController.swift in Sources */,
 				FC758FEC248939AF0050804C /* NoteCategory.m in Sources */,
 				FC2E1BFA248838FD0089F347 /* main.m in Sources */,
 				FC31DDD52499DCD700861E37 /* JSONParser.m in Sources */,
 				FC2E1BEC248838FC0089F347 /* SceneDelegate.m in Sources */,
 				FC9F32B7249A7748005C20A5 /* NSDate+MyFormats.m in Sources */,
-				FC2D81D424AE2C560083918A /* AlertController.m in Sources */,
 				FCF049BA24A14FC400DB4600 /* DownloadManager.m in Sources */,
+				FC09245A24AE676F008A562C /* ViewController.m in Sources */,
 				FCFF0DFA248C4C6200175862 /* NoteCell.m in Sources */,
 				FC31DDD22499D46700861E37 /* Repository.m in Sources */,
 				FCDDBC4724927F6500C1A19A /* SetCategoryViewController.swift in Sources */,
 				FCFF0DFA248C4C6200175862 /* NoteCell.m in Sources */,
+				FC87C12124AE6666003FAA32 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
