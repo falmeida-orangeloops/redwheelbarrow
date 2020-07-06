@@ -36,16 +36,28 @@ NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";
     [self reloadNotes];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return ((Repository *)[Repository sharedRepository]).notes.count;
+    return [Repository sharedRepository].notes.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     Cell *cell = [tableView dequeueReusableCellWithIdentifier:NOTE_CELL_IDENTIFIER];
-    Note *note = [((Repository *)[Repository sharedRepository]).notes objectAtIndex:indexPath.row];
+    Note *note = [[Repository sharedRepository].notes objectAtIndex:indexPath.row];
     [cell fillForNote:note];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    DetailsViewController *detailsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailsViewController"];
+    detailsViewController.note = [Repository sharedRepository].notes[indexPath.row];
+    
+    [self.navigationController pushViewController:detailsViewController animated:true];
 }
 
 - (void)reloadNotes {
@@ -75,21 +87,9 @@ NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";
     [self presentViewController:alert animated:true completion:nil];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self.tableView reloadData];
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    DetailsViewController *detailsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailsViewController"];
-    [detailsViewController loadView:((Repository*)[Repository sharedRepository]).notes[indexPath.row]];
-    
-    [self.navigationController pushViewController:detailsViewController animated:true];
-}
-
 - (IBAction)addNote:(id)sender {
-    Note *newNote = [[Note alloc] initWithIdentifier:[[NSUUID UUID] UUIDString] title:@"" content:@"" createdDate:[NSDate date] category:((Repository*)[Repository sharedRepository]).categories[@"0"]];
-    [((Repository*)[Repository sharedRepository]).notes insertObject:newNote atIndex:0];
+    Note *newNote = [[Note alloc] initWithIdentifier:[[NSUUID UUID] UUIDString] title:@"" content:@"" createdDate:[NSDate date] category:[Repository sharedRepository].categories[@"0"]];
+    [[Repository sharedRepository].notes insertObject:newNote atIndex:0];
     
     [self.tableView reloadData];
     [self tableView:_tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];

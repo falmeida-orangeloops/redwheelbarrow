@@ -12,7 +12,11 @@
 
 @implementation Note
 
-- (id)initWithIdentifier:(NSString *)identifier title:(NSString *)title content:(NSString *)content createdDate:(NSDate *)createdDate category:(NoteCategory *)category {
+- (instancetype)initWithIdentifier:(NSString *)identifier
+                   title:(NSString *)title
+                 content:(NSString *)content
+             createdDate:(NSDate *)createdDate
+                category:(NoteCategory *)category {
     self = [super init];
     
     self.identifier = identifier;
@@ -24,8 +28,12 @@
     return self;
 }
 
-- (id)initWithDict:(NSDictionary *)dict {
-    return [self initWithIdentifier:dict[@"id"] title:dict[@"title"] content:dict[@"content"] createdDate:[NSDate dateWithTimeIntervalSince1970:[dict[@"createdDate"] integerValue]] category:((Repository*)[Repository sharedRepository]).categories[dict[@"categoryId"]]];
+- (instancetype)initWithDict:(NSDictionary *)dict {
+    return [self initWithIdentifier:dict[@"id"]
+                              title:dict[@"title"]
+                            content:dict[@"content"]
+                        createdDate:[NSDate dateWithTimeIntervalSince1970:[dict[@"createdDate"] integerValue]]
+                           category:[Repository sharedRepository].categories[dict[@"categoryId"]]];
 }
 
 @end

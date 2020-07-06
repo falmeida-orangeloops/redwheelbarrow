@@ -41,16 +41,16 @@ NSString *const NOTES_URL = @"https://s3.amazonaws.com/kezmo.assets/sandbox/note
         }
         
         for (id item in dict[@"categories"])
-            [_categories setObject:[[NoteCategory alloc] initWithDict:item] forKey:item[@"id"]];
+            [self->_categories setObject:[[NoteCategory alloc] initWithDict:item] forKey:item[@"id"]];
         
         for (id item in dict[@"notes"])
-            [_notes addObject:[[Note alloc] initWithDict:item]];
+            [self->_notes addObject:[[Note alloc] initWithDict:item]];
         
         completionHandler(nil);
     }];
 }
 
-+ (id)sharedRepository {
++ (instancetype)sharedRepository {
     static Repository *instance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{instance = [[Repository alloc] init];});

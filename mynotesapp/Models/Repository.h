@@ -19,7 +19,7 @@
 @property (readonly, strong, nonnull, nonatomic) NSMutableDictionary<NSString*,NoteCategory*> *categories;
 
 - (void)reloadNotesAndCategories:(void (^_Nonnull)(NSError * _Nonnull error))completionHandler;
-+ (id _Nonnull)sharedRepository;
++ (instancetype _Nonnull)sharedRepository;
 
 @end
 
