@@ -55,7 +55,7 @@ NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     DetailsViewController *detailsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailsViewController"];
-    detailsViewController.note = [Repository sharedRepository].notes[indexPath.row];
+    detailsViewController.note = [[Note alloc] initWithNote:[Repository sharedRepository].notes[indexPath.row]];
     
     [self.navigationController pushViewController:detailsViewController animated:true];
 }
@@ -88,8 +88,7 @@ NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";
 }
 
 - (IBAction)addNote:(id)sender {
-    Note *newNote = [[Note alloc] initWithIdentifier:[[NSUUID UUID] UUIDString] title:@"" content:@"" createdDate:[NSDate date] category:[Repository sharedRepository].categories[@"0"]];
-    [[Repository sharedRepository].notes insertObject:newNote atIndex:0];
+    [[Repository sharedRepository] addEmptyNote];
     
     [self.tableView reloadData];
     [self tableView:_tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];

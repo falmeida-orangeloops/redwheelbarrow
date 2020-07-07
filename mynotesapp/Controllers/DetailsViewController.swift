@@ -35,8 +35,7 @@ import UIKit
             return
         }
         
-        note.title = title
-        note.content = contentTextView.text
+        Repository.shared().updateNote(note)
     }
     
     @IBAction func showSetCategoryViewController(_ sender: Any) {
@@ -58,7 +57,11 @@ import UIKit
     @IBAction func deleteNote(_ sender: Any) {
         let confirmationAlert = UIAlertController(title: "Delete this note", message: "Are you sure? This can't be undone.", preferredStyle: .alert)
         confirmationAlert.addAction(UIAlertAction(title: "Delete", style: .default, handler: {(action: UIAlertAction!) in
-            Repository.shared().notes.remove(self.note)
+            guard let note = self.note else {
+                return
+            }
+            
+            Repository.shared().removeNote(note)
             self.navigationController?.popViewController(animated: true)
         }))
         confirmationAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))

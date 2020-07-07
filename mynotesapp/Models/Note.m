@@ -36,4 +36,12 @@
                            category:[Repository sharedRepository].categories[dict[@"categoryId"]]];
 }
 
+- (instancetype)initWithNote:(Note *)note {
+    return [self initWithIdentifier:note.identifier
+                              title:note.title
+                            content:note.content
+                        createdDate:note.createdDate
+                           category:note.category];
+}
+
 @end
