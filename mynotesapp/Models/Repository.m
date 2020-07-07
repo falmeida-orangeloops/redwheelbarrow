@@ -52,10 +52,10 @@ NSString *const NOTES_URL = @"https://s3.amazonaws.com/kezmo.assets/sandbox/note
     }
 }
 
-- (void)updateNote:(Note *)note with:(Note *)otherNote {
+- (void)updateNote:(Note *)note {
     for (int i = 0; i < self.notes.count; i++) {
         if (self.notes[i].identifier == note.identifier) {
-            self.notes[i] = otherNote;
+            self.notes[i] = note;
             return;
         }
     }
