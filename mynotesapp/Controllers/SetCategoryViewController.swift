@@ -8,50 +8,39 @@
 
 import UIKit
 
-@objc class SetCategoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+@objc class SetCategoryViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     let CategoryCellIdentifier = "CategoryCellIdentifier"
     var categories = [NoteCategory]()
     var currentCategory: NoteCategory?
-    weak var delegate: DetailsViewController?
+    var categorySelectedHandler: ((NoteCategory)->Void)?
     
-    @IBOutlet weak var tableView: UITableView!
-    
-    override func loadView() {
-        super.loadView()
-        
-        self.currentCategory = delegate!.note!.category
-        self.categories = Array((Repository.shared().categories as! [String:NoteCategory]).values)
-        self.categories.sort(by: {$0.title < $1.title})
-    }
+    @IBOutlet weak var pickerView: UIPickerView!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        self.categories = Array((Repository.shared().categories as! [String:NoteCategory]).values)
+        self.categories.sort(by: {$0.title < $1.title})
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: CategoryCellIdentifier)
+        guard let currentCategory = self.currentCategory, let currentCategoryIndex = self.categories.firstIndex(of: currentCategory) else {
+            return
+        }
+        
+        pickerView.selectRow(currentCategoryIndex, inComponent: 0, animated: false)
+    }
+
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return self.categories.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: CategoryCellIdentifier, for: indexPath)
-        
-        if (self.categories[indexPath.row] == self.currentCategory) {
-            cell.backgroundColor = UIColor.secondarySystemFill
-        }
-        
-        cell.textLabel?.text = self.categories[indexPath.row].title
-        
-        return cell
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return self.categories[row].title
     }
     
-    func tableView(_ tableView: UITableView,
-                            didSelectRowAt indexPath: IndexPath) {
-        let newCategory = self.categories[indexPath.row]
-        delegate?.setCategory(newCategory)
-        
-        self.navigationController?.popViewController(animated: true)
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        categorySelectedHandler?(categories[row])
+        dismiss(animated: true, completion: nil)
     }
 }

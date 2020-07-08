@@ -65,20 +65,26 @@
                                 <rect key="frame" x="16" y="60" width="382" height="786"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p01-Ew-eU1">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="27"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="164.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="IXk-cO-mPa" id="ldc-l5-r8W"/>
+                                        </connections>
                                     </textField>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Moh-8s-Cey">
-                                        <rect key="frame" x="0.0" y="27" width="382" height="567"/>
+                                        <rect key="frame" x="0.0" y="164.5" width="382" height="567"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="IXk-cO-mPa" id="lHQ-t4-jQ5"/>
+                                        </connections>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rfv-aX-dl5">
-                                        <rect key="frame" x="0.0" y="594" width="382" height="35"/>
+                                        <rect key="frame" x="0.0" y="731.5" width="382" height="35"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <state key="normal" title="Category"/>
                                         <state key="disabled">
@@ -89,35 +95,11 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created on [Created Date]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J4Q-IX-Qdi">
-                                        <rect key="frame" x="0.0" y="629" width="382" height="19.5"/>
+                                        <rect key="frame" x="0.0" y="766.5" width="382" height="19.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eCu-0d-QNU">
-                                        <rect key="frame" x="0.0" y="648.5" width="382" height="137.5"/>
-                                        <subviews>
-                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="26q-iv-ubW">
-                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="35"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                                <state key="normal" title="Save changes"/>
-                                                <connections>
-                                                    <action selector="saveChanges:" destination="IXk-cO-mPa" eventType="touchUpInside" id="NYf-AE-uwa"/>
-                                                </connections>
-                                            </button>
-                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Uh-N2-BzB">
-                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="35"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                                <state key="normal" title="Discard changes"/>
-                                                <connections>
-                                                    <action selector="discardChanges:" destination="IXk-cO-mPa" eventType="touchUpInside" id="gCG-IO-Q27"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="26q-iv-ubW" firstAttribute="width" secondItem="5Uh-N2-BzB" secondAttribute="width" multiplier="1.67133" id="zge-Gh-wr7"/>
-                                        </constraints>
-                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -130,27 +112,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="f0z-GB-c6a"/>
                     </view>
-                    <navigationItem key="navigationItem" id="AwB-KZ-L9I">
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="trash" id="ZhF-0u-IoT">
-                                <connections>
-                                    <action selector="deleteNote:" destination="IXk-cO-mPa" id="fGP-BJ-mKo"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="edit" id="Pcm-xU-Un7">
-                                <connections>
-                                    <action selector="enableEditionMode:" destination="IXk-cO-mPa" id="Yvv-J3-qAM"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="AwB-KZ-L9I"/>
                     <connections>
                         <outlet property="categoryButton" destination="Rfv-aX-dl5" id="Vw7-VV-uKs"/>
                         <outlet property="contentTextView" destination="Moh-8s-Cey" id="2Xl-Yh-kFu"/>
                         <outlet property="createdDateLabel" destination="J4Q-IX-Qdi" id="la6-lg-rAF"/>
-                        <outlet property="discardChangesButton" destination="5Uh-N2-BzB" id="eQx-HK-HLi"/>
-                        <outlet property="editBarButtonItem" destination="Pcm-xU-Un7" id="E3b-SI-is8"/>
-                        <outlet property="saveChangesButton" destination="26q-iv-ubW" id="hqP-sQ-I1y"/>
                         <outlet property="titleTextField" destination="p01-Ew-eU1" id="QFF-jc-NWD"/>
                     </connections>
                 </viewController>
@@ -166,27 +132,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mKG-0t-rnW">
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5CT-1m-QzF">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="IJz-sw-8R7" id="xLj-os-ZiT"/>
-                                    <outlet property="delegate" destination="IJz-sw-8R7" id="yJD-VH-tkC"/>
+                                    <outlet property="dataSource" destination="IJz-sw-8R7" id="tZn-aB-Uf1"/>
+                                    <outlet property="delegate" destination="IJz-sw-8R7" id="vAw-Oi-gkb"/>
                                 </connections>
-                            </tableView>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="mKG-0t-rnW" firstAttribute="leading" secondItem="EaO-40-foq" secondAttribute="leading" id="0sB-rD-K5F"/>
-                            <constraint firstItem="EaO-40-foq" firstAttribute="trailing" secondItem="mKG-0t-rnW" secondAttribute="trailing" id="B9h-d3-p7s"/>
-                            <constraint firstItem="EaO-40-foq" firstAttribute="bottom" secondItem="mKG-0t-rnW" secondAttribute="bottom" id="QjY-7Y-zQB"/>
-                            <constraint firstItem="mKG-0t-rnW" firstAttribute="top" secondItem="EaO-40-foq" secondAttribute="top" id="bvO-jO-jFj"/>
+                            <constraint firstItem="5CT-1m-QzF" firstAttribute="leading" secondItem="EaO-40-foq" secondAttribute="leading" id="cIa-nZ-1KA"/>
+                            <constraint firstItem="EaO-40-foq" firstAttribute="bottom" secondItem="5CT-1m-QzF" secondAttribute="bottom" id="kMS-Ur-nsH"/>
+                            <constraint firstItem="5CT-1m-QzF" firstAttribute="top" secondItem="EaO-40-foq" secondAttribute="top" id="u1J-Ri-xVI"/>
+                            <constraint firstItem="5CT-1m-QzF" firstAttribute="trailing" secondItem="EaO-40-foq" secondAttribute="trailing" id="uel-h4-hv8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EaO-40-foq"/>
                     </view>
                     <navigationItem key="navigationItem" title="Set Category" id="avY-Yd-f9J"/>
                     <connections>
-                        <outlet property="tableView" destination="mKG-0t-rnW" id="1Bv-fZ-gTQ"/>
+                        <outlet property="pickerView" destination="5CT-1m-QzF" id="MiT-Rz-nIG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jVv-MK-v7o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

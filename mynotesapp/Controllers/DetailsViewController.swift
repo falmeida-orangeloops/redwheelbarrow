@@ -8,20 +8,29 @@
 
 import UIKit
 
-@objc class DetailsViewController: UIViewController {
+@objc class DetailsViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
     @objc var note: Note?
+    var unsavedNote: Note?
     var editionMode = false
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var createdDateLabel: UILabel!
     @IBOutlet weak var contentTextView: UITextView!
     @IBOutlet weak var categoryButton: UIButton!
-    @IBOutlet weak var editBarButtonItem: UIBarButtonItem!
-    @IBOutlet weak var saveChangesButton: UIButton!
-    @IBOutlet weak var discardChangesButton: UIButton!
+    var editNoteBarButtonItem: UIBarButtonItem!
+    var deleteNoteBarButtonItem: UIBarButtonItem!
+    var saveChangesBarButtonItem: UIBarButtonItem!
+    var discardChangesBarButtonItem: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        editNoteBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(enableEditionMode))
+        deleteNoteBarButtonItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteNote))
+        saveChangesBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveChanges))
+        discardChangesBarButtonItem = UIBarButtonItem(title: "Discard", style: .plain, target: self, action: #selector(discardChanges))
+        
+        disableEditionMode()
         
         guard let note = self.note else {
             return
@@ -59,16 +68,16 @@ import UIKit
         
         let setCategoryViewController = storyboard.instantiateViewController(identifier: "SetCategoryViewController") as SetCategoryViewController
         
-        setCategoryViewController.delegate = self
-        self.navigationController?.pushViewController(setCategoryViewController, animated: true)
+        setCategoryViewController.categorySelectedHandler = {(category: NoteCategory) in
+            self.unsavedNote?.category = category
+            self.categoryButton.setTitle(category.title, for: .normal)
         }
-    
-    func setCategory(_ category: NoteCategory) {
-        note?.category = category
-        categoryButton.setTitle(note?.category.title, for: .normal)
+        setCategoryViewController.modalPresentationStyle = .popover
+        
+        self.present(setCategoryViewController, animated: true, completion: nil)
     }
     
-    @IBAction func deleteNote(_ sender: Any) {
+    @objc func deleteNote(_ sender: Any) {
         let confirmationAlert = UIAlertController(title: "Delete this note", message: "Are you sure? This can't be undone.", preferredStyle: .alert)
         confirmationAlert.addAction(UIAlertAction(title: "Delete", style: .default, handler: {(action: UIAlertAction!) in
             guard let note = self.note else {
@@ -83,27 +92,30 @@ import UIKit
         present(confirmationAlert, animated: true, completion: nil)
     }
     
-    @IBAction func enableEditionMode(_ sender: Any) {      titleTextField.isEnabled = true
+    @objc func enableEditionMode(_ sender: Any) {
+        guard let note = self.note else {
+            return
+        }
+        
+        unsavedNote = Note.init(note: note)
+        editionMode = true
+        
+        titleTextField.isEnabled = true
         contentTextView.isEditable = true
         categoryButton.isEnabled = true
         
         titleTextField.layer.borderWidth = 1
-        titleTextField.layer.borderColor = UIColor.red.cgColor
-        
         contentTextView.layer.borderWidth = 1
-        titleTextField.layer.borderColor = UIColor.red.cgColor
         
-        createdDateLabel.isHidden = true
-        editBarButtonItem.isEnabled = false
-        saveChangesButton.isHidden = false
-        discardChangesButton.isHidden = false
+        navigationItem.rightBarButtonItems = [discardChangesBarButtonItem, saveChangesBarButtonItem]
         
         contentTextView.becomeFirstResponder()
-        
-        editionMode = true
     }
     
     func disableEditionMode() {
+        unsavedNote = nil
+        editionMode = false
+        
         titleTextField.isEnabled = false
         contentTextView.isEditable = false
         categoryButton.isEnabled = false
@@ -111,30 +123,39 @@ import UIKit
         titleTextField.layer.borderWidth = 0
         contentTextView.layer.borderWidth = 0
         
-        createdDateLabel.isHidden = false
-        editBarButtonItem.isEnabled = true
-        saveChangesButton.isHidden = true
-        discardChangesButton.isHidden = true
-        
-        editionMode = false
+        navigationItem.rightBarButtonItems = [deleteNoteBarButtonItem, editNoteBarButtonItem]
     }
     
-    @IBAction func saveChanges(_ sender: Any) {
-        guard let note = self.note, let title = titleTextField.text else {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let title = titleTextField.text else {
             return
         }
         
-        let newNote = Note.init(note: note)
-        newNote.title = title
-        newNote.content = contentTextView.text
+        unsavedNote?.title = title
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        unsavedNote?.content = contentTextView.text
+    }
+    
+    @objc func saveChanges(_ sender: Any) {
+        guard let unsavedNote = self.unsavedNote else {
+            return
+        }
         
-        Repository.shared().updateNote(newNote)
+        titleTextField.endEditing(true)
+        contentTextView.endEditing(true)
+        
+        Repository.shared().updateNote(unsavedNote)
+        note = unsavedNote
+        
         disableEditionMode()
     }
     
-    @IBAction func discardChanges(_ sender: Any) {
+     @objc func discardChanges(_ sender: Any) {
         titleTextField.text = note?.title
         contentTextView.text = note?.content
+        categoryButton.setTitle(note?.category.title, for: .normal)
         
         disableEditionMode()
     }

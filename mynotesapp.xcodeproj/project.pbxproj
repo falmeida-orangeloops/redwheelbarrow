@@ -22,6 +22,7 @@
 		FC87C12024AE6666003FAA32 /* AlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC87C11C24AE6666003FAA32 /* AlertController.m */; };
 		FC87C12124AE6666003FAA32 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC87C11E24AE6666003FAA32 /* DetailsViewController.swift */; };
 		FC9F32B7249A7748005C20A5 /* NSDate+MyFormats.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9F32B6249A7748005C20A5 /* NSDate+MyFormats.m */; };
+		FCB75C4324B5A5870027191B /* EditCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB75C4224B5A5870027191B /* EditCategoriesViewController.swift */; };
 		FCDDBC4724927F6500C1A19A /* SetCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDBC4624927F6500C1A19A /* SetCategoryViewController.swift */; };
 		FCF049BA24A14FC400DB4600 /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF049B924A14FC400DB4600 /* DownloadManager.m */; };
 		FCFF0DFA248C4C6200175862 /* NoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFF0DF8248C4C6200175862 /* NoteCell.m */; };
@@ -55,6 +56,7 @@
 		FC87C11E24AE6666003FAA32 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		FC9F32B5249A7733005C20A5 /* NSDate+MyFormats.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+MyFormats.h"; sourceTree = "<group>"; };
 		FC9F32B6249A7748005C20A5 /* NSDate+MyFormats.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+MyFormats.m"; sourceTree = "<group>"; };
+		FCB75C4224B5A5870027191B /* EditCategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCategoriesViewController.swift; sourceTree = "<group>"; };
 		FCDDBC4624927F6500C1A19A /* SetCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCategoryViewController.swift; sourceTree = "<group>"; };
 		FCF049B824A14F3E00DB4600 /* DownloadManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DownloadManager.h; sourceTree = "<group>"; };
 		FCF049B924A14FC400DB4600 /* DownloadManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DownloadManager.m; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				FC87C11C24AE6666003FAA32 /* AlertController.m */,
 				FC87C11E24AE6666003FAA32 /* DetailsViewController.swift */,
 				FCDDBC4624927F6500C1A19A /* SetCategoryViewController.swift */,
+				FCB75C4224B5A5870027191B /* EditCategoriesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				FC31DDD52499DCD700861E37 /* JSONParser.m in Sources */,
 				FC2E1BEC248838FC0089F347 /* SceneDelegate.m in Sources */,
 				FC9F32B7249A7748005C20A5 /* NSDate+MyFormats.m in Sources */,
+				FCB75C4324B5A5870027191B /* EditCategoriesViewController.swift in Sources */,
 				FCF049BA24A14FC400DB4600 /* DownloadManager.m in Sources */,
 				FC09245A24AE676F008A562C /* ViewController.m in Sources */,
 				FCFF0DFA248C4C6200175862 /* NoteCell.m in Sources */,
