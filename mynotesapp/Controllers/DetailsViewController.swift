@@ -40,25 +40,10 @@ import UIKit
         contentTextView.text = note.content
         createdDateLabel.text = "Created on " + (note.createdDate as NSDate).shortString()
         categoryButton.setTitle(note.category.title, for: .normal)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
         
-//        if (!editionMode) {
-//            return
-//        }
-//        
-//        let confirmationAlert = UIAlertController(title: "Editing this note", message: "You are currently editing this note. What do you want to do?", preferredStyle: .alert)
-//        confirmationAlert.addAction(UIAlertAction(title: "Save", style: .default, handler: {(action: UIAlertAction!) in
-//            self.saveChanges(confirmationAlert)
-//        }))
-//        
-//        confirmationAlert.addAction(UIAlertAction(title: "Discard", style: .cancel, handler: nil))
-//        
-//        //confirmationAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-//        
-//        present(confirmationAlert, animated: true, completion: nil)
+        titleTextField.layer.borderColor = UIColor.darkGray.cgColor
+        contentTextView.layer.borderColor = UIColor.darkGray.cgColor
+        
     }
     
     @IBAction func showSetCategoryViewController(_ sender: Any) {
@@ -104,9 +89,6 @@ import UIKit
         contentTextView.isEditable = true
         categoryButton.isEnabled = true
         
-        titleTextField.layer.borderWidth = 1
-        contentTextView.layer.borderWidth = 1
-        
         navigationItem.rightBarButtonItems = [discardChangesBarButtonItem, saveChangesBarButtonItem]
         
         contentTextView.becomeFirstResponder()
@@ -126,7 +108,15 @@ import UIKit
         navigationItem.rightBarButtonItems = [deleteNoteBarButtonItem, editNoteBarButtonItem]
     }
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        titleTextField.layer.borderWidth = 1
+        titleTextField.backgroundColor = UIColor.systemGray4
+    }
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
+        titleTextField.layer.borderWidth = 0
+        titleTextField.backgroundColor = nil
+        
         guard let title = titleTextField.text else {
             return
         }
@@ -134,7 +124,15 @@ import UIKit
         unsavedNote?.title = title
     }
     
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        contentTextView.layer.borderWidth = 1
+        contentTextView.backgroundColor = UIColor.systemGray4
+    }
+    
     func textViewDidEndEditing(_ textView: UITextView) {
+        contentTextView.layer.borderWidth = 0
+        contentTextView.backgroundColor = nil
+        
         unsavedNote?.content = contentTextView.text
     }
     
