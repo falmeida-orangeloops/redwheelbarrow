@@ -17,6 +17,7 @@ import UIKit
     @IBOutlet weak var createdDateLabel: UILabel!
     @IBOutlet weak var contentTextView: UITextView!
     @IBOutlet weak var categoryButton: UIButton!
+    @IBOutlet weak var editingLabel: UILabel!
     var editNoteBarButtonItem: UIBarButtonItem!
     var deleteNoteBarButtonItem: UIBarButtonItem!
     var saveChangesBarButtonItem: UIBarButtonItem!
@@ -91,6 +92,9 @@ import UIKit
         
         navigationItem.rightBarButtonItems = [discardChangesBarButtonItem, saveChangesBarButtonItem]
         
+        createdDateLabel.isHidden = true
+        editingLabel.isHidden = false
+        
         contentTextView.becomeFirstResponder()
     }
     
@@ -106,6 +110,9 @@ import UIKit
         contentTextView.layer.borderWidth = 0
         
         navigationItem.rightBarButtonItems = [deleteNoteBarButtonItem, editNoteBarButtonItem]
+        
+        createdDateLabel.isHidden = false
+        editingLabel.isHidden = true
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {

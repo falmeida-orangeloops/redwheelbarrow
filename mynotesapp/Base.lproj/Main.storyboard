@@ -100,6 +100,12 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Editing. Tap something to change it." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lsh-dF-YdF">
+                                        <rect key="frame" x="0.0" y="786" width="382" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -117,6 +123,7 @@
                         <outlet property="categoryButton" destination="Rfv-aX-dl5" id="Vw7-VV-uKs"/>
                         <outlet property="contentTextView" destination="Moh-8s-Cey" id="2Xl-Yh-kFu"/>
                         <outlet property="createdDateLabel" destination="J4Q-IX-Qdi" id="la6-lg-rAF"/>
+                        <outlet property="editingLabel" destination="Lsh-dF-YdF" id="m9e-K3-Jii"/>
                         <outlet property="titleTextField" destination="p01-Ew-eU1" id="QFF-jc-NWD"/>
                     </connections>
                 </viewController>
