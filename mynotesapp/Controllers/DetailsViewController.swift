@@ -54,6 +54,7 @@ import UIKit
         
         let setCategoryViewController = storyboard.instantiateViewController(identifier: "SetCategoryViewController") as SetCategoryViewController
         
+        setCategoryViewController.currentCategory = unsavedNote?.category
         setCategoryViewController.categorySelectedHandler = {(category: NoteCategory) in
             self.unsavedNote?.category = category
             self.categoryButton.setTitle(category.title, for: .normal)
