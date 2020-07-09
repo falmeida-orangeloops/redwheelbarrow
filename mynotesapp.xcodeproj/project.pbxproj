@@ -136,7 +136,7 @@
 				FC2E1BF8248838FD0089F347 /* Info.plist */,
 				FC2E1BE8248838FC0089F347 /* AppDelegate.m */,
 				FC2E1BF9248838FD0089F347 /* main.m */,
-				FCFF3F6B24912976005D953E /* mynotesapp-Bridging-Header.h */,
+				FC031F0D24B75BD6008CB2EA /* mynotesapp-Bridging-Header.h */,
 			);
 			path = mynotesapp;
 			sourceTree = "<group>";
@@ -155,7 +155,6 @@
 				FCFF0DF8248C4C6200175862 /* NoteCell.m */,
 				FCFF0DF9248C4C6200175862 /* NoteCell.xib */,
 				FC031F0E24B75BD7008CB2EA /* RefreshControl.swift */,
-				FC031F0D24B75BD6008CB2EA /* mynotesapp-Bridging-Header.h */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -404,6 +403,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Debug;
 		};
@@ -455,6 +455,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
