@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -251,7 +251,7 @@
 				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -356,7 +356,7 @@
 			};
 			name = Debug;
 		};
-		7770025C49D1392CE32E4059AA33FEA1 /* Debug */ = {
+		B3D3A49A5B3785CEDF45904746F55088 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BB47B1EDC73C41DE525B11DC6E5F1CB9 /* JHPullToRefreshKit.debug.xcconfig */;
 			buildSettings = {
@@ -384,11 +384,48 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		CC8EA463BAF7D55F2FBCC56B92F4AAEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D67B8DE9FF6250446E998BABD0B5FEC /* JHPullToRefreshKit.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/JHPullToRefreshKit/JHPullToRefreshKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JHPullToRefreshKit/JHPullToRefreshKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/JHPullToRefreshKit/JHPullToRefreshKit.modulemap";
+				PRODUCT_MODULE_NAME = JHPullToRefreshKit;
+				PRODUCT_NAME = JHPullToRefreshKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		DFD9D19FEEBF98DE271D7FBABCB845B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -553,41 +590,6 @@
 			};
 			name = Release;
 		};
-		F9D8011FF275EE67EF0EB40BED96C592 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9D67B8DE9FF6250446E998BABD0B5FEC /* JHPullToRefreshKit.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/JHPullToRefreshKit/JHPullToRefreshKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/JHPullToRefreshKit/JHPullToRefreshKit-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/JHPullToRefreshKit/JHPullToRefreshKit.modulemap";
-				PRODUCT_MODULE_NAME = JHPullToRefreshKit;
-				PRODUCT_NAME = JHPullToRefreshKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -603,8 +605,8 @@
 		3557482B62B47AD88E66228A1AD340CF /* Build configuration list for PBXNativeTarget "JHPullToRefreshKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7770025C49D1392CE32E4059AA33FEA1 /* Debug */,
-				F9D8011FF275EE67EF0EB40BED96C592 /* Release */,
+				B3D3A49A5B3785CEDF45904746F55088 /* Debug */,
+				CC8EA463BAF7D55F2FBCC56B92F4AAEC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		FC09245A24AE676F008A562C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC09245824AE676E008A562C /* ViewController.m */; };
 		93A883A418F0FABC58B13D1C /* Pods_mynotesapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2FFC0D29150D98CE9720DCC /* Pods_mynotesapp.framework */; };
+		FC031F0F24B75BD7008CB2EA /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC031F0E24B75BD7008CB2EA /* RefreshControl.swift */; };
 		FC26F496248EDDBC00283D50 /* notes.json in Resources */ = {isa = PBXBuildFile; fileRef = FC26F495248EDDBC00283D50 /* notes.json */; };
-		FC27F55824A27A3E000A1615 /* RefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = FC27F55724A27A3E000A1615 /* RefreshControl.m */; };
 		FC2E1BE9248838FC0089F347 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2E1BE8248838FC0089F347 /* AppDelegate.m */; };
 		FC2E1BEC248838FC0089F347 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2E1BEB248838FC0089F347 /* SceneDelegate.m */; };
 		FC2E1BF2248838FC0089F347 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC2E1BF0248838FC0089F347 /* Main.storyboard */; };
@@ -37,9 +37,9 @@
 		8CD11A8F3481559DB4648B2E /* Pods-mynotesapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mynotesapp.release.xcconfig"; path = "Target Support Files/Pods-mynotesapp/Pods-mynotesapp.release.xcconfig"; sourceTree = "<group>"; };
 		A5BC19FFB43AA0843CAD186C /* Pods-mynotesapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mynotesapp.debug.xcconfig"; path = "Target Support Files/Pods-mynotesapp/Pods-mynotesapp.debug.xcconfig"; sourceTree = "<group>"; };
 		B2FFC0D29150D98CE9720DCC /* Pods_mynotesapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mynotesapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC031F0D24B75BD6008CB2EA /* mynotesapp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mynotesapp-Bridging-Header.h"; sourceTree = "<group>"; };
+		FC031F0E24B75BD7008CB2EA /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
 		FC26F495248EDDBC00283D50 /* notes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = notes.json; path = Resources/General/notes.json; sourceTree = SOURCE_ROOT; };
-		FC27F55624A27A3E000A1615 /* RefreshControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RefreshControl.h; sourceTree = "<group>"; };
-		FC27F55724A27A3E000A1615 /* RefreshControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RefreshControl.m; sourceTree = "<group>"; };
 		FC2E1BE4248838FB0089F347 /* mynotesapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mynotesapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC2E1BE7248838FC0089F347 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FC2E1BE8248838FC0089F347 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -154,8 +154,8 @@
 				FCFF0DF7248C4C6200175862 /* NoteCell.h */,
 				FCFF0DF8248C4C6200175862 /* NoteCell.m */,
 				FCFF0DF9248C4C6200175862 /* NoteCell.xib */,
-				FC27F55624A27A3E000A1615 /* RefreshControl.h */,
-				FC27F55724A27A3E000A1615 /* RefreshControl.m */, refresh control provided by JHPullToRefreshKit pod
+				FC031F0E24B75BD7008CB2EA /* RefreshControl.swift */,
+				FC031F0D24B75BD6008CB2EA /* mynotesapp-Bridging-Header.h */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -254,7 +254,6 @@
 				FCFF0DFB248C4C6200175862 /* NoteCell.xib in Resources */,
 				FC2E1BF4248838FC0089F347 /* Assets.xcassets in Resources */,
 				FC2E1BF2248838FC0089F347 /* Main.storyboard in Resources */,
-				FCE5C0C324ACE05C0000B3C9 /* loadingAnimation in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +310,8 @@
 				FC758FE82489381F0050804C /* Note.m in Sources */,
 				FC2E1BE9248838FC0089F347 /* AppDelegate.m in Sources */,
 				FC758FEC248939AF0050804C /* NoteCategory.m in Sources */,
+				FC9F32B2249A5AEA005C20A5 /* AlertController.m in Sources */,
+				FC031F0F24B75BD7008CB2EA /* RefreshControl.swift in Sources */,
 				FC2E1BFA248838FD0089F347 /* main.m in Sources */,
 				FC31DDD52499DCD700861E37 /* JSONParser.m in Sources */,
 				FC2E1BEC248838FC0089F347 /* SceneDelegate.m in Sources */,
