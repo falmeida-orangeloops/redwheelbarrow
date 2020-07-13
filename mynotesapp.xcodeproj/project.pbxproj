@@ -19,6 +19,8 @@
 		FC31DDD52499DCD700861E37 /* JSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FC31DDD42499DCD700861E37 /* JSONParser.m */; };
 		FC758FE82489381F0050804C /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = FC758FE72489381F0050804C /* Note.m */; };
 		FC758FEC248939AF0050804C /* NoteCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = FC758FEB248939AF0050804C /* NoteCategory.m */; };
+		FC77749124BA983E0011B098 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC77748F24BA983E0011B098 /* CategoryCell.swift */; };
+		FC77749224BA983E0011B098 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC77749024BA983E0011B098 /* CategoryCell.xib */; };
 		FC87C12024AE6666003FAA32 /* AlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC87C11C24AE6666003FAA32 /* AlertController.m */; };
 		FC87C12124AE6666003FAA32 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC87C11E24AE6666003FAA32 /* DetailsViewController.swift */; };
 		FC9F32B7249A7748005C20A5 /* NSDate+MyFormats.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9F32B6249A7748005C20A5 /* NSDate+MyFormats.m */; };
@@ -51,6 +53,8 @@
 		FC758FE72489381F0050804C /* Note.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		FC758FEA2489399C0050804C /* NoteCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteCategory.h; sourceTree = "<group>"; };
 		FC758FEB248939AF0050804C /* NoteCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteCategory.m; sourceTree = "<group>"; };
+		FC77748F24BA983E0011B098 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		FC77749024BA983E0011B098 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		FC87C11C24AE6666003FAA32 /* AlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertController.m; sourceTree = "<group>"; };
 		FC87C11D24AE6666003FAA32 /* AlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertController.h; sourceTree = "<group>"; };
 		FC87C11E24AE6666003FAA32 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +146,8 @@
 				FCFF0DF7248C4C6200175862 /* NoteCell.h */,
 				FCFF0DF8248C4C6200175862 /* NoteCell.m */,
 				FCFF0DF9248C4C6200175862 /* NoteCell.xib */,
+				FC77748F24BA983E0011B098 /* CategoryCell.swift */,
+				FC77749024BA983E0011B098 /* CategoryCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -224,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC2E1BF7248838FC0089F347 /* LaunchScreen.storyboard in Resources */,
+				FC77749224BA983E0011B098 /* CategoryCell.xib in Resources */,
 				FC26F496248EDDBC00283D50 /* notes.json in Resources */,
 				FCFF0DFB248C4C6200175862 /* NoteCell.xib in Resources */,
 				FC2E1BF4248838FC0089F347 /* Assets.xcassets in Resources */,
@@ -238,6 +245,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC77749124BA983E0011B098 /* CategoryCell.swift in Sources */,
 				FC87C12024AE6666003FAA32 /* AlertController.m in Sources */,
 				FC758FE82489381F0050804C /* Note.m in Sources */,
 				FC2E1BE9248838FC0089F347 /* AppDelegate.m in Sources */,

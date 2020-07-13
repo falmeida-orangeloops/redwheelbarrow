@@ -10,15 +10,23 @@ import UIKit
 
 @objc class SetCategoryViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     let CategoryCellIdentifier = "CategoryCellIdentifier"
-    var categories = [NoteCategory]()
+    var categories = [NoteCategory?]()
     var currentCategory: NoteCategory?
-    var categorySelectedHandler: ((NoteCategory)->Void)?
+    var categorySelectedHandler: ((NoteCategory?)->Void)?
     
     @IBOutlet weak var pickerView: UIPickerView!
     
     override func viewDidLoad() {
         self.categories = Array((Repository.shared().categories as! [String:NoteCategory]).values)
-        self.categories.sort(by: {$0.title < $1.title})
+        self.categories.sort(by: {
+            guard let x = $0, let y = $1 else {
+                return false
+            }
+            
+            return x.title < y.title
+        })
+        
+        self.categories.insert(nil, at: 0)
         
         guard let currentCategory = self.currentCategory, let currentCategoryIndex = self.categories.firstIndex(of: currentCategory) else {
             return
@@ -36,11 +44,18 @@ import UIKit
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return self.categories[row].title
+        if let category = self.categories[row] {
+            return category.title
+        }
+        
+        else {
+            return "(No category)"
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         categorySelectedHandler?(categories[row])
+        
         dismiss(animated: true, completion: nil)
     }
 }

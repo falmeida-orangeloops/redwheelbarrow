@@ -40,6 +40,12 @@ NSString *const NOTES_URL = @"https://s3.amazonaws.com/kezmo.assets/sandbox/note
 }
 
 - (void)removeCategory:(NoteCategory *)category {
+    for (Note *note in self.notes) {
+        if (note.category == category) {
+            note.category = nil;
+        }
+    }
+    
     [self.categories removeObjectForKey:category.identifier];
 }
 

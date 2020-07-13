@@ -40,7 +40,6 @@ import UIKit
         titleTextField.text = note.title
         contentTextView.text = note.content
         createdDateLabel.text = "Created on " + (note.createdDate as NSDate).shortString()
-        categoryButton.setTitle(note.category.title, for: .normal)
         
         titleTextField.layer.borderColor = UIColor.darkGray.cgColor
         contentTextView.layer.borderColor = UIColor.darkGray.cgColor
@@ -55,9 +54,9 @@ import UIKit
         let setCategoryViewController = storyboard.instantiateViewController(identifier: "SetCategoryViewController") as SetCategoryViewController
         
         setCategoryViewController.currentCategory = unsavedNote?.category
-        setCategoryViewController.categorySelectedHandler = {(category: NoteCategory) in
+        setCategoryViewController.categorySelectedHandler = {(category: NoteCategory?) in
             self.unsavedNote?.category = category
-            self.categoryButton.setTitle(category.title, for: .normal)
+            self.categoryButton.setTitle(category != nil ? category?.title : "(No category)", for: .normal)
         }
         setCategoryViewController.modalPresentationStyle = .popover
         
@@ -91,6 +90,8 @@ import UIKit
         contentTextView.isEditable = true
         categoryButton.isEnabled = true
         
+        categoryButton.isHidden = false
+        
         navigationItem.rightBarButtonItems = [discardChangesBarButtonItem, saveChangesBarButtonItem]
         
         createdDateLabel.isHidden = true
@@ -109,6 +110,16 @@ import UIKit
         
         titleTextField.layer.borderWidth = 0
         contentTextView.layer.borderWidth = 0
+        
+        if (note?.category == nil) {
+            categoryButton.setTitle("(No category)", for: .normal)
+            categoryButton.isHidden = true
+        }
+        
+        else {
+            categoryButton.setTitle(note?.category?.title, for: .normal)
+            categoryButton.isHidden = false
+        }
         
         navigationItem.rightBarButtonItems = [deleteNoteBarButtonItem, editNoteBarButtonItem]
         
@@ -161,7 +172,7 @@ import UIKit
      @objc func discardChanges(_ sender: Any) {
         titleTextField.text = note?.title
         contentTextView.text = note?.content
-        categoryButton.setTitle(note?.category.title, for: .normal)
+        categoryButton.setTitle(note?.category?.title, for: .normal)
         
         disableEditionMode()
     }
