@@ -21,25 +21,24 @@ class RefreshControl: JHRefreshControl {
     }
     
     override func setup() {
-        var frames = [UIImage]()
         
-        for i in 1...12 {
-            guard let frame = UIImage(named: String(format: "frame%d.png", i)) else {
-                continue
+        var animationImages = [UIImage]()
+        
+        for i in 0...12 {
+            if let frame = UIImage(named: String(format: "frame%d.png", i)) {
+                animationImages.append(frame)
             }
-            
-            frames.append(frame)
         }
         
-        self.imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: frames[0].size.width, height: frames[0].size.height))
+        self.imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
         
         guard let imageView = self.imageView else {
             return
         }
         
-        imageView.center = CGPoint(x: self.frame.size.width/2, y: self.frame.size.height/2)
-        imageView.animationDuration = 1
-        imageView.animationImages = frames
+        imageView.contentMode = .center
+        imageView.animationDuration = RefreshControl.animationDuration()
+        imageView.animationImages = animationImages
         imageView.startAnimating()
         
         self.addSubview(imageView)

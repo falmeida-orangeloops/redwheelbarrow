@@ -154,7 +154,6 @@
 				FCFF0DF7248C4C6200175862 /* NoteCell.h */,
 				FCFF0DF8248C4C6200175862 /* NoteCell.m */,
 				FCFF0DF9248C4C6200175862 /* NoteCell.xib */,
-				FC031F0E24B75BD7008CB2EA /* RefreshControl.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -165,6 +164,11 @@
 				FCFF0DF7248C4C6200175862 /* NoteCell.h */,
 				FCFF0DF8248C4C6200175862 /* NoteCell.m */,
 				FCFF0DF9248C4C6200175862 /* NoteCell.xib */,
+				FC2E1BED248838FC0089F347 /* ViewController.h */,
+				FC2E1BEE248838FC0089F347 /* ViewController.m */,
+				FC9F32B0249A5AD7005C20A5 /* AlertController.h */,
+				FC9F32B1249A5AEA005C20A5 /* AlertController.m */,
+				FC031F0E24B75BD7008CB2EA /* RefreshControl.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
