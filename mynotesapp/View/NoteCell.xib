@@ -39,6 +39,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="67" height="110"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <state key="normal" title="Category"/>
+                                        <connections>
+                                            <action selector="didCategoryButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="6YP-cw-aWr"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Created Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vec-oi-b0x">
                                         <rect key="frame" x="67" y="0.0" width="133" height="110"/>

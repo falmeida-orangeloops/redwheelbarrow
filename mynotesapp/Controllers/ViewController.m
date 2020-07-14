@@ -18,7 +18,9 @@ NSString *const NOTE_CELL_IDENTIFIER = @"NoteCell";
 NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";
 
 @interface ViewController ()
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIView *filterSubView;
 
 @end
 
@@ -33,6 +35,9 @@ NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";
     [_refreshControl addTarget:self action:@selector(reloadNotes) forControlEvents:UIControlEventValueChanged];
     self.tableView.refreshControl = self.refreshControl;
     
+    _categoryFilter = nil;
+    _filteredNotes = nil;
+    
     [self reloadNotes];
 }
 
@@ -42,13 +47,23 @@ NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [Repository sharedRepository].notes.count;
+    if (!self.categoryFilter) {
+        return [Repository sharedRepository].notes.count;
+    }
+    
+    else {
+        return self.filteredNotes.count;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    Note *note = [(self.categoryFilter ? self.filteredNotes : [Repository sharedRepository].notes) objectAtIndex:indexPath.row];
+    
     Cell *cell = [tableView dequeueReusableCellWithIdentifier:NOTE_CELL_IDENTIFIER];
-    Note *note = [[Repository sharedRepository].notes objectAtIndex:indexPath.row];
     [cell fillForNote:note];
+    cell.categoryFilterChangedCallback = ^() {
+        [self applyCategoryFilter:note.category];
+    };
     
     return cell;
 }
@@ -85,6 +100,28 @@ NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";
 
     AlertController *alert = [[AlertController alloc] initWithTitle:@"Problem when loading notes" message:errorMessage];
     [self presentViewController:alert animated:true completion:nil];
+}
+
+- (void)applyCategoryFilter:(NoteCategory *)newFilter {
+    _categoryFilter = newFilter;
+    
+    if (_categoryFilter) {
+        _filteredNotes = [[Repository sharedRepository].notes filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^bool(id object, NSDictionary *bindings) {
+            return ((Note *) object).category == self.categoryFilter;
+        }]];
+        self.filterSubView.hidden = false;
+    }
+    
+    else {
+        _filteredNotes = nil;
+        self.filterSubView.hidden = true;
+    }
+    
+    [self.tableView reloadData];
+}
+
+- (IBAction)clearFilter:(id)sender {
+    [self applyCategoryFilter:nil];
 }
 
 - (IBAction)addNote:(id)sender {

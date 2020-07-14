@@ -29,4 +29,10 @@
     self.createdDateLabel.text = [note.createdDate shortString];
 }
 
+- (IBAction)didCategoryButtonPressed:(id)sender {
+    if (self.categoryFilterChangedCallback) {
+        self.categoryFilterChangedCallback();
+    }
+}
+
 @end

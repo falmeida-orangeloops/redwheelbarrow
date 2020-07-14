@@ -18,6 +18,33 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jNG-WD-ll3">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qt3-JO-ML6">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="10"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Filtering by category." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yyu-Jc-4eM">
+                                                <rect key="frame" x="5" y="5" width="160" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iS4-hv-gTa">
+                                                <rect key="frame" x="337" y="-10" width="72" height="30"/>
+                                                <state key="normal" title="Clear filter"/>
+                                                <connections>
+                                                    <action selector="clearFilter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q2E-Rb-TYc"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="Yyu-Jc-4eM" firstAttribute="top" secondItem="Qt3-JO-ML6" secondAttribute="top" constant="5" id="OmB-gH-Lot"/>
+                                            <constraint firstItem="iS4-hv-gTa" firstAttribute="centerY" secondItem="Yyu-Jc-4eM" secondAttribute="centerY" id="QFS-S4-39Q"/>
+                                            <constraint firstItem="iS4-hv-gTa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Yyu-Jc-4eM" secondAttribute="trailing" constant="5" id="SGG-Y6-IqS"/>
+                                            <constraint firstItem="Yyu-Jc-4eM" firstAttribute="leading" secondItem="Qt3-JO-ML6" secondAttribute="leading" constant="5" id="cpn-bY-9Jd"/>
+                                            <constraint firstAttribute="bottom" secondItem="Yyu-Jc-4eM" secondAttribute="bottom" constant="5" id="iFd-TT-Nzy"/>
+                                            <constraint firstAttribute="trailing" secondItem="iS4-hv-gTa" secondAttribute="trailing" constant="5" id="nGu-J9-IsI"/>
+                                        </constraints>
+                                    </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dwg-zK-mMq">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -46,6 +73,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="filterSubView" destination="Qt3-JO-ML6" id="1Gf-9h-pDH"/>
                         <outlet property="tableView" destination="Dwg-zK-mMq" id="LKp-Wm-4so"/>
                     </connections>
                 </viewController>
