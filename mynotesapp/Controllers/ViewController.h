@@ -13,11 +13,17 @@
 @interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (readonly, strong, nullable, nonatomic) UIRefreshControl *refreshControl;
-@property (readonly, strong, nullable, nonatomic) NoteCategory *categoryFilter;
+@property (readwrite, strong, nonnull, nonatomic) NSString *textFilter;
+@property (readwrite, strong, nullable, nonatomic) NoteCategory *categoryFilter;
 @property (readonly, strong, nullable, nonatomic) NSArray<Note*> *filteredNotes;
 
-- (void)applyCategoryFilter:(NoteCategory *_Nullable)newFilter;
+- (NSArray<Note*> *_Nonnull)notes;
 - (void)reloadNotes;
 - (void)didReloadNotes:(NSError *)error;
+- (void)applyTextFilter:(NSString *)newFilter;
+- (void)applyCategoryFilter:(NoteCategory *_Nullable)newFilter;
+- (void)didSearchBarTextChange;
+- (void)updateFilteredNotes;
+- (void)updateFilterSubView;
 @end
 

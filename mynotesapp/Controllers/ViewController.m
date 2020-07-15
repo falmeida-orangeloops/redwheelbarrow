@@ -21,6 +21,10 @@ NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *filterSubView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UIView *categoryFilterSubView;
+@property (weak, nonatomic) IBOutlet UILabel *categoryFilterLabel;
+@property (weak, nonatomic) IBOutlet UIButton *clearCategoryFilterButton;
 
 @end
 
@@ -35,8 +39,10 @@ NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";
     [_refreshControl addTarget:self action:@selector(reloadNotes) forControlEvents:UIControlEventValueChanged];
     self.tableView.refreshControl = self.refreshControl;
     
-    _categoryFilter = nil;
-    _filteredNotes = nil;
+    [self applyTextFilter:@""];
+    [self applyCategoryFilter:nil];
+    
+    [self.searchBar.searchTextField addTarget:self action:@selector(didSearchBarTextChange) forControlEvents:UIControlEventEditingChanged];
     
     [self reloadNotes];
 }
@@ -46,18 +52,22 @@ NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";
     [self.tableView reloadData];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (!self.categoryFilter) {
-        return [Repository sharedRepository].notes.count;
+- (NSArray<Note *> *)notes {
+    if (self.textFilter.length == 0 && !self.categoryFilter) {
+        return [Repository sharedRepository].notes;
     }
     
     else {
-        return self.filteredNotes.count;
+        return self.filteredNotes;
     }
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self notes].count;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    Note *note = [(self.categoryFilter ? self.filteredNotes : [Repository sharedRepository].notes) objectAtIndex:indexPath.row];
+    Note *note = [[self notes] objectAtIndex:indexPath.row];
     
     Cell *cell = [tableView dequeueReusableCellWithIdentifier:NOTE_CELL_IDENTIFIER];
     [cell fillForNote:note];
@@ -70,7 +80,7 @@ NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     DetailsViewController *detailsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailsViewController"];
-    detailsViewController.note = [Repository sharedRepository].notes[indexPath.row];
+    detailsViewController.note = [self notes][indexPath.row];
     
     [self.navigationController pushViewController:detailsViewController animated:true];
 }
@@ -102,25 +112,68 @@ NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";
     [self presentViewController:alert animated:true completion:nil];
 }
 
-- (void)applyCategoryFilter:(NoteCategory *)newFilter {
-    _categoryFilter = newFilter;
-    
-    if (_categoryFilter) {
-        _filteredNotes = [[Repository sharedRepository].notes filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^bool(id object, NSDictionary *bindings) {
-            return ((Note *) object).category == self.categoryFilter;
-        }]];
-        self.filterSubView.hidden = false;
+- (void)updateFilteredNotes {
+    if (self.textFilter.length == 0 && !self.categoryFilter) {
+        _filteredNotes = nil;
     }
     
     else {
-        _filteredNotes = nil;
-        self.filterSubView.hidden = true;
+        _filteredNotes = [[Repository sharedRepository].notes filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^bool(id object, NSDictionary *bindings) {
+            Note *note = (Note *)object;
+            
+            bool titleMatches = self.textFilter.length == 0 || [note.title rangeOfString:self.textFilter options:NSCaseInsensitiveSearch].length > 0;
+            bool contentMatches = self.textFilter.length == 0 || [note.content rangeOfString:self.textFilter options:NSCaseInsensitiveSearch].length > 0;
+            bool categoryMatches = !self.categoryFilter || note.category == self.categoryFilter;
+            
+            return (titleMatches || contentMatches) && categoryMatches;
+        }]];
+    }
+}
+
+- (void)updateFilterSubView {
+    if (self.categoryFilter) {
+        self.categoryFilterLabel.text = [NSString stringWithFormat:@"Showing items in '%@'.", self.categoryFilter.title];
     }
     
+    self.categoryFilterSubView.hidden = !self.categoryFilter;
+    
+    if (self.textFilter.length > 0 || self.categoryFilter) {
+        self.filterSubView.hidden = false;
+    }
+}
+
+- (IBAction)toggleFilterSubview:(id)sender {
+    if (self.filterSubView.isHidden) {
+        self.filterSubView.hidden = false;
+        [self.searchBar becomeFirstResponder];
+    }
+    
+    else {
+        self.filterSubView.hidden = true;
+    }
+}
+
+- (void)applyTextFilter:(NSString *)newFilter {
+    self.textFilter = newFilter;
+    
+    [self updateFilteredNotes];
+    [self updateFilterSubView];
     [self.tableView reloadData];
 }
 
-- (IBAction)clearFilter:(id)sender {
+- (void)applyCategoryFilter:(NoteCategory *)newFilter {
+    self.categoryFilter = newFilter;
+    
+    [self updateFilteredNotes];
+    [self updateFilterSubView];
+    [self.tableView reloadData];
+}
+
+- (void)didSearchBarTextChange {
+    [self applyTextFilter:self.searchBar.text];
+}
+
+- (IBAction)clearCategoryFilter:(id)sender {
     [self applyCategoryFilter:nil];
 }
 
