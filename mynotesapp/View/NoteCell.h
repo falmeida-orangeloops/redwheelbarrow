@@ -16,8 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 @property (weak, nonatomic) IBOutlet UIButton *categoryButton;
 @property (weak, nonatomic) IBOutlet UILabel *createdDateLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *pinIndicator;
 
-- (void)fillForNote: (Note *)note;
+- (void)fillForNote: (Note *)note pinnedHint: (bool)pinnedHint;
 
 @end
 

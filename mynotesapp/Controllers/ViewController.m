@@ -41,16 +41,72 @@ NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";
     [self.tableView reloadData];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [Repository sharedRepository].notes.count;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (section == 0) {
+        return [Repository sharedRepository].pinnedNotes.count;
+    }
+    
+    else  {
+        return [Repository sharedRepository].notes.count;
+    }
+}
+
+//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+//    if (section == 0) {
+//        if ([Repository sharedRepository].pinnedNotes.count > 0) {
+//            return @"Pinned notes";
+//        }
+//
+//        else {
+//            return nil;
+//        }
+//    }
+//
+//    else {
+//        if ([Repository sharedRepository].notes.count > 0) {
+//            return @"Notes";
+//        }
+//
+//        else {
+//            return nil;
+//        }
+//    }
+//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     Cell *cell = [tableView dequeueReusableCellWithIdentifier:NOTE_CELL_IDENTIFIER];
-    Note *note = [[Repository sharedRepository].notes objectAtIndex:indexPath.row];
-    [cell fillForNote:note];
+    
+    Note *note;
+    
+    if (indexPath.section == 0) {
+        note = [Repository sharedRepository].pinnedNotes[indexPath.row];
+        [cell fillForNote:note pinnedHint:true];
+    }
+    
+    else {
+        note = [Repository sharedRepository].notes[indexPath.row];
+        [cell fillForNote:note pinnedHint:false];
+    }
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        Note *note = [Repository sharedRepository].pinnedNotes[indexPath.row];
+        
+        return note.archived ? 0 : -1;
+    }
+    
+    else {
+        Note *note = [Repository sharedRepository].notes[indexPath.row];
+        
+        return note.pinned || note.archived ? 0 : -1;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

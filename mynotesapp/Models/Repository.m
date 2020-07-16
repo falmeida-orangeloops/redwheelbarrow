@@ -61,9 +61,26 @@ NSString *const NOTES_URL = @"https://s3.amazonaws.com/kezmo.assets/sandbox/note
     }
 }
 
+- (void)togglePinNote:(Note *)note {
+    if (note.pinned) {
+        [self.pinnedNotes removeObjectAtIndex:[self.pinnedNotes indexOfObject:note]];
+        note.pinned = false;
+    }
+    
+    else {
+        [self.pinnedNotes addObject:note];
+        note.pinned = true;
+    }
+}
+
+- (void)toggleArchiveNote:(Note *)note {
+    note.archived = !note.archived;
+}
+
 - (void)reloadNotesAndCategories:(void (^)(NSError *))completionHandler {
     _categories = [[NSMutableDictionary<NSString*, NoteCategory*> alloc] init];
     _notes = [[NSMutableArray<Note*> alloc] init];
+    _pinnedNotes = [[NSMutableArray<Note*> alloc] init];
     
     [DownloadManager dataFromURL:[NSURL URLWithString:NOTES_URL] completionHandler:^(NSData *data, NSURLResponse *response, NSError *httpError) {
         

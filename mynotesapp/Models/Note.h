@@ -18,6 +18,8 @@
 @property (copy, nonnull, nonatomic) NSString *content;
 @property (copy, nonnull, nonatomic) NSDate *createdDate;
 @property (strong, nonnull, nonatomic) NoteCategory *category;
+@property (nonatomic) bool pinned;
+@property (nonatomic) bool archived;
 
 - (instancetype _Nonnull)initWithIdentifier:(NSString*_Nonnull)identifier title:(NSString*_Nonnull)title content:(NSString*_Nonnull)content createdDate:(NSDate*_Nonnull)createdDate category:(NoteCategory*_Nonnull)category;
 - (instancetype _Nonnull)initWithDict:(NSDictionary *_Nonnull)dict;

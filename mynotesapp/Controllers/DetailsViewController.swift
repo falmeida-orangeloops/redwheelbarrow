@@ -19,6 +19,8 @@ import UIKit
     @IBOutlet weak var categoryButton: UIButton!
     @IBOutlet weak var editingLabel: UILabel!
     var editNoteBarButtonItem: UIBarButtonItem!
+    var pinNoteBarButtonItem: UIBarButtonItem!
+    var archiveNoteBarButtonItem: UIBarButtonItem!
     var deleteNoteBarButtonItem: UIBarButtonItem!
     var saveChangesBarButtonItem: UIBarButtonItem!
     var discardChangesBarButtonItem: UIBarButtonItem!
@@ -27,7 +29,10 @@ import UIKit
         super.viewDidLoad()
         
         editNoteBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(enableEditionMode))
-        deleteNoteBarButtonItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteNote))
+        pinNoteBarButtonItem = UIBarButtonItem(image: nil, style: .plain, target: self, action: #selector(togglePinNote))
+        archiveNoteBarButtonItem = UIBarButtonItem(image: nil, style: .plain, target: self, action: #selector(toggleArchiveNote))
+        deleteNoteBarButtonItem =
+            UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteNote))
         saveChangesBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveChanges))
         discardChangesBarButtonItem = UIBarButtonItem(title: "Discard", style: .plain, target: self, action: #selector(discardChanges))
         
@@ -45,6 +50,8 @@ import UIKit
         titleTextField.layer.borderColor = UIColor.darkGray.cgColor
         contentTextView.layer.borderColor = UIColor.darkGray.cgColor
         
+        pinNoteBarButtonItem.image = UIImage(systemName: note.pinned ? "pin.fill" : "pin")
+        archiveNoteBarButtonItem.image = UIImage(systemName: note.pinned ? "archivebox.fill" : "archivebox")
     }
     
     @IBAction func showSetCategoryViewController(_ sender: Any) {
@@ -62,21 +69,6 @@ import UIKit
         setCategoryViewController.modalPresentationStyle = .popover
         
         self.present(setCategoryViewController, animated: true, completion: nil)
-    }
-    
-    @objc func deleteNote(_ sender: Any) {
-        let confirmationAlert = UIAlertController(title: "Delete this note", message: "Are you sure? This can't be undone.", preferredStyle: .alert)
-        confirmationAlert.addAction(UIAlertAction(title: "Delete", style: .default, handler: {(action: UIAlertAction!) in
-            guard let note = self.note else {
-                return
-            }
-            
-            Repository.shared().removeNote(note)
-            self.navigationController?.popViewController(animated: true)
-        }))
-        confirmationAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        
-        present(confirmationAlert, animated: true, completion: nil)
     }
     
     @objc func enableEditionMode(_ sender: Any) {
@@ -110,7 +102,7 @@ import UIKit
         titleTextField.layer.borderWidth = 0
         contentTextView.layer.borderWidth = 0
         
-        navigationItem.rightBarButtonItems = [deleteNoteBarButtonItem, editNoteBarButtonItem]
+        navigationItem.rightBarButtonItems = [deleteNoteBarButtonItem, archiveNoteBarButtonItem, pinNoteBarButtonItem, editNoteBarButtonItem]
         
         createdDateLabel.isHidden = false
         editingLabel.isHidden = true
@@ -164,5 +156,38 @@ import UIKit
         categoryButton.setTitle(note?.category.title, for: .normal)
         
         disableEditionMode()
+    }
+    
+    @objc func togglePinNote(_ sender: Any) {
+        guard let note = self.note else {
+            return
+        }
+        
+        Repository.shared().togglePinNote(note)
+        pinNoteBarButtonItem.image = UIImage(systemName: (note.pinned ? "pin.fill" : "pin"))
+    }
+    
+    @objc func toggleArchiveNote(_ sender: Any) {
+        guard let note = self.note else {
+            return
+        }
+        
+        Repository.shared().toggleArchiveNote(note)
+        archiveNoteBarButtonItem.image = UIImage(systemName: (note.archived ? "archivebox.fill" : "archivebox"))
+    }
+    
+    @objc func deleteNote(_ sender: Any) {
+        let confirmationAlert = UIAlertController(title: "Delete this note", message: "Are you sure? This can't be undone.", preferredStyle: .alert)
+        confirmationAlert.addAction(UIAlertAction(title: "Delete", style: .default, handler: {(action: UIAlertAction!) in
+            guard let note = self.note else {
+                return
+            }
+            
+            Repository.shared().removeNote(note)
+            self.navigationController?.popViewController(animated: true)
+        }))
+        confirmationAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        present(confirmationAlert, animated: true, completion: nil)
     }
 }

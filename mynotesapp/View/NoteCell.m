@@ -22,11 +22,21 @@
     // Configure the view for the selected state
 }
 
-- (void)fillForNote:(Note *)note {
+- (void)fillForNote:(Note *)note pinnedHint: (bool)pinnedHint {
     self.titleLabel.text = note.title;
     self.contentLabel.text = note.content;
     [self.categoryButton setTitle:note.category.title forState:UIControlStateNormal];
     self.createdDateLabel.text = [note.createdDate shortString];
+    
+    if (pinnedHint) {
+        self.backgroundColor = [UIColor systemFillColor];
+        self.pinIndicator.hidden = !note.pinned;
+    }
+    
+    else {
+        self.backgroundColor = nil;
+        self.pinIndicator.hidden = true;
+    }
 }
 
 @end

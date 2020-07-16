@@ -24,6 +24,8 @@
     self.content = content;
     self.createdDate = createdDate;
     self.category = category;
+    self.pinned = false;
+    self.archived = false;
     
     return self;
 }
