@@ -150,4 +150,9 @@ NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";
     [self tableView:_tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
 }
 
+- (IBAction)showArchivedNotesViewController:(id)sender {
+    ArchivedNotesViewController *archivedNotesViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ArchivedNotesViewController"];
+    [self.navigationController pushViewController:archivedNotesViewController animated:true];
+}
+
 @end

@@ -19,6 +19,7 @@
 		FC31DDD52499DCD700861E37 /* JSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FC31DDD42499DCD700861E37 /* JSONParser.m */; };
 		FC758FE82489381F0050804C /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = FC758FE72489381F0050804C /* Note.m */; };
 		FC758FEC248939AF0050804C /* NoteCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = FC758FEB248939AF0050804C /* NoteCategory.m */; };
+		FC7B609A24C0EA4A00868945 /* ArchivedNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7B609924C0EA4A00868945 /* ArchivedNotesViewController.swift */; };
 		FC87C12024AE6666003FAA32 /* AlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC87C11C24AE6666003FAA32 /* AlertController.m */; };
 		FC87C12124AE6666003FAA32 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC87C11E24AE6666003FAA32 /* DetailsViewController.swift */; };
 		FC9F32B7249A7748005C20A5 /* NSDate+MyFormats.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9F32B6249A7748005C20A5 /* NSDate+MyFormats.m */; };
@@ -51,6 +52,7 @@
 		FC758FE72489381F0050804C /* Note.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		FC758FEA2489399C0050804C /* NoteCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteCategory.h; sourceTree = "<group>"; };
 		FC758FEB248939AF0050804C /* NoteCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteCategory.m; sourceTree = "<group>"; };
+		FC7B609924C0EA4A00868945 /* ArchivedNotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivedNotesViewController.swift; sourceTree = "<group>"; };
 		FC87C11C24AE6666003FAA32 /* AlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertController.m; sourceTree = "<group>"; };
 		FC87C11D24AE6666003FAA32 /* AlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertController.h; sourceTree = "<group>"; };
 		FC87C11E24AE6666003FAA32 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				FC87C11E24AE6666003FAA32 /* DetailsViewController.swift */,
 				FCDDBC4624927F6500C1A19A /* SetCategoryViewController.swift */,
 				FCB75C4224B5A5870027191B /* EditCategoriesViewController.swift */,
+				FC7B609924C0EA4A00868945 /* ArchivedNotesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				FC2E1BFA248838FD0089F347 /* main.m in Sources */,
 				FC31DDD52499DCD700861E37 /* JSONParser.m in Sources */,
 				FC2E1BEC248838FC0089F347 /* SceneDelegate.m in Sources */,
+				FC7B609A24C0EA4A00868945 /* ArchivedNotesViewController.swift in Sources */,
 				FC9F32B7249A7748005C20A5 /* NSDate+MyFormats.m in Sources */,
 				FCB75C4324B5A5870027191B /* EditCategoriesViewController.swift in Sources */,
 				FCF049BA24A14FC400DB4600 /* DownloadManager.m in Sources */,

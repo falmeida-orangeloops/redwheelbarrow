@@ -174,6 +174,8 @@ import UIKit
         
         Repository.shared().toggleArchiveNote(note)
         archiveNoteBarButtonItem.image = UIImage(systemName: (note.archived ? "archivebox.fill" : "archivebox"))
+        
+        print(note.archived, Repository.shared().archivedNotes.count)
     }
     
     @objc func deleteNote(_ sender: Any) {

@@ -39,11 +39,18 @@
                         <viewLayoutGuide key="safeArea" id="bjP-lb-JDx"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Notes" id="kIL-4Z-ifa">
-                        <barButtonItem key="rightBarButtonItem" image="rch|" id="NPL-2j-KQ3">
-                            <connections>
-                                <action selector="addNote:" destination="BYZ-38-t0r" id="dB4-Fa-WbE"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="NPL-2j-KQ3">
+                                <connections>
+                                    <action selector="addNote:" destination="BYZ-38-t0r" id="dB4-Fa-WbE"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Archived notes" image="archivebox" catalog="system" id="o5j-n0-UzB">
+                                <connections>
+                                    <action selector="showArchivedNotesViewController:" destination="BYZ-38-t0r" id="Ca6-57-9sj"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Dwg-zK-mMq" id="LKp-Wm-4so"/>
@@ -176,15 +183,55 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="JmA-wR-bvx"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="qlk-Jr-iCf"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t01-3N-Thy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="84.375"/>
         </scene>
+        <!--Archived Notes-->
+        <scene sceneID="CXn-3J-9WQ">
+            <objects>
+                <viewController storyboardIdentifier="ArchivedNotesViewController" id="Fp5-53-71Q" customClass="ArchivedNotesViewController" customModule="mynotesapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8qe-Cm-Vmh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="DZ4-F8-cpo">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j3p-3f-auM">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="Fp5-53-71Q" id="Cnt-Eu-2uY"/>
+                                            <outlet property="delegate" destination="Fp5-53-71Q" id="IM2-DS-QEY"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="DZ4-F8-cpo" firstAttribute="top" secondItem="eaS-cJ-xnV" secondAttribute="top" id="4PJ-S8-14G"/>
+                            <constraint firstItem="DZ4-F8-cpo" firstAttribute="leading" secondItem="eaS-cJ-xnV" secondAttribute="leading" id="C0L-Hd-dec"/>
+                            <constraint firstItem="DZ4-F8-cpo" firstAttribute="trailing" secondItem="eaS-cJ-xnV" secondAttribute="trailing" id="YQd-wU-g5q"/>
+                            <constraint firstItem="eaS-cJ-xnV" firstAttribute="bottom" secondItem="DZ4-F8-cpo" secondAttribute="bottom" id="bDj-DP-Add"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eaS-cJ-xnV"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Archived Notes" id="uhL-6t-07s"/>
+                    <connections>
+                        <outlet property="tableView" destination="j3p-3f-auM" id="0vs-3H-BGk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fni-cs-69Q" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1048" y="811"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="rch|" width="128" height="128"/>
+        <image name="archivebox" catalog="system" width="128" height="106"/>
     </resources>
 </document>

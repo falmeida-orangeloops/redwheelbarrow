@@ -5,3 +5,4 @@
 #import "Models/Note.h"
 #import "Models/Repository.h"
 #import "Models/NSDate+MyFormats.h"
+#import "View/NoteCell.h"
