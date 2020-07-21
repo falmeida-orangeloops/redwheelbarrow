@@ -52,7 +52,18 @@ NSString *const NOTES_URL = @"https://s3.amazonaws.com/kezmo.assets/sandbox/note
     [self addNote:note atIndex:0];
 }
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _isLoading = false;
+    }
+    return self;
+}
+
 - (void)reloadNotesAndCategories:(void (^)(NSError *))completionHandler {
+    _isLoading = true;
+    
     _categories = [[NSMutableDictionary<NSString*, NoteCategory*> alloc] init];
     _notes = [[NSMutableArray<Note*> alloc] init];
     
@@ -60,6 +71,7 @@ NSString *const NOTES_URL = @"https://s3.amazonaws.com/kezmo.assets/sandbox/note
         
         if (httpError != nil) {
             completionHandler(httpError);
+            _isLoading = false;
             return;
         }
         
@@ -68,11 +80,13 @@ NSString *const NOTES_URL = @"https://s3.amazonaws.com/kezmo.assets/sandbox/note
         
         if (dict[@"categories"] == nil || dict[@"notes"] == nil) {
             completionHandler(nil);
+            _isLoading = false;
             return;
         }
         
         if (parsingError != nil) {
             completionHandler(parsingError);
+            _isLoading = false;
             return;
         }
         
@@ -83,6 +97,7 @@ NSString *const NOTES_URL = @"https://s3.amazonaws.com/kezmo.assets/sandbox/note
             [self addNote:[[Note alloc] initWithDict:item]];
         
         completionHandler(nil);
+        _isLoading = false;
     }];
 }
 

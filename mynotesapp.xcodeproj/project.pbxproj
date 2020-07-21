@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FC09245A24AE676F008A562C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC09245824AE676E008A562C /* ViewController.m */; };
+		52414F5424DC5164003A0BFF /* NoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52414F5224DC5164003A0BFF /* NoteCell.m */; };
+		52414F5524DC5164003A0BFF /* NoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52414F5324DC5164003A0BFF /* NoteCell.xib */; };
+		52414F5724DC5195003A0BFF /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52414F5624DC5195003A0BFF /* RefreshControl.swift */; };
 		93A883A418F0FABC58B13D1C /* Pods_mynotesapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2FFC0D29150D98CE9720DCC /* Pods_mynotesapp.framework */; };
-		FC031F0F24B75BD7008CB2EA /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC031F0E24B75BD7008CB2EA /* RefreshControl.swift */; };
+		FC09245A24AE676F008A562C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC09245824AE676E008A562C /* ViewController.m */; };
 		FC26F496248EDDBC00283D50 /* notes.json in Resources */ = {isa = PBXBuildFile; fileRef = FC26F495248EDDBC00283D50 /* notes.json */; };
 		FC2E1BE9248838FC0089F347 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2E1BE8248838FC0089F347 /* AppDelegate.m */; };
 		FC2E1BEC248838FC0089F347 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2E1BEB248838FC0089F347 /* SceneDelegate.m */; };
@@ -26,19 +28,19 @@
 		FC9F32B7249A7748005C20A5 /* NSDate+MyFormats.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9F32B6249A7748005C20A5 /* NSDate+MyFormats.m */; };
 		FCDDBC4724927F6500C1A19A /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDBC4624927F6500C1A19A /* CategoryPickerViewController.swift */; };
 		FCF049BA24A14FC400DB4600 /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF049B924A14FC400DB4600 /* DownloadManager.m */; };
-		FCE5C0C324ACE05C0000B3C9 /* loadingAnimation in Resources */ = {isa = PBXBuildFile; fileRef = FCE5C0C224ACE05C0000B3C9 /* loadingAnimation */; };
-		FCFF0DFA248C4C6200175862 /* NoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFF0DF8248C4C6200175862 /* NoteCell.m */; };
-		FCFF0DFB248C4C6200175862 /* NoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCFF0DF9248C4C6200175862 /* NoteCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FC09245824AE676E008A562C /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		FC09245924AE676E008A562C /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		52414F5124DC5164003A0BFF /* NoteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteCell.h; sourceTree = "<group>"; };
+		52414F5224DC5164003A0BFF /* NoteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteCell.m; sourceTree = "<group>"; };
+		52414F5324DC5164003A0BFF /* NoteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteCell.xib; sourceTree = "<group>"; };
+		52414F5624DC5195003A0BFF /* RefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
 		8CD11A8F3481559DB4648B2E /* Pods-mynotesapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mynotesapp.release.xcconfig"; path = "Target Support Files/Pods-mynotesapp/Pods-mynotesapp.release.xcconfig"; sourceTree = "<group>"; };
 		A5BC19FFB43AA0843CAD186C /* Pods-mynotesapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mynotesapp.debug.xcconfig"; path = "Target Support Files/Pods-mynotesapp/Pods-mynotesapp.debug.xcconfig"; sourceTree = "<group>"; };
 		B2FFC0D29150D98CE9720DCC /* Pods_mynotesapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mynotesapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC031F0D24B75BD6008CB2EA /* mynotesapp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mynotesapp-Bridging-Header.h"; sourceTree = "<group>"; };
-		FC031F0E24B75BD7008CB2EA /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
+		FC09245824AE676E008A562C /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FC09245924AE676E008A562C /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		FC26F495248EDDBC00283D50 /* notes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = notes.json; path = Resources/General/notes.json; sourceTree = SOURCE_ROOT; };
 		FC2E1BE4248838FB0089F347 /* mynotesapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mynotesapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC2E1BE7248838FC0089F347 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -66,11 +68,6 @@
 		FCDDBC4624927F6500C1A19A /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewController.swift; sourceTree = "<group>"; };
 		FCF049B824A14F3E00DB4600 /* DownloadManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DownloadManager.h; sourceTree = "<group>"; };
 		FCF049B924A14FC400DB4600 /* DownloadManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DownloadManager.m; sourceTree = "<group>"; };
-		FCE5C0C224ACE05C0000B3C9 /* loadingAnimation */ = {isa = PBXFileReference; lastKnownFileType = folder; path = loadingAnimation; sourceTree = "<group>"; };
-		FCFF0DF7248C4C6200175862 /* NoteCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteCell.h; sourceTree = "<group>"; };
-		FCFF0DF8248C4C6200175862 /* NoteCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteCell.m; sourceTree = "<group>"; };
-		FCFF0DF9248C4C6200175862 /* NoteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteCell.xib; sourceTree = "<group>"; };
-		FCFF3F6B24912976005D953E /* mynotesapp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mynotesapp-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,10 +147,6 @@
 				FC87C11C24AE6666003FAA32 /* AlertController.m */,
 				FC87C11E24AE6666003FAA32 /* EditNoteViewController.swift */,
 				FCDDBC4624927F6500C1A19A /* CategoryPickerViewController.swift */,
-				FCE5C0C224ACE05C0000B3C9 /* loadingAnimation */,
-				FCFF0DF7248C4C6200175862 /* NoteCell.h */,
-				FCFF0DF8248C4C6200175862 /* NoteCell.m */,
-				FCFF0DF9248C4C6200175862 /* NoteCell.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -161,14 +154,10 @@
 		FC5D4B0224AE1BA00001C3C0 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FCFF0DF7248C4C6200175862 /* NoteCell.h */,
-				FCFF0DF8248C4C6200175862 /* NoteCell.m */,
-				FCFF0DF9248C4C6200175862 /* NoteCell.xib */,
-				FC2E1BED248838FC0089F347 /* ViewController.h */,
-				FC2E1BEE248838FC0089F347 /* ViewController.m */,
-				FC9F32B0249A5AD7005C20A5 /* AlertController.h */,
-				FC9F32B1249A5AEA005C20A5 /* AlertController.m */,
-				FC031F0E24B75BD7008CB2EA /* RefreshControl.swift */,
+				52414F5624DC5195003A0BFF /* RefreshControl.swift */,
+				52414F5124DC5164003A0BFF /* NoteCell.h */,
+				52414F5224DC5164003A0BFF /* NoteCell.m */,
+				52414F5324DC5164003A0BFF /* NoteCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -176,10 +165,10 @@
 		FC758FE5248937800050804C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FC758FEB248939AF0050804C /* NoteCategory.m */,
 				FC758FE6248937A60050804C /* Note.h */,
 				FC758FE72489381F0050804C /* Note.m */,
 				FC758FEA2489399C0050804C /* NoteCategory.h */,
-				FC758FEB248939AF0050804C /* NoteCategory.m */,
 				FC31DDD02499D45300861E37 /* Repository.h */,
 				FC31DDD12499D46700861E37 /* Repository.m */,
 				FC31DDD32499DCBD00861E37 /* JSONParser.h */,
@@ -252,9 +241,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52414F5524DC5164003A0BFF /* NoteCell.xib in Resources */,
 				FC2E1BF7248838FC0089F347 /* LaunchScreen.storyboard in Resources */,
 				FC26F496248EDDBC00283D50 /* notes.json in Resources */,
-				FCFF0DFB248C4C6200175862 /* NoteCell.xib in Resources */,
 				FC2E1BF4248838FC0089F347 /* Assets.xcassets in Resources */,
 				FC2E1BF2248838FC0089F347 /* Main.storyboard in Resources */,
 			);
@@ -310,23 +299,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC87C12024AE6666003FAA32 /* AlertController.m in Sources */,
+				52414F5424DC5164003A0BFF /* NoteCell.m in Sources */,
 				FC758FE82489381F0050804C /* Note.m in Sources */,
 				FC2E1BE9248838FC0089F347 /* AppDelegate.m in Sources */,
 				FC758FEC248939AF0050804C /* NoteCategory.m in Sources */,
-				FC9F32B2249A5AEA005C20A5 /* AlertController.m in Sources */,
-				FC031F0F24B75BD7008CB2EA /* RefreshControl.swift in Sources */,
 				FC2E1BFA248838FD0089F347 /* main.m in Sources */,
 				FC31DDD52499DCD700861E37 /* JSONParser.m in Sources */,
 				FC2E1BEC248838FC0089F347 /* SceneDelegate.m in Sources */,
 				FC9F32B7249A7748005C20A5 /* NSDate+MyFormats.m in Sources */,
+				52414F5724DC5195003A0BFF /* RefreshControl.swift in Sources */,
 				FCF049BA24A14FC400DB4600 /* DownloadManager.m in Sources */,
 				FC09245A24AE676F008A562C /* ViewController.m in Sources */,
-				FCFF0DFA248C4C6200175862 /* NoteCell.m in Sources */,
 				FC31DDD22499D46700861E37 /* Repository.m in Sources */,
 				FCDDBC4724927F6500C1A19A /* CategoryPickerViewController.swift in Sources */,
-				FCFF0DFA248C4C6200175862 /* NoteCell.m in Sources */,
 				FC87C12124AE6666003FAA32 /* EditNoteViewController.swift in Sources */,
-				FC27F55824A27A3E000A1615 /* RefreshControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -30,12 +30,11 @@ NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";
     [self.tableView registerNib:[UINib nibWithNibName:NOTE_CELL_NIB_NAME bundle:nil] forCellReuseIdentifier:NOTE_CELL_IDENTIFIER];
     
     _refreshControl = [[RefreshControl alloc] init];
-    [_refreshControl addTarget:self action:@selector(reloadNotes) forControlEvents:UIControlEventValueChanged];
-    self.tableView.refreshControl = self.refreshControl;
+    //[_refreshControl addTarget:self action:@selector(reloadNotes) forControlEvents:UIControlEventValueChanged];
     
-    __weak ViewController* weakSelf = self;
+    __weak id weakSelf = self;
     [_refreshControl addToScrollView:self.tableView withRefreshBlock:^{
-        [weakSelf updateNotes];
+        [weakSelf reloadNotes];
     }];
     
     [self reloadNotes];

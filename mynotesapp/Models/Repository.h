@@ -17,6 +17,7 @@
 
 @property (readonly, strong, nonnull, nonatomic) NSMutableArray<Note*> *notes;
 @property (readonly, strong, nonnull, nonatomic) NSMutableDictionary<NSString*, NoteCategory*> *categories;
+@property (readonly, atomic) bool isLoading;
 
 - (void)addCategory:(NoteCategory *_Nonnull)category;
 - (void)addNote:(Note *_Nonnull)note atIndex:(int)index;
