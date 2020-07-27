@@ -51,7 +51,7 @@ import UIKit
         contentTextView.layer.borderColor = UIColor.darkGray.cgColor
         
         pinNoteBarButtonItem.image = UIImage(systemName: note.pinned ? "pin.fill" : "pin")
-        archiveNoteBarButtonItem.image = UIImage(systemName: note.pinned ? "archivebox.fill" : "archivebox")
+        archiveNoteBarButtonItem.image = UIImage(systemName: note.archived ? "archivebox.fill" : "archivebox")
     }
     
     @IBAction func showSetCategoryViewController(_ sender: Any) {
