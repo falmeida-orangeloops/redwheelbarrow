@@ -17,13 +17,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MsG-1E-9OF">
-                        <rect key="frame" x="5" y="5" width="58.5" height="25.5"/>
+                        <rect key="frame" x="5" y="12" width="58.5" height="25.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Of9-3T-fwB">
-                        <rect key="frame" x="5" y="35.5" width="340" height="19.5"/>
+                        <rect key="frame" x="12" y="45.5" width="326" height="19.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -46,15 +46,15 @@
                 <constraints>
                     <constraint firstAttribute="bottomMargin" secondItem="Ycf-ph-3AW" secondAttribute="bottom" id="2c5-1l-qSV"/>
                     <constraint firstItem="Vec-oi-b0x" firstAttribute="centerY" secondItem="Ycf-ph-3AW" secondAttribute="centerY" id="5j3-fh-JCx"/>
-                    <constraint firstItem="MsG-1E-9OF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="DZC-oK-A6x"/>
-                    <constraint firstItem="gRd-Rw-ZNj" firstAttribute="leading" secondItem="MsG-1E-9OF" secondAttribute="trailing" constant="5" id="DaK-90-9Sj"/>
+                    <constraint firstItem="MsG-1E-9OF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="DZC-oK-A6x"/>
+                    <constraint firstItem="gRd-Rw-ZNj" firstAttribute="leading" secondItem="MsG-1E-9OF" secondAttribute="trailing" constant="8" id="DaK-90-9Sj"/>
                     <constraint firstItem="Ycf-ph-3AW" firstAttribute="leading" secondItem="MsG-1E-9OF" secondAttribute="leading" id="H1P-OJ-p4h"/>
                     <constraint firstItem="Vec-oi-b0x" firstAttribute="trailing" secondItem="Of9-3T-fwB" secondAttribute="trailing" id="IcA-yc-gFY"/>
-                    <constraint firstAttribute="trailing" secondItem="gRd-Rw-ZNj" secondAttribute="trailing" constant="5" id="QXX-5G-Qdo"/>
-                    <constraint firstAttribute="trailing" secondItem="Of9-3T-fwB" secondAttribute="trailing" constant="5" id="RoO-DV-jBr"/>
-                    <constraint firstItem="Of9-3T-fwB" firstAttribute="top" secondItem="MsG-1E-9OF" secondAttribute="bottom" constant="5" id="TO5-Jb-2oB"/>
-                    <constraint firstItem="MsG-1E-9OF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="YRb-D5-NYn"/>
-                    <constraint firstItem="Ycf-ph-3AW" firstAttribute="top" secondItem="Of9-3T-fwB" secondAttribute="bottom" constant="5" id="cjh-5P-5Tq"/>
+                    <constraint firstAttribute="trailing" secondItem="gRd-Rw-ZNj" secondAttribute="trailing" constant="12" id="QXX-5G-Qdo"/>
+                    <constraint firstAttribute="trailing" secondItem="Of9-3T-fwB" secondAttribute="trailing" constant="12" id="RoO-DV-jBr"/>
+                    <constraint firstItem="Of9-3T-fwB" firstAttribute="top" secondItem="MsG-1E-9OF" secondAttribute="bottom" constant="8" id="TO5-Jb-2oB"/>
+                    <constraint firstItem="MsG-1E-9OF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="YRb-D5-NYn"/>
+                    <constraint firstItem="Ycf-ph-3AW" firstAttribute="top" secondItem="Of9-3T-fwB" secondAttribute="bottom" constant="8" id="cjh-5P-5Tq"/>
                     <constraint firstItem="Of9-3T-fwB" firstAttribute="leading" secondItem="MsG-1E-9OF" secondAttribute="leading" id="mbm-hi-eh2"/>
                     <constraint firstItem="gRd-Rw-ZNj" firstAttribute="centerY" secondItem="MsG-1E-9OF" secondAttribute="centerY" id="umL-DD-IUT"/>
                     <constraint firstItem="gRd-Rw-ZNj" firstAttribute="height" secondItem="MsG-1E-9OF" secondAttribute="height" multiplier="0.803922" id="w3o-p8-8NO"/>
