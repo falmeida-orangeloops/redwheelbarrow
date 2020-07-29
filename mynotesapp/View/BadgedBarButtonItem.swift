@@ -16,7 +16,7 @@ class BadgedBarButtonItem: UIBarButtonItem {
     }
     
     @objc var badgeTag = 9830384
-    @objc var badgeSize: CGFloat = 15
+    @objc var badgeSize: CGFloat = 14
     @objc var badgeLabel: UILabel?
     
     required init?(coder aDecoder: NSCoder) {
@@ -35,7 +35,7 @@ class BadgedBarButtonItem: UIBarButtonItem {
         badgeLabel.layer.masksToBounds = true
         badgeLabel.textColor = .white
         badgeLabel.font = badgeLabel.font.withSize(12)
-        badgeLabel.backgroundColor = .systemRed
+        badgeLabel.backgroundColor = UIColor.systemBlue
     }
     
     func addBadgeLabelAsSubview() {
@@ -49,7 +49,7 @@ class BadgedBarButtonItem: UIBarButtonItem {
         
         NSLayoutConstraint.activate([
             badgeLabel.rightAnchor.constraint(equalTo: view.rightAnchor),
-            badgeLabel.topAnchor.constraint(equalTo: view.topAnchor),
+            badgeLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             badgeLabel.widthAnchor.constraint(equalToConstant: badgeSize),
             badgeLabel.heightAnchor.constraint(equalToConstant: badgeSize)])
     }
