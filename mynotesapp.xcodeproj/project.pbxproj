@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52D8619F24D1993000683224 /* BadgedBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D8619E24D1993000683224 /* BadgedBarButtonItem.swift */; };
 		FC09245A24AE676F008A562C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC09245824AE676E008A562C /* ViewController.m */; };
 		FC26F496248EDDBC00283D50 /* notes.json in Resources */ = {isa = PBXBuildFile; fileRef = FC26F495248EDDBC00283D50 /* notes.json */; };
 		FC2E1BE9248838FC0089F347 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2E1BE8248838FC0089F347 /* AppDelegate.m */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		52D8619E24D1993000683224 /* BadgedBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgedBarButtonItem.swift; sourceTree = "<group>"; };
 		FC09245824AE676E008A562C /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FC09245924AE676E008A562C /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		FC26F495248EDDBC00283D50 /* notes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = notes.json; path = Resources/General/notes.json; sourceTree = SOURCE_ROOT; };
@@ -145,6 +147,7 @@
 				FCFF0DF7248C4C6200175862 /* NoteCell.h */,
 				FCFF0DF8248C4C6200175862 /* NoteCell.m */,
 				FCFF0DF9248C4C6200175862 /* NoteCell.xib */,
+				52D8619E24D1993000683224 /* BadgedBarButtonItem.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52D8619F24D1993000683224 /* BadgedBarButtonItem.swift in Sources */,
 				FC87C12024AE6666003FAA32 /* AlertController.m in Sources */,
 				FC758FE82489381F0050804C /* Note.m in Sources */,
 				FC2E1BE9248838FC0089F347 /* AppDelegate.m in Sources */,

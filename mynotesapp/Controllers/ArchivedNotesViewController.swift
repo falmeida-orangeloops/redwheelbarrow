@@ -9,14 +9,32 @@
 import UIKit
 
 let ArchivedNoteCellIdentifier = "ArchivedNoteCell"
+let NoteCellNibName = "NoteCell"
 
 class ArchivedNotesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var noArchivedNotesView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(Cell.self, forCellReuseIdentifier: ArchivedNoteCellIdentifier)
+        tableView.register(UINib(nibName: NoteCellNibName, bundle: nil), forCellReuseIdentifier: ArchivedNoteCellIdentifier)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
+        
+        if Repository.shared().archivedNotes.count == 0 {
+            tableView.backgroundView = noArchivedNotesView
+            tableView.separatorStyle = .none
+        }
+        
+        else {
+            tableView.backgroundView = nil;
+            tableView.separatorStyle = .singleLine
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -34,5 +52,16 @@ class ArchivedNotesViewController: UIViewController, UITableViewDelegate, UITabl
         cell.fill(for: note, pinnedHint: false)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let storyboard = self.storyboard else {
+            return
+        }
+        
+        let detailsViewController = storyboard.instantiateViewController(identifier: "DetailsViewController") as DetailsViewController
+        detailsViewController.note = Repository.shared().archivedNotes[indexPath.row] as? Note
+        
+        navigationController?.pushViewController(detailsViewController, animated: true)
     }
 }

@@ -18,7 +18,10 @@ NSString *const NOTE_CELL_IDENTIFIER = @"NoteCell";
 NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";
 
 @interface ViewController ()
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet BadgedBarButtonItem *archivedNotesBarButtonItem;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *addNoteBarButtonItem;
 
 @end
 
@@ -29,7 +32,7 @@ NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";
 
     [self.tableView registerNib:[UINib nibWithNibName:NOTE_CELL_NIB_NAME bundle:nil] forCellReuseIdentifier:NOTE_CELL_IDENTIFIER];
     
-    _refreshControl = [[UIRefreshControl alloc]init];
+    _refreshControl = [[UIRefreshControl alloc] init];
     [_refreshControl addTarget:self action:@selector(reloadNotes) forControlEvents:UIControlEventValueChanged];
     self.tableView.refreshControl = self.refreshControl;
     
@@ -39,6 +42,7 @@ NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.tableView reloadData];
+    self.archivedNotesBarButtonItem.badgeCount = [Repository sharedRepository].archivedNotes.count;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -54,28 +58,6 @@ NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";
         return [Repository sharedRepository].notes.count;
     }
 }
-
-//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-//    if (section == 0) {
-//        if ([Repository sharedRepository].pinnedNotes.count > 0) {
-//            return @"Pinned notes";
-//        }
-//
-//        else {
-//            return nil;
-//        }
-//    }
-//
-//    else {
-//        if ([Repository sharedRepository].notes.count > 0) {
-//            return @"Notes";
-//        }
-//
-//        else {
-//            return nil;
-//        }
-//    }
-//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     Cell *cell = [tableView dequeueReusableCellWithIdentifier:NOTE_CELL_IDENTIFIER];

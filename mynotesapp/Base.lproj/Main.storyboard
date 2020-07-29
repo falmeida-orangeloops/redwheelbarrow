@@ -45,14 +45,16 @@
                                     <action selector="addNote:" destination="BYZ-38-t0r" id="dB4-Fa-WbE"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Archived notes" image="archivebox" catalog="system" id="o5j-n0-UzB">
+                            <barButtonItem title="Item" image="archivebox" catalog="system" id="PtB-6K-Mxw" customClass="BadgedBarButtonItem" customModule="mynotesapp" customModuleProvider="target">
                                 <connections>
-                                    <action selector="showArchivedNotesViewController:" destination="BYZ-38-t0r" id="Ca6-57-9sj"/>
+                                    <action selector="showArchivedNotesViewController:" destination="BYZ-38-t0r" id="Hhh-Yo-VyR"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="addNoteBarButtonItem" destination="NPL-2j-KQ3" id="aX7-tW-TKk"/>
+                        <outlet property="archivedNotesBarButtonItem" destination="PtB-6K-Mxw" id="cpy-Pi-mgH"/>
                         <outlet property="tableView" destination="Dwg-zK-mMq" id="LKp-Wm-4so"/>
                     </connections>
                 </viewController>
@@ -223,10 +225,50 @@
                     </view>
                     <navigationItem key="navigationItem" title="Archived Notes" id="uhL-6t-07s"/>
                     <connections>
+                        <outlet property="noArchivedNotesView" destination="yMr-JZ-nj0" id="dtQ-Wb-Xwz"/>
                         <outlet property="tableView" destination="j3p-3f-auM" id="0vs-3H-BGk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fni-cs-69Q" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="yMr-JZ-nj0">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WL1-rQ-xUY">
+                            <rect key="frame" x="10.5" y="20.5" width="219" height="131"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="archivebox" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="PGf-GO-Qsd">
+                                    <rect key="frame" x="59.5" y="1" width="100" height="97.5"/>
+                                    <color key="tintColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="100" id="ckM-7g-2gg"/>
+                                        <constraint firstAttribute="width" constant="100" id="rse-PC-Ebk"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There are no archived notes." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26Y-kH-Eed">
+                                    <rect key="frame" x="0.0" y="110" width="219" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="26Y-kH-Eed" secondAttribute="bottom" id="KOV-ET-vbV"/>
+                                <constraint firstAttribute="trailing" secondItem="26Y-kH-Eed" secondAttribute="trailing" id="Upo-30-dHm"/>
+                                <constraint firstItem="26Y-kH-Eed" firstAttribute="top" secondItem="PGf-GO-Qsd" secondAttribute="bottom" constant="10" id="YJg-Cy-6ek"/>
+                                <constraint firstItem="PGf-GO-Qsd" firstAttribute="top" secondItem="WL1-rQ-xUY" secondAttribute="top" id="fP2-pa-WfS"/>
+                                <constraint firstItem="26Y-kH-Eed" firstAttribute="leading" secondItem="WL1-rQ-xUY" secondAttribute="leading" id="mZ0-8m-iDT"/>
+                                <constraint firstItem="PGf-GO-Qsd" firstAttribute="centerX" secondItem="WL1-rQ-xUY" secondAttribute="centerX" id="u9i-K7-koN"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="WL1-rQ-xUY" firstAttribute="centerY" secondItem="ASB-cZ-fEy" secondAttribute="centerY" id="eYQ-wk-i2q"/>
+                        <constraint firstItem="WL1-rQ-xUY" firstAttribute="centerX" secondItem="ASB-cZ-fEy" secondAttribute="centerX" id="oBA-Dy-9db"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="ASB-cZ-fEy"/>
+                </view>
             </objects>
             <point key="canvasLocation" x="1048" y="811"/>
         </scene>
