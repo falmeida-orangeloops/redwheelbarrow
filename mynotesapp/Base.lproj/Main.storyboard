@@ -19,33 +19,33 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <view hidden="YES" contentMode="scaleToFill" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qt3-JO-ML6">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="24"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="25"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="axh-uJ-G0f">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="24"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="25"/>
                                                 <subviews>
-                                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="8Uy-T7-TF3">
+                                                    <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="8Uy-T7-TF3">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
+                                                        <color key="barTintColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </searchBar>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1dx-8k-QbU">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="24"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Showing items in '(category)'" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yyu-Jc-4eM">
-                                                                <rect key="frame" x="12" y="12" width="342" height="0.0"/>
+                                                                <rect key="frame" x="12" y="12" width="358.5" height="0.0"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iS4-hv-gTa">
-                                                                <rect key="frame" x="366" y="-3" width="36" height="30"/>
-                                                                <state key="normal" title="Clear"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iS4-hv-gTa">
+                                                                <rect key="frame" x="382.5" y="1" width="19.5" height="22"/>
+                                                                <state key="normal" image="clear" catalog="system"/>
                                                                 <connections>
                                                                     <action selector="clearCategoryFilter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m1N-YY-SFe"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
                                                             <constraint firstItem="Yyu-Jc-4eM" firstAttribute="top" secondItem="1dx-8k-QbU" secondAttribute="top" constant="12" id="Hxx-17-TN8"/>
                                                             <constraint firstAttribute="bottom" secondItem="Yyu-Jc-4eM" secondAttribute="bottom" constant="12" id="IJ6-QA-bH0"/>
@@ -58,10 +58,21 @@
                                                             <constraint firstItem="Yyu-Jc-4eM" firstAttribute="leading" secondItem="1dx-8k-QbU" secondAttribute="leading" constant="12" id="pb5-bj-xdu"/>
                                                         </constraints>
                                                     </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kBH-li-ok2">
+                                                        <rect key="frame" x="0.0" y="24" width="414" height="1"/>
+                                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="2UP-r4-dR8"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="kBH-li-ok2" secondAttribute="trailing" id="7hj-X3-NOF"/>
+                                                    <constraint firstItem="kBH-li-ok2" firstAttribute="leading" secondItem="axh-uJ-G0f" secondAttribute="leading" id="Poa-nr-vYG"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="axh-uJ-G0f" firstAttribute="top" secondItem="Qt3-JO-ML6" secondAttribute="top" id="1Nh-cN-szB"/>
                                             <constraint firstAttribute="bottom" secondItem="axh-uJ-G0f" secondAttribute="bottom" id="IHc-4G-S6H"/>
@@ -289,6 +300,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="clear" catalog="system" width="128" height="114"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
     </resources>
 </document>
