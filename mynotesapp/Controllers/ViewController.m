@@ -25,6 +25,7 @@ NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";
 @property (weak, nonatomic) IBOutlet UIView *categoryFilterSubView;
 @property (weak, nonatomic) IBOutlet UILabel *categoryFilterLabel;
 @property (weak, nonatomic) IBOutlet UIButton *clearCategoryFilterButton;
+@property (strong, nonatomic) IBOutlet UIView *noNotesFoundView;
 
 @end
 
@@ -45,6 +46,7 @@ NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";
     [self.searchBar.searchTextField addTarget:self action:@selector(didSearchBarTextChange) forControlEvents:UIControlEventEditingChanged];
     
     [self reloadNotes];
+    self.tableView.backgroundView = self.noNotesFoundView;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -127,6 +129,16 @@ NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";
             
             return (titleMatches || contentMatches) && categoryMatches;
         }]];
+        
+        if (_filteredNotes.count == 0) {
+            self.tableView.backgroundView = self.noNotesFoundView;
+            self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        }
+        
+        else {
+            self.tableView.backgroundView = nil;
+            self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        }
     }
 }
 

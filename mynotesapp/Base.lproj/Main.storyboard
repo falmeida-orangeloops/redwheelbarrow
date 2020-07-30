@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="If1-jR-fbK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="If1-jR-fbK">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -25,7 +25,7 @@
                                                 <rect key="frame" x="12" y="12" width="402" height="24"/>
                                                 <subviews>
                                                     <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="8Uy-T7-TF3">
-                                                        <rect key="frame" x="0.0" y="0.0" width="390" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="402" height="0.0"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </searchBar>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1dx-8k-QbU">
@@ -112,11 +112,52 @@
                         <outlet property="categoryFilterSubView" destination="1dx-8k-QbU" id="3jI-kn-a4b"/>
                         <outlet property="clearCategoryFilterButton" destination="iS4-hv-gTa" id="oMD-d6-wcX"/>
                         <outlet property="filterSubView" destination="Qt3-JO-ML6" id="1Gf-9h-pDH"/>
+                        <outlet property="noNotesFoundView" destination="7FG-TD-2JK" id="p87-ol-DfV"/>
                         <outlet property="searchBar" destination="8Uy-T7-TF3" id="4pK-ue-qEH"/>
                         <outlet property="tableView" destination="Dwg-zK-mMq" id="LKp-Wm-4so"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="7FG-TD-2JK">
+                    <rect key="frame" x="0.0" y="0.0" width="272" height="398"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wIi-rk-Kz3">
+                            <rect key="frame" x="54" y="158" width="164" height="126"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="iJA-Ok-Dw6">
+                                    <rect key="frame" x="32" y="1" width="100" height="98"/>
+                                    <color key="tintColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="100" id="22c-BP-xSg"/>
+                                        <constraint firstAttribute="width" constant="100" id="hwT-FV-iw8"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No notes were found." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6He-ti-Gi2">
+                                    <rect key="frame" x="0.0" y="105" width="164" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="iJA-Ok-Dw6" firstAttribute="centerX" secondItem="wIi-rk-Kz3" secondAttribute="centerX" id="EaP-9x-B2m"/>
+                                <constraint firstItem="iJA-Ok-Dw6" firstAttribute="top" secondItem="wIi-rk-Kz3" secondAttribute="top" id="Gmr-xw-cDA"/>
+                                <constraint firstItem="6He-ti-Gi2" firstAttribute="top" secondItem="iJA-Ok-Dw6" secondAttribute="bottom" constant="5" id="IgX-5R-6Km"/>
+                                <constraint firstItem="6He-ti-Gi2" firstAttribute="leading" secondItem="wIi-rk-Kz3" secondAttribute="leading" id="cem-39-7NJ"/>
+                                <constraint firstAttribute="trailing" secondItem="6He-ti-Gi2" secondAttribute="trailing" id="vrI-LV-YNM"/>
+                                <constraint firstAttribute="bottom" secondItem="6He-ti-Gi2" secondAttribute="bottom" id="z6z-gK-stb"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="wIi-rk-Kz3" firstAttribute="centerX" secondItem="mWw-XU-60L" secondAttribute="centerX" id="QdH-Zz-4af"/>
+                        <constraint firstItem="wIi-rk-Kz3" firstAttribute="centerY" secondItem="mWw-XU-60L" secondAttribute="centerY" id="sSn-EP-AWU"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="mWw-XU-60L"/>
+                </view>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="84.375"/>
         </scene>
