@@ -40,6 +40,7 @@
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iS4-hv-gTa">
                                                                 <rect key="frame" x="382.5" y="1" width="19.5" height="22"/>
+                                                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" image="clear" catalog="system"/>
                                                                 <connections>
                                                                     <action selector="clearCategoryFilter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m1N-YY-SFe"/>
@@ -118,6 +119,7 @@
                         <outlet property="categoryFilterLabel" destination="Yyu-Jc-4eM" id="lL5-4v-NQi"/>
                         <outlet property="categoryFilterSubView" destination="1dx-8k-QbU" id="3jI-kn-a4b"/>
                         <outlet property="clearCategoryFilterButton" destination="iS4-hv-gTa" id="oMD-d6-wcX"/>
+                        <outlet property="filterBarButtonItem" destination="Q8p-hL-jvo" id="XhX-N5-QeA"/>
                         <outlet property="filterSubView" destination="Qt3-JO-ML6" id="1Gf-9h-pDH"/>
                         <outlet property="noNotesFoundView" destination="7FG-TD-2JK" id="p87-ol-DfV"/>
                         <outlet property="searchBar" destination="8Uy-T7-TF3" id="4pK-ue-qEH"/>

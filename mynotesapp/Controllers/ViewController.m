@@ -20,6 +20,7 @@ NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *filterBarButtonItem;
 @property (weak, nonatomic) IBOutlet UIView *filterSubView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UIView *categoryFilterSubView;
@@ -152,6 +153,18 @@ NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";
     if (self.textFilter.length > 0 || self.categoryFilter) {
         self.filterSubView.hidden = false;
     }
+    
+    [self updateFilterBarButtonItemTintColor];
+}
+
+- (void)updateFilterBarButtonItemTintColor {
+    if (self.filterSubView.hidden) {
+        self.filterBarButtonItem.tintColor = UIColor.systemBlueColor;
+    }
+    
+    else {
+        self.filterBarButtonItem.tintColor = UIColor.systemGrayColor;
+    }
 }
 
 - (IBAction)toggleFilterSubview:(id)sender {
@@ -163,6 +176,8 @@ NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";
     else {
         self.filterSubView.hidden = true;
     }
+    
+    [self updateFilterBarButtonItemTintColor];
 }
 
 - (void)applyTextFilter:(NSString *)newFilter {
