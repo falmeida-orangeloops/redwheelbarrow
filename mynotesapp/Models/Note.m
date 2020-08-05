@@ -12,16 +12,40 @@
 
 @implementation Note
 
-- (id)initWithDict:(NSDictionary *)dict {
+- (instancetype)initWithIdentifier:(NSString *)identifier
+                   title:(NSString *)title
+                 content:(NSString *)content
+             createdDate:(NSDate *)createdDate
+                category:(NoteCategory *)category {
     self = [super init];
-    self.identifier = dict[@"id"];
-    self.title = dict[@"title"];
-    self.content = dict[@"content"];
-    self.createdDate = [NSDate dateWithTimeIntervalSince1970:[dict[@"createdDate"] integerValue]];
-    self.category = ((Repository
-                     *)[Repository sharedRepository]).categories[dict[@"categoryId"]];
+    
+    self.identifier = identifier;
+    self.title = title;
+    self.content = content;
+    self.createdDate = createdDate;
+    self.category = category;
     
     return self;
+}
+
+- (instancetype)initWithDict:(NSDictionary *)dict {
+    return [self initWithIdentifier:dict[@"id"]
+                              title:dict[@"title"]
+                            content:dict[@"content"]
+                        createdDate:[NSDate dateWithTimeIntervalSince1970:[dict[@"createdDate"] integerValue]]
+                           category:[Repository sharedRepository].categories[dict[@"categoryId"]]];
+}
+
+- (instancetype)initWithNote:(Note *)note {
+    return [self initWithIdentifier:note.identifier
+                              title:note.title
+                            content:note.content
+                        createdDate:note.createdDate
+                           category:note.category];
+}
+
+- (bool)isEmpty {
+    return self.title.length == 0 && self.content.length == 0;
 }
 
 @end

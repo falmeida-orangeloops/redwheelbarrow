@@ -10,8 +10,9 @@
 #import "../Models/Note.h"
 #import "../Models/NoteCategory.h"
 #import "../Models/Repository.h"
-#import "AlertController.h"
+#import "./AlertController.h"
 #import "NoteCell.h"
+#import "mynotesapp-Swift.h"
 
 NSString *const NOTE_CELL_IDENTIFIER = @"NoteCell";
 NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";
@@ -25,7 +26,7 @@ NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     [self.tableView registerNib:[UINib nibWithNibName:NOTE_CELL_NIB_NAME bundle:nil] forCellReuseIdentifier:NOTE_CELL_IDENTIFIER];
     
     _refreshControl = [[UIRefreshControl alloc]init];
@@ -35,16 +36,28 @@ NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";
     [self reloadNotes];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return ((Repository *)[Repository sharedRepository]).notes.count;
+    return [Repository sharedRepository].notes.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     Cell *cell = [tableView dequeueReusableCellWithIdentifier:NOTE_CELL_IDENTIFIER];
-    Note *note = [((Repository *)[Repository sharedRepository]).notes objectAtIndex:indexPath.row];
+    Note *note = [[Repository sharedRepository].notes objectAtIndex:indexPath.row];
     [cell fillForNote:note];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    EditNoteViewController *editNoteViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"EditNoteViewController"];
+    editNoteViewController.note = [Repository sharedRepository].notes[indexPath.row];
+    
+    [self.navigationController pushViewController:editNoteViewController animated:true];
 }
 
 - (void)reloadNotes {
@@ -72,6 +85,11 @@ NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";
 
     AlertController *alert = [[AlertController alloc] initWithTitle:@"Problem when loading notes" message:errorMessage];
     [self presentViewController:alert animated:true completion:nil];
+}
+
+- (IBAction)addNote:(id)sender {
+    EditNoteViewController *editNoteViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"EditNoteViewController"];
+    [self.navigationController pushViewController:editNoteViewController animated:true];
 }
 
 @end
