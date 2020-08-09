@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "../Models/NoteCategory.h"
 #import "../Models/Note.h"
-#import "mynotesapp-Swift.h"
+#import "Red_Wheelbarrow-Swift.h"
 
 @interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 

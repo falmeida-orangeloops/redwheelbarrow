@@ -12,7 +12,7 @@
 #import "../Models/Repository.h"
 #import "./AlertController.h"
 #import "NoteCell.h"
-#import "mynotesapp-Swift.h"
+#import "Red_Wheelbarrow-Swift.h"
 
 NSString *const NOTE_CELL_IDENTIFIER = @"NoteCell";
 NSString *const NOTE_CELL_NIB_NAME = @"NoteCell";

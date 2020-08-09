@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Red Wheelbarrow-->
+        <!--Notes-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
@@ -38,7 +38,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bjP-lb-JDx"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Red Wheelbarrow" id="kIL-4Z-ifa">
+                    <navigationItem key="navigationItem" title="Notes" id="kIL-4Z-ifa">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="NPL-2j-KQ3">
                             <connections>
                                 <action selector="addNote:" destination="BYZ-38-t0r" id="dB4-Fa-WbE"/>

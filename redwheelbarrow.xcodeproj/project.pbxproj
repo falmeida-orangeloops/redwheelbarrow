@@ -38,11 +38,11 @@
 		8CD11A8F3481559DB4648B2E /* Pods-mynotesapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mynotesapp.release.xcconfig"; path = "Target Support Files/Pods-mynotesapp/Pods-mynotesapp.release.xcconfig"; sourceTree = "<group>"; };
 		A5BC19FFB43AA0843CAD186C /* Pods-mynotesapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mynotesapp.debug.xcconfig"; path = "Target Support Files/Pods-mynotesapp/Pods-mynotesapp.debug.xcconfig"; sourceTree = "<group>"; };
 		B2FFC0D29150D98CE9720DCC /* Pods_mynotesapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mynotesapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC031F0D24B75BD6008CB2EA /* mynotesapp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mynotesapp-Bridging-Header.h"; sourceTree = "<group>"; };
+		FC031F0D24B75BD6008CB2EA /* redwheelbarrow-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "redwheelbarrow-Bridging-Header.h"; sourceTree = "<group>"; };
 		FC09245824AE676E008A562C /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FC09245924AE676E008A562C /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		FC26F495248EDDBC00283D50 /* notes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = notes.json; path = Resources/General/notes.json; sourceTree = SOURCE_ROOT; };
-		FC2E1BE4248838FB0089F347 /* mynotesapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mynotesapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC2E1BE4248838FB0089F347 /* Red Wheelbarrow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Red Wheelbarrow.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC2E1BE7248838FC0089F347 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FC2E1BE8248838FC0089F347 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FC2E1BEA248838FC0089F347 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 		FC2E1BDB248838FB0089F347 = {
 			isa = PBXGroup;
 			children = (
-				FC2E1BE6248838FB0089F347 /* mynotesapp */,
+				FC2E1BE6248838FB0089F347 /* redwheelbarrow */,
 				FC2E1BE5248838FB0089F347 /* Products */,
 				2A53E2673FBFDBCB287A59FD /* Pods */,
 				BBD2F9C0E62A17B7411909D2 /* Frameworks */,
@@ -112,12 +112,12 @@
 		FC2E1BE5248838FB0089F347 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FC2E1BE4248838FB0089F347 /* mynotesapp.app */,
+				FC2E1BE4248838FB0089F347 /* Red Wheelbarrow.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FC2E1BE6248838FB0089F347 /* mynotesapp */ = {
+		FC2E1BE6248838FB0089F347 /* redwheelbarrow */ = {
 			isa = PBXGroup;
 			children = (
 				FC5D4B0224AE1BA00001C3C0 /* View */,
@@ -133,9 +133,9 @@
 				FC2E1BF8248838FD0089F347 /* Info.plist */,
 				FC2E1BE8248838FC0089F347 /* AppDelegate.m */,
 				FC2E1BF9248838FD0089F347 /* main.m */,
-				FC031F0D24B75BD6008CB2EA /* mynotesapp-Bridging-Header.h */,
+				FC031F0D24B75BD6008CB2EA /* redwheelbarrow-Bridging-Header.h */,
 			);
-			path = mynotesapp;
+			path = redwheelbarrow;
 			sourceTree = "<group>";
 		};
 		FC5D4B0124AE1B310001C3C0 /* Controllers */ = {
@@ -184,9 +184,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FC2E1BE3248838FB0089F347 /* mynotesapp */ = {
+		FC2E1BE3248838FB0089F347 /* redwheelbarrow */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FC2E1BFD248838FD0089F347 /* Build configuration list for PBXNativeTarget "mynotesapp" */;
+			buildConfigurationList = FC2E1BFD248838FD0089F347 /* Build configuration list for PBXNativeTarget "redwheelbarrow" */;
 			buildPhases = (
 				49CF4400EF835A48D6788E19 /* [CP] Check Pods Manifest.lock */,
 				FC2E1BE0248838FB0089F347 /* Sources */,
@@ -198,9 +198,9 @@
 			);
 			dependencies = (
 			);
-			name = mynotesapp;
+			name = redwheelbarrow;
 			productName = mynotesapp;
-			productReference = FC2E1BE4248838FB0089F347 /* mynotesapp.app */;
+			productReference = FC2E1BE4248838FB0089F347 /* Red Wheelbarrow.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -218,7 +218,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FC2E1BDF248838FB0089F347 /* Build configuration list for PBXProject "mynotesapp" */;
+			buildConfigurationList = FC2E1BDF248838FB0089F347 /* Build configuration list for PBXProject "redwheelbarrow" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -231,7 +231,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FC2E1BE3248838FB0089F347 /* mynotesapp */,
+				FC2E1BE3248838FB0089F347 /* redwheelbarrow */,
 			);
 		};
 /* End PBXProject section */
@@ -458,14 +458,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				INFOPLIST_FILE = mynotesapp/Info.plist;
+				INFOPLIST_FILE = redwheelbarrow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "falmeida-orangeloops.mynotesapp";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "mynotesapp/mynotesapp-Bridging-Header.h";
+				PRODUCT_BUNDLE_IDENTIFIER = "falmeida-orangeloops.redwheelbarrow";
+				PRODUCT_NAME = "Red Wheelbarrow";
+				SWIFT_OBJC_BRIDGING_HEADER = "redwheelbarrow/redwheelbarrow-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -480,14 +480,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				INFOPLIST_FILE = mynotesapp/Info.plist;
+				INFOPLIST_FILE = redwheelbarrow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "falmeida-orangeloops.mynotesapp";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "mynotesapp/mynotesapp-Bridging-Header.h";
+				PRODUCT_BUNDLE_IDENTIFIER = "falmeida-orangeloops.redwheelbarrow";
+				PRODUCT_NAME = "Red Wheelbarrow";
+				SWIFT_OBJC_BRIDGING_HEADER = "redwheelbarrow/redwheelbarrow-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -496,7 +496,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FC2E1BDF248838FB0089F347 /* Build configuration list for PBXProject "mynotesapp" */ = {
+		FC2E1BDF248838FB0089F347 /* Build configuration list for PBXProject "redwheelbarrow" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FC2E1BFB248838FD0089F347 /* Debug */,
@@ -505,7 +505,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FC2E1BFD248838FD0089F347 /* Build configuration list for PBXNativeTarget "mynotesapp" */ = {
+		FC2E1BFD248838FD0089F347 /* Build configuration list for PBXNativeTarget "redwheelbarrow" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FC2E1BFE248838FD0089F347 /* Debug */,

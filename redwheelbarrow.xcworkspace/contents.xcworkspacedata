@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:mynotesapp.xcodeproj">
+      location = "group:/Users/facundo/Downloads/Development/redwheelbarrow/redwheelbarrow.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
